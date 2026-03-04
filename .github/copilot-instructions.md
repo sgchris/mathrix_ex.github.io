@@ -18,3 +18,8 @@ Mathrix is a client-side only web application designed for children aged 11-14 t
 2. **State Resumption**: Always ensure that the user's progress (active exercise, attempt history, solved exercises) is immediately synced to `localStorage` and smoothly resumed on page reload.
 3. **Component Structure**: Keep React components modular and functional. Use React Hooks for state and effect management.
 4. **Zero Warnings/Errors**: The project must always build and compile cleanly without any errors or warnings. Ensure that all generated code is robust and follows strict compilation guidelines.
+
+## Workflow & Agent Guidelines
+1. **No Extra Markdown**: Do not create any additional `.md` files unless explicitly requested by the user.
+2. **CLI Usage**: You are allowed and encouraged to use CLI commands to install/update tools or libraries, run builds, start the dev server, etc.
+3. **Git Operations**: Git commands are restricted to read-only operations (e.g., `git status`, `git diff`, `git log`). Do not execute state-mutating Git commands.
