@@ -7,7 +7,12 @@
       "algebra-easy-002",
       "algebra-medium-003",
       "algebra-medium-004",
-      "algebra-medium-005"
+      "algebra-medium-005",
+      "algebra-medium-006",
+      "algebra-medium-007",
+      "algebra-medium-008",
+      "algebra-hard-009",
+      "algebra-hard-010"
     ]
   },
   {
@@ -29,7 +34,12 @@
       "percentages-easy-002",
       "percentages-medium-003",
       "percentages-medium-004",
-      "percentages-medium-005"
+      "percentages-medium-005",
+      "percentages-medium-006",
+      "percentages-medium-007",
+      "percentages-medium-008",
+      "percentages-hard-009",
+      "percentages-hard-010"
     ]
   }
 ]

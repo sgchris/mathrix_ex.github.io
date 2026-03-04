@@ -1,0 +1,40 @@
+{
+  "id": "algebra-hard-009",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "hard",
+  "instructions": "Solve the quadratic equation and give both roots.",
+  "question": {
+    "text": "Find the two solutions for x.",
+    "mathExpression": [
+      "$$ 2x^2 - 7x + 3 = 0 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x1",
+      "label": "Smaller root =",
+      "inputType": "number",
+      "correctAnswer": "0.5"
+    },
+    {
+      "name": "x2",
+      "label": "Larger root =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    }
+  ],
+  "hints": [
+    "Try factoring the trinomial by splitting the middle term.",
+    "You can rewrite it as $$ (2x - 1)(x - 3) = 0 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 2x^2 - 7x + 3 = 0 $$.",
+      "2. Factor the quadratic: $$ 2x^2 - 7x + 3 = (2x - 1)(x - 3) $$.",
+      "3. Apply the zero-product rule: $$ 2x - 1 = 0 $$ or $$ x - 3 = 0 $$.",
+      "4. Solve each equation: $$ x = \\frac{1}{2} = 0.5 $$ and $$ x = 3 $$.",
+      "5. Therefore, the two roots are $$ 0.5 $$ and $$ 3 $$."
+    ]
+  }
+}

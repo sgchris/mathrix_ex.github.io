@@ -1,0 +1,42 @@
+{
+  "id": "algebra-medium-008",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "medium",
+  "instructions": "Solve the system of equations.",
+  "question": {
+    "text": "What are the values of x and y?",
+    "mathExpression": [
+      "$$ 4x - 3y = 7 $$",
+      "$$ x + y = 7 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "4"
+    },
+    {
+      "name": "y",
+      "label": "y =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    }
+  ],
+  "hints": [
+    "From $$ x + y = 7 $$, isolate one variable: $$ x = 7 - y $$.",
+    "Substitute into $$ 4x - 3y = 7 $$ and solve for y first."
+  ],
+  "explanation": {
+    "steps": [
+      "1. From $$ x + y = 7 $$, write $$ x = 7 - y $$.",
+      "2. Substitute into the first equation: $$ 4(7 - y) - 3y = 7 $$.",
+      "3. Expand and combine terms: $$ 28 - 4y - 3y = 7 $$, so $$ 28 - 7y = 7 $$.",
+      "4. Subtract 28: $$ -7y = -21 $$, then divide by -7: $$ y = 3 $$.",
+      "5. Substitute back: $$ x = 7 - 3 = 4 $$.",
+      "6. Check: $$ 4(4) - 3(3) = 16 - 9 = 7 $$ and $$ 4 + 3 = 7 $$ ✓"
+    ]
+  }
+}
