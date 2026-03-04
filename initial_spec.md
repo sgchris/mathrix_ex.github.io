@@ -11,6 +11,8 @@ Mathrix is a client-side only web application designed to help children aged 11-
 
 ## 3. Layout & User Interface
 
+**Design Guidelines:** The design must be bright, clean, and convenient for reading. Since the target audience is teenagers (ages 11-14), the visual style should be engaging but not childish, finding a balance between approachability and maturity.
+
 The application layout is divided into three main responsive columns/areas:
 
 ### 3.1 Primary Sidebar (Topics)
