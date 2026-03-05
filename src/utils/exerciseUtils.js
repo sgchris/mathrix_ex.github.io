@@ -1,11 +1,13 @@
+const base = import.meta.env.BASE_URL
+
 export async function fetchTopics() {
-  const res = await fetch('/exercises/topics.json')
+  const res = await fetch(`${base}exercises/topics.json`)
   if (!res.ok) throw new Error('Failed to fetch topics')
   return res.json()
 }
 
 export async function fetchExercise(topicId, exerciseId) {
-  const res = await fetch(`/exercises/${topicId}/${exerciseId}.json`)
+  const res = await fetch(`${base}exercises/${topicId}/${exerciseId}.json`)
   if (!res.ok) throw new Error(`Failed to fetch exercise: ${exerciseId}`)
   return res.json()
 }
