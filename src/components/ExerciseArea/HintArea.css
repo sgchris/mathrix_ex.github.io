@@ -42,3 +42,10 @@
   border-radius: var(--border-radius-sm);
   border-left: 3px solid var(--color-hint-border);
 }
+
+@media (max-width: 768px) {
+  .hint-area {
+    margin: 16px 16px 0;
+    padding: 12px 14px;
+  }
+}

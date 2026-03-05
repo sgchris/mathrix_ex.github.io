@@ -69,3 +69,23 @@
   background: var(--color-danger-light);
   color: #991b1b;
 }
+
+@media (max-width: 768px) {
+  .answer-inputs {
+    padding: 16px 20px;
+  }
+  
+  .answer-inputs__fields {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .answer-row__label {
+    min-width: 30px;
+  }
+  
+  .answer-row__input {
+    width: 100%;
+    max-width: 150px;
+  }
+}

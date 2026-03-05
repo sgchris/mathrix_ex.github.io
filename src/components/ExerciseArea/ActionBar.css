@@ -60,3 +60,20 @@
 .action-btn__icon--right {
   order: 1;
 }
+
+@media (max-width: 768px) {
+  .action-bar {
+    padding: 12px 16px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .action-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    flex: 1;
+    min-width: 100px;
+    justify-content: center;
+  }
+}

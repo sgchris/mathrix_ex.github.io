@@ -7,6 +7,12 @@
   box-shadow: var(--shadow-sm);
 }
 
+@media (max-width: 768px) {
+  .exercise-display {
+    padding: 20px 16px;
+  }
+}
+
 .exercise-display__text {
   font-size: 1.05rem;
   color: var(--color-text-secondary);

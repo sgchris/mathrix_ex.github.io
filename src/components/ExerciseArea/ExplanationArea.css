@@ -35,3 +35,13 @@
 .explanation-area__step .math-inline .katex {
   font-size: 1em;
 }
+
+@media (max-width: 768px) {
+  .explanation-area {
+    padding: 16px 20px;
+  }
+  
+  .explanation-area__step {
+    padding: 10px 12px;
+  }
+}
