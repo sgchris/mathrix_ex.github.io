@@ -1,16 +1,45 @@
-# React + Vite
+# Mathrix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Mathrix is an interactive math exercise platform designed to help learners practice and master fundamental math concepts through guided exercises, helpful hints, and detailed explanations.
 
-Currently, two official plugins are available:
+## What is Mathrix?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Mathrix provides step-by-step math problems across multiple topics and difficulty levels. Each exercise includes:
+- **Clear instructions** to guide you through the problem
+- **Interactive answer inputs** where you work through your solution
+- **Progressive hints** to help when you get stuck
+- **Detailed step-by-step explanations** after you submit your answer
 
-## React Compiler
+## Topics Covered
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Currently, Mathrix includes exercises in:
+- **Algebra** - Solving equations, working with variables, and algebraic expressions
+- **Fractions** - Operations with fractions, simplification, and comparison
+- **Percentages** - Calculating percentages, percent change, and real-world applications
 
-## Expanding the ESLint configuration
+## Difficulty Levels
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Exercises are organized by difficulty to support learners at different levels:
+- **Easy** - Foundational concepts and basic problem types
+- **Medium** - More complex applications and multi-step problems
+- **Hard** - Advanced problems requiring deeper understanding
+
+## Features
+
+- **Exercise History** - Track the exercises you've attempted and review your progress
+- **Topic Navigation** - Easily browse and select exercises by topic
+- **Accessibility** - Math expressions are displayed in clear mathematical notation
+- **Progress Tracking** - Keep your work organized with your exercise history
+
+## Getting Started
+
+1. Select a topic from the sidebar
+2. Choose an exercise at your desired difficulty level
+3. Read the instructions and solve the problem
+4. Submit your answer to see if it's correct
+5. If needed, use the hint system for guidance
+6. Review the detailed explanation to understand the solution
+
+## Feedback & Reasoning
+
+As you work through exercises, you can provide reasoning for your approaches, helping you think more deeply about the math and explaining your problem-solving process.
