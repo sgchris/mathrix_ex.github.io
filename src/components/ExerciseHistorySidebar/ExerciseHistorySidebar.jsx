@@ -12,6 +12,13 @@ export default function ExerciseHistorySidebar() {
   const history = topicHistory[activeTopic] || []
   const topicData = topics.find(t => t.id === activeTopic)
 
+  function getLevelFromId(exerciseId) {
+    if (exerciseId?.includes('-easy-')) return 'easy'
+    if (exerciseId?.includes('-medium-')) return 'medium'
+    if (exerciseId?.includes('-hard-')) return 'hard'
+    return null
+  }
+
   function handleSelect(exerciseId) {
     dispatch({ type: 'SELECT_EXERCISE', payload: { exerciseId } })
   }
@@ -42,6 +49,12 @@ export default function ExerciseHistorySidebar() {
             onClick={() => handleSelect(exerciseId)}
           >
             <span className="history-item__number">#{index + 1}</span>
+            {getLevelFromId(exerciseId) && (
+              <span
+                className={`level-dot level-dot--${getLevelFromId(exerciseId)}`}
+                title={getLevelFromId(exerciseId)}
+              />
+            )}
             <span className="history-item__label">Exercise {index + 1}</span>
             <span className="history-item__status">{getStatusIcon(exerciseId)}</span>
           </button>

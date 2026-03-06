@@ -6,6 +6,7 @@ import TopicSidebar from './components/TopicSidebar/TopicSidebar'
 import ExerciseHistorySidebar from './components/ExerciseHistorySidebar/ExerciseHistorySidebar'
 import ExerciseArea from './components/ExerciseArea/ExerciseArea'
 import MobileDrawer from './components/shared/MobileDrawer'
+import LevelSelectorBar from './components/shared/LevelSelectorBar'
 import './App.css'
 
 function AppLayout() {
@@ -28,6 +29,7 @@ function AppLayout() {
             </button>
             <span className="mobile-app-bar__title">Mathrix</span>
           </div>
+          <LevelSelectorBar />
           <ExerciseArea />
         </main>
       </div>

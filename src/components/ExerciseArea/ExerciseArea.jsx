@@ -26,7 +26,7 @@ const EMPTY_EX_STATE = {
 
 export default function ExerciseArea() {
   const { appState, dispatch, topics } = useContext(AppContext)
-  const { activeExerciseId, activeTopic, exerciseStates } = appState
+  const { activeExerciseId, activeTopic, exerciseStates, selectedLevel } = appState
 
   const [loadedExercise, setLoadedExercise] = useState({ id: null, data: null, error: null })
 
@@ -91,8 +91,15 @@ export default function ExerciseArea() {
   const canNext = isCompleted
 
   const topicData = topics.find(t => t.id === activeTopic)
-  const currentIndex = topicData?.exercises.indexOf(activeExerciseId) ?? -1
-  const nextExerciseId = topicData?.exercises[currentIndex + 1] ?? null
+  const level = selectedLevel || 'easy'
+  const solvedIds = new Set(
+    Object.entries(exerciseStates)
+      .filter(([, es]) => es.status === 'solved')
+      .map(([id]) => id)
+  )
+  const levelExercises = (topicData?.exercises ?? []).filter(id => id.includes(`-${level}-`))
+  const remainingExercises = levelExercises.filter(id => !solvedIds.has(id) && id !== activeExerciseId)
+  const hasNextExercise = remainingExercises.length > 0
 
   const attemptsLeft = 3 - exState.attempts
 
@@ -116,7 +123,8 @@ export default function ExerciseArea() {
   }
 
   function handleNext() {
-    if (!nextExerciseId) return
+    if (remainingExercises.length === 0) return
+    const nextExerciseId = remainingExercises[Math.floor(Math.random() * remainingExercises.length)]
     dispatch({
       type: 'NEXT_EXERCISE',
       payload: { topicId: activeTopic, nextExerciseId },
@@ -143,7 +151,7 @@ export default function ExerciseArea() {
         canCheck={canCheck}
         canHint={canHint}
         canNext={canNext}
-        hasNextExercise={!!nextExerciseId}
+        hasNextExercise={hasNextExercise}
         onCheck={handleCheckAnswers}
         onHint={handleHint}
         onHowToSolve={handleHowToSolve}
@@ -188,7 +196,7 @@ export default function ExerciseArea() {
           onChange={handleInputChange}
           canCheck={canCheck}
           canNext={canNext}
-          hasNextExercise={!!nextExerciseId}
+          hasNextExercise={hasNextExercise}
           onCheck={handleCheckAnswers}
           onNext={handleNext}
         />

@@ -14,7 +14,11 @@ export default function TopicSidebar() {
   function handleSelectTopic(topic) {
     dispatch({
       type: 'SELECT_TOPIC',
-      payload: { topicId: topic.id, firstExerciseId: topic.exercises[0] },
+      payload: {
+        topicId: topic.id,
+        exercises: topic.exercises,
+        selectedLevel: appState.selectedLevel || 'easy',
+      },
     })
   }
 

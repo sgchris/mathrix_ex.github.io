@@ -12,11 +12,18 @@
   color: var(--color-text-secondary);
 }
 
+.reasoning-box__sublabel {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+  margin-top: -2px;
+}
+
 .reasoning-box__textarea {
   resize: vertical;
-  min-height: 90px;
+  min-height: 160px;
   padding: 12px 14px;
-  font-size: 0.93rem;
+  font-size: 1rem;
   border: 1.5px solid var(--color-border);
   border-radius: var(--border-radius-sm);
   background: var(--color-surface);

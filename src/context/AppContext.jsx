@@ -9,6 +9,7 @@ const initialState = {
   activeExerciseId: null,
   topicHistory: {},
   exerciseStates: {},
+  selectedLevel: 'easy',
 }
 
 function getExerciseState(state, exerciseId) {
@@ -28,16 +29,28 @@ function getExerciseState(state, exerciseId) {
 function reducer(state, action) {
   switch (action.type) {
     case 'SELECT_TOPIC': {
-      const { topicId, firstExerciseId } = action.payload
+      const { topicId, exercises, selectedLevel } = action.payload
       const existingHistory = state.topicHistory[topicId] || []
-      const history =
-        existingHistory.length > 0 ? existingHistory : [firstExerciseId]
-      // Resume at the most recent exercise in history
-      const activeExerciseId = history[history.length - 1]
+      let firstExerciseId
+      let history
+
+      if (existingHistory.length > 0) {
+        history = existingHistory
+        firstExerciseId = existingHistory[existingHistory.length - 1]
+      } else {
+        const level = selectedLevel || 'easy'
+        const pool = (exercises || []).filter(id => id.includes(`-${level}-`))
+        const candidates = pool.length > 0 ? pool : (exercises || [])
+        firstExerciseId = candidates.length > 0
+          ? candidates[Math.floor(Math.random() * candidates.length)]
+          : null
+        history = firstExerciseId ? [firstExerciseId] : []
+      }
+
       return {
         ...state,
         activeTopic: topicId,
-        activeExerciseId,
+        activeExerciseId: firstExerciseId,
         topicHistory: {
           ...state.topicHistory,
           [topicId]: history,
@@ -162,6 +175,50 @@ function reducer(state, action) {
       }
     }
 
+    case 'SET_LEVEL': {
+      const { level, exercises } = action.payload
+      const baseState = { ...state, selectedLevel: level }
+
+      if (!state.activeTopic || !exercises || exercises.length === 0) return baseState
+
+      const solvedIds = new Set(
+        Object.entries(state.exerciseStates)
+          .filter(([, es]) => es.status === 'solved')
+          .map(([id]) => id)
+      )
+      const levelPool = exercises.filter(id => id.includes(`-${level}-`))
+      // Exclude solved and the current active exercise from candidates
+      const available = levelPool.filter(
+        id => !solvedIds.has(id) && id !== state.activeExerciseId
+      )
+      if (available.length === 0) return baseState
+
+      const nextExId = available[Math.floor(Math.random() * available.length)]
+      const topicId = state.activeTopic
+      const currentExState = state.exerciseStates[state.activeExerciseId]
+      const currentIsSolved = currentExState?.status === 'solved'
+
+      let history = state.topicHistory[topicId] || []
+
+      if (currentIsSolved) {
+        // Current is solved — keep it in history, append the new exercise
+        history = history.includes(nextExId) ? history : [...history, nextExId]
+      } else {
+        // Current is not solved — remove it from history and replace with new exercise
+        history = history.filter(id => id !== state.activeExerciseId)
+        history = history.includes(nextExId) ? history : [...history, nextExId]
+      }
+
+      return {
+        ...baseState,
+        activeExerciseId: nextExId,
+        topicHistory: {
+          ...state.topicHistory,
+          [topicId]: history,
+        },
+      }
+    }
+
     default:
       return state
   }
@@ -173,7 +230,7 @@ export default function AppProvider({ children }) {
   const [appState, dispatch] = useReducer(reducer, null, () => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
-      return saved ? JSON.parse(saved) : initialState
+      return saved ? { ...initialState, ...JSON.parse(saved) } : initialState
     } catch {
       return initialState
     }

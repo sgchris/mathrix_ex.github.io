@@ -92,3 +92,23 @@
 .history-status--danger {
   color: var(--color-danger);
 }
+
+.level-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.level-dot--easy {
+  background-color: #22c55e;
+}
+
+.level-dot--medium {
+  background-color: #f97316;
+}
+
+.level-dot--hard {
+  background-color: #ef4444;
+}

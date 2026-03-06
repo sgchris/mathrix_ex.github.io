@@ -1,0 +1,66 @@
+.level-selector-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 32px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.level-selector-bar__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.level-selector-bar__pills {
+  display: flex;
+  gap: 6px;
+}
+
+.level-pill {
+  padding: 5px 16px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface-2);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.level-pill:hover:not(.level-pill--active) {
+  border-color: #c5cde8;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.level-pill--easy.level-pill--active {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #fff;
+}
+
+.level-pill--medium.level-pill--active {
+  background: #f97316;
+  border-color: #f97316;
+  color: #fff;
+}
+
+.level-pill--hard.level-pill--active {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .level-selector-bar {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+}
