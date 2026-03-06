@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-043",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x + 17 = 25 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "8"
+    }
+  ],
+  "hints": [
+    "What number added to 17 gives 25?",
+    "Subtract 17 from both sides to find x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x + 17 = 25 $$.",
+      "2. Subtract 17 from both sides: $$ x = 25 - 17 $$.",
+      "3. Simplify: $$ x = 8 $$.",
+      "4. Check: $$ 8 + 17 = 25 $$ ✓"
+    ]
+  }
+}

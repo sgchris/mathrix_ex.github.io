@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-041",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 4x - 3 = 13 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "4"
+    }
+  ],
+  "hints": [
+    "First add 3 to both sides to remove the constant term.",
+    "Then divide both sides by 4."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 4x - 3 = 13 $$.",
+      "2. Add 3 to both sides: $$ 4x = 13 + 3 = 16 $$.",
+      "3. Divide both sides by 4: $$ x = \\frac{16}{4} = 4 $$.",
+      "4. Check: $$ 4 \\times 4 - 3 = 16 - 3 = 13 $$ ✓"
+    ]
+  }
+}

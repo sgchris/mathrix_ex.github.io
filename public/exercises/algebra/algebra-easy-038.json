@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-038",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x - 3 = 8 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "11"
+    }
+  ],
+  "hints": [
+    "A number minus 3 equals 8. What is that number?",
+    "Add 3 to both sides to find x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x - 3 = 8 $$.",
+      "2. Add 3 to both sides: $$ x = 8 + 3 $$.",
+      "3. Simplify: $$ x = 11 $$.",
+      "4. Check: $$ 11 - 3 = 8 $$ ✓"
+    ]
+  }
+}

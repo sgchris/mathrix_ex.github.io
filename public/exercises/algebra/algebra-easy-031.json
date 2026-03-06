@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-031",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 3x - 5 = 10 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Start by adding 5 to both sides to undo the subtraction.",
+    "Then divide both sides by 3."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 3x - 5 = 10 $$.",
+      "2. Add 5 to both sides: $$ 3x = 10 + 5 = 15 $$.",
+      "3. Divide both sides by 3: $$ x = \\frac{15}{3} = 5 $$.",
+      "4. Check: $$ 3 \\times 5 - 5 = 15 - 5 = 10 $$ ✓"
+    ]
+  }
+}

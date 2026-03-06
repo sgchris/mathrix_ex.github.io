@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-028",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 5x = 30 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "6"
+    }
+  ],
+  "hints": [
+    "5 multiplied by x equals 30. What operation is the inverse of multiplication?",
+    "Divide both sides by 5 to find x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 5x = 30 $$.",
+      "2. Divide both sides by 5: $$ \\frac{5x}{5} = \\frac{30}{5} $$.",
+      "3. Simplify: $$ x = 6 $$.",
+      "4. Check: $$ 5 \\times 6 = 30 $$ ✓"
+    ]
+  }
+}

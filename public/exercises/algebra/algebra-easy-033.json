@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-033",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x - 7 = 0 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "A number minus 7 equals 0. What must that number be?",
+    "Add 7 to both sides to solve for x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x - 7 = 0 $$.",
+      "2. Add 7 to both sides: $$ x = 0 + 7 $$.",
+      "3. Simplify: $$ x = 7 $$.",
+      "4. Check: $$ 7 - 7 = 0 $$ ✓"
+    ]
+  }
+}

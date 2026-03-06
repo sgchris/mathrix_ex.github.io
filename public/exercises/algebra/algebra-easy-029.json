@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-029",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ \\frac{x}{4} = 3 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "12"
+    }
+  ],
+  "hints": [
+    "x divided by 4 equals 3. The inverse of division is multiplication.",
+    "Multiply both sides by 4 to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{x}{4} = 3 $$.",
+      "2. Multiply both sides by 4: $$ \\frac{x}{4} \\times 4 = 3 \\times 4 $$.",
+      "3. Simplify: $$ x = 12 $$.",
+      "4. Check: $$ \\frac{12}{4} = 3 $$ ✓"
+    ]
+  }
+}

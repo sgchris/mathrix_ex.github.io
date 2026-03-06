@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-044",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 3x + 4 = 19 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Subtract 4 from both sides to remove the constant.",
+    "Then divide both sides by 3."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 3x + 4 = 19 $$.",
+      "2. Subtract 4 from both sides: $$ 3x = 19 - 4 = 15 $$.",
+      "3. Divide both sides by 3: $$ x = \\frac{15}{3} = 5 $$.",
+      "4. Check: $$ 3 \\times 5 + 4 = 15 + 4 = 19 $$ ✓"
+    ]
+  }
+}

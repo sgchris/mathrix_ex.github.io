@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-034",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 4x = 36 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "9"
+    }
+  ],
+  "hints": [
+    "4 times x equals 36. What is 36 divided by 4?",
+    "Divide both sides by 4 to find x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 4x = 36 $$.",
+      "2. Divide both sides by 4: $$ \\frac{4x}{4} = \\frac{36}{4} $$.",
+      "3. Simplify: $$ x = 9 $$.",
+      "4. Check: $$ 4 \\times 9 = 36 $$ ✓"
+    ]
+  }
+}

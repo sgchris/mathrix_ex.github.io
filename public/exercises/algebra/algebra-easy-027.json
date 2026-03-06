@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-027",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x - 4 = 9 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "13"
+    }
+  ],
+  "hints": [
+    "To undo the subtraction of 4, add 4 to both sides.",
+    "What number minus 4 equals 9?"
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x - 4 = 9 $$.",
+      "2. Add 4 to both sides: $$ x - 4 + 4 = 9 + 4 $$.",
+      "3. Simplify: $$ x = 13 $$.",
+      "4. Check: $$ 13 - 4 = 9 $$ ✓"
+    ]
+  }
+}

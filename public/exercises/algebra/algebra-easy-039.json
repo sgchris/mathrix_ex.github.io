@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-039",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 6x = 42 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "6 times x equals 42. What is 42 divided by 6?",
+    "Divide both sides by 6 to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 6x = 42 $$.",
+      "2. Divide both sides by 6: $$ \\frac{6x}{6} = \\frac{42}{6} $$.",
+      "3. Simplify: $$ x = 7 $$.",
+      "4. Check: $$ 6 \\times 7 = 42 $$ ✓"
+    ]
+  }
+}

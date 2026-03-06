@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-035",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ \\frac{x}{3} = 5 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "15"
+    }
+  ],
+  "hints": [
+    "x divided by 3 gives 5. Think: 3 times what gives 5?",
+    "Multiply both sides by 3 to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{x}{3} = 5 $$.",
+      "2. Multiply both sides by 3: $$ x = 5 \\times 3 $$.",
+      "3. Simplify: $$ x = 15 $$.",
+      "4. Check: $$ \\frac{15}{3} = 5 $$ ✓"
+    ]
+  }
+}

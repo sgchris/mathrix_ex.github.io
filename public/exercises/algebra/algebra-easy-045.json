@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-045",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x - 9 = 6 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "15"
+    }
+  ],
+  "hints": [
+    "A number minus 9 equals 6. What is that number?",
+    "Add 9 to both sides to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x - 9 = 6 $$.",
+      "2. Add 9 to both sides: $$ x = 6 + 9 $$.",
+      "3. Simplify: $$ x = 15 $$.",
+      "4. Check: $$ 15 - 9 = 6 $$ ✓"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-032",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x + 12 = 20 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "8"
+    }
+  ],
+  "hints": [
+    "What number added to 12 gives 20?",
+    "Subtract 12 from both sides to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x + 12 = 20 $$.",
+      "2. Subtract 12 from both sides: $$ x = 20 - 12 $$.",
+      "3. Simplify: $$ x = 8 $$.",
+      "4. Check: $$ 8 + 12 = 20 $$ ✓"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-036",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 2x + 1 = 9 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "4"
+    }
+  ],
+  "hints": [
+    "First subtract 1 from both sides to remove the constant.",
+    "Then divide both sides by 2."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 2x + 1 = 9 $$.",
+      "2. Subtract 1 from both sides: $$ 2x = 9 - 1 = 8 $$.",
+      "3. Divide both sides by 2: $$ x = \\frac{8}{2} = 4 $$.",
+      "4. Check: $$ 2 \\times 4 + 1 = 8 + 1 = 9 $$ ✓"
+    ]
+  }
+}

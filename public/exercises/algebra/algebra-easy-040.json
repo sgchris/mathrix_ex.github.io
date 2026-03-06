@@ -1,0 +1,33 @@
+{
+  "id": "algebra-easy-040",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "easy",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ \\frac{x}{2} = 9 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "18"
+    }
+  ],
+  "hints": [
+    "x divided by 2 equals 9. What times 2 gives 9?",
+    "Multiply both sides by 2 to find x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{x}{2} = 9 $$.",
+      "2. Multiply both sides by 2: $$ x = 9 \\times 2 $$.",
+      "3. Simplify: $$ x = 18 $$.",
+      "4. Check: $$ \\frac{18}{2} = 9 $$ ✓"
+    ]
+  }
+}
