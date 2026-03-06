@@ -34,7 +34,12 @@
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
-.level-pill:hover:not(.level-pill--active) {
+.level-pill:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.level-pill:hover:not(.level-pill--active):not(:disabled) {
   border-color: #c5cde8;
   color: var(--color-text);
   background: var(--color-surface);

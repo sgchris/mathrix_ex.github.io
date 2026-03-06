@@ -187,13 +187,16 @@ function reducer(state, action) {
           .map(([id]) => id)
       )
       const levelPool = exercises.filter(id => id.includes(`-${level}-`))
-      // Exclude solved and the current active exercise from candidates
-      const available = levelPool.filter(
+      // Prefer unsolved; fall back to any exercise in the pool if all are solved
+      const unsolved = levelPool.filter(
         id => !solvedIds.has(id) && id !== state.activeExerciseId
       )
-      if (available.length === 0) return baseState
+      const candidates = unsolved.length > 0
+        ? unsolved
+        : levelPool.filter(id => id !== state.activeExerciseId)
+      if (candidates.length === 0) return baseState
 
-      const nextExId = available[Math.floor(Math.random() * available.length)]
+      const nextExId = candidates[Math.floor(Math.random() * candidates.length)]
       const topicId = state.activeTopic
       const currentExState = state.exerciseStates[state.activeExerciseId]
       const currentIsSolved = currentExState?.status === 'solved'

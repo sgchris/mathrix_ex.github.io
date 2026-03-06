@@ -29,6 +29,7 @@ export default function LevelSelectorBar() {
             key={id}
             className={`level-pill level-pill--${id}${selectedLevel === id ? ' level-pill--active' : ''}`}
             onClick={() => handleSelect(id)}
+            disabled={selectedLevel === id}
           >
             {label}
           </button>
