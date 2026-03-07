@@ -35,5 +35,36 @@
       "3. Add the numerators: $$ \\frac{8 + 3}{8} $$.",
       "4. The physical result is $$ \\frac{11}{8} $$."
     ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חברו את השברים.",
+      "question": {
+        "text": "מה הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה:"
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה:"
+        }
+      ],
+      "hints": [
+        "מצאו מכנה משותף.",
+        "המכנה המשותף של 4 ו-8 הוא 8."
+      ],
+      "explanation": {
+        "steps": [
+          "1. הביטוי הוא $$ \\frac{4}{4} + \\frac{3}{8} $$.",
+          "2. ממירים את השבר הראשון: $$ \\frac{8}{8} $$.",
+          "3. מחברים את המונים: $$ \\frac{8 + 3}{8} $$.",
+          "4. התוצאה היא $$ \\frac{11}{8} $$."
+        ]
+      }
+    }
   }
 }
