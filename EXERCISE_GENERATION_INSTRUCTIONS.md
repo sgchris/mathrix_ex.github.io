@@ -69,6 +69,33 @@ Every exercise file must strictly follow this JSON structure:
       "3. Simplify: $$ x = 7 $$.",
       "4. Check: substitute back — $$ 7 + 5 = 12 $$ ✓"
     ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "חשבו איזה מספר, כשמוסיפים לו 5, נותן 12.",
+        "אפשר לבודד את x על ידי חיסור 5 משני אגפי המשוואה."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים מהמשוואה $$ x + 5 = 12 $$.",
+          "2. כדי למצוא את x, צריך להשאיר אותו לבדו באגף אחד. מחסרים 5 משני אגפי המשוואה: $$ x + 5 - 5 = 12 - 5 $$.",
+          "3. מפשטים: $$ x = 7 $$.",
+          "4. בודקים על ידי הצבה: $$ 7 + 5 = 12 $$ ✓"
+        ]
+      }
+    }
   }
 }
 ```
@@ -78,3 +105,6 @@ Every exercise file must strictly follow this JSON structure:
 - **Multiple Inputs**: For things like fractions, provide multiple elements in the `inputs` array (e.g., one for `numerator` and one for `denominator`).
 - **Steps**: In the `explanation.steps` array, make each step clear and easy to read. Number the steps naturally (1., 2., 3., etc.).
 - **Consistency**: Maintain consistency with existing ID sequencing (e.g., pad sequences with zeroes like `001`, `002`).
+- **Hebrew Required**: Every exercise must include a complete `translations.he` overlay for all human-readable exercise content: `topicName`, `instructions`, `question.text`, `inputs[].label`, `hints`, and `explanation.steps`.
+- **Keep Structure in Base Fields**: Do not translate `id`, `topicId`, `difficulty`, `inputs[].name`, `inputs[].inputType`, or `inputs[].correctAnswer`. These remain in the base exercise object.
+- **Preserve Math Unless Language Is Inside It**: Keep math expressions in the base object unless the expression itself contains natural-language text that also needs localization.

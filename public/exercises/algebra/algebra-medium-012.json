@@ -28,5 +28,31 @@
       "2. Subtract 5 from both sides: $$ 3x = 15 $$.",
       "3. Divide by 3: $$ x = 5 $$."
     ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "בודדו את האיבר עם x.",
+        "חסרו 5 משני האגפים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 3x + 5 = 20 $$.",
+          "2. מחסרים 5 משני האגפים: $$ 3x = 15 $$.",
+          "3. מחלקים ב-3: $$ x = 5 $$."
+        ]
+      }
+    }
   }
 }

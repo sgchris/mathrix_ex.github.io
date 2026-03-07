@@ -28,5 +28,31 @@
       "2. Subtract 9 from both sides: $$ 5x = 25 $$.",
       "3. Divide by 5: $$ x = 5 $$."
     ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "בודדו את האיבר עם x.",
+        "חסרו 9 משני האגפים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 5x + 9 = 34 $$.",
+          "2. מחסרים 9 משני האגפים: $$ 5x = 25 $$.",
+          "3. מחלקים ב-5: $$ x = 5 $$."
+        ]
+      }
+    }
   }
 }
