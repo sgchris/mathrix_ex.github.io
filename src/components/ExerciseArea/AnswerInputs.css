@@ -128,6 +128,10 @@
   order: 1;
 }
 
+:dir(rtl) .answer-action-btn__icon--right {
+  transform: scaleX(-1);
+}
+
 @media (max-width: 768px) {
   .answer-inputs {
     padding: 16px 20px;
