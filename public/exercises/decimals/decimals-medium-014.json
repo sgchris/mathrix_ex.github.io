@@ -1,0 +1,62 @@
+{
+  "id": "decimals-medium-014",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "medium",
+  "instructions": "Divide the decimal by a whole number.",
+  "question": {
+    "text": "What is the quotient?",
+    "mathExpression": [
+      "$$ 7.2 / 3 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "quotient",
+      "label": "Quotient =",
+      "inputType": "number",
+      "correctAnswer": "2.4"
+    }
+  ],
+  "hints": [
+    "Think of $$ 7.2 $$ as 72 tenths.",
+    "If 72 tenths are shared equally into 3 groups, each group gets 24 tenths."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Rewrite $$ 7.2 $$ as 72 tenths.",
+      "2. Divide: $$ 72 / 3 = 24 $$.",
+      "3. Because the 72 was tenths, the answer is 24 tenths.",
+      "4. And 24 tenths is $$ 2.4 $$.",
+      "5. So $$ 7.2 / 3 = 2.4 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "חלקו את המספר העשרוני במספר שלם.",
+      "question": {
+        "text": "מהי המנה?"
+      },
+      "inputs": [
+        {
+          "name": "quotient",
+          "label": "מנה ="
+        }
+      ],
+      "hints": [
+        "חשבו על $$ 7.2 $$ כעל 72 עשיריות.",
+        "אם מחלקים 72 עשיריות שווה בשווה ל-3 קבוצות, בכל קבוצה יהיו 24 עשיריות."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כותבים מחדש את $$ 7.2 $$ בתור 72 עשיריות.",
+          "2. מחלקים: $$ 72 / 3 = 24 $$.",
+          "3. מכיוון שה-72 היו עשיריות, התשובה היא 24 עשיריות.",
+          "4. ו-24 עשיריות הן $$ 2.4 $$.",
+          "5. לכן $$ 7.2 / 3 = 2.4 $$."
+        ]
+      }
+    }
+  }
+}

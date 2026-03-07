@@ -1,0 +1,60 @@
+{
+  "id": "decimals-easy-004",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "easy",
+  "instructions": "Subtract the decimals.",
+  "question": {
+    "text": "What is the difference?",
+    "mathExpression": [
+      "$$ 5.8 - 2.1 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "difference",
+      "label": "Difference =",
+      "inputType": "number",
+      "correctAnswer": "3.7"
+    }
+  ],
+  "hints": [
+    "Line up the decimal points before subtracting.",
+    "Subtract the tenths and the ones separately: $$ 0.8 - 0.1 = 0.7 $$ and $$ 5 - 2 = 3 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Write the decimals in columns with the decimal points aligned.",
+      "2. Subtract the tenths: $$ 0.8 - 0.1 = 0.7 $$.",
+      "3. Subtract the ones: $$ 5 - 2 = 3 $$.",
+      "4. Combine the result: $$ 3 + 0.7 = 3.7 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "חסרו את המספרים העשרוניים.",
+      "question": {
+        "text": "מהו ההפרש?"
+      },
+      "inputs": [
+        {
+          "name": "difference",
+          "label": "הפרש ="
+        }
+      ],
+      "hints": [
+        "יישרו את הנקודות העשרוניות לפני החיסור.",
+        "חסרו את העשיריות ואת היחידות בנפרד: $$ 0.8 - 0.1 = 0.7 $$ ו-$$ 5 - 2 = 3 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כותבים את המספרים בטור כך שהנקודות העשרוניות יהיו מיושרות.",
+          "2. מחסרים את העשיריות: $$ 0.8 - 0.1 = 0.7 $$.",
+          "3. מחסרים את היחידות: $$ 5 - 2 = 3 $$.",
+          "4. מחברים את התוצאה: $$ 3 + 0.7 = 3.7 $$."
+        ]
+      }
+    }
+  }
+}

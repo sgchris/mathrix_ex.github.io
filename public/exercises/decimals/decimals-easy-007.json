@@ -1,0 +1,58 @@
+{
+  "id": "decimals-easy-007",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "easy",
+  "instructions": "Divide the decimal by 10.",
+  "question": {
+    "text": "What is the result?",
+    "mathExpression": [
+      "$$ 58.2 / 10 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "result",
+      "label": "Result =",
+      "inputType": "number",
+      "correctAnswer": "5.82"
+    }
+  ],
+  "hints": [
+    "Dividing by 10 moves every digit one place to the right.",
+    "The decimal point moves one place to the left: 58.2 becomes 5.82."
+  ],
+  "explanation": {
+    "steps": [
+      "1. When you divide by $$ 10 $$, each digit shifts one place to the right.",
+      "2. That makes the decimal point move one place to the left.",
+      "3. So $$ 58.2 / 10 = 5.82 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "חלקו את המספר העשרוני ב-10.",
+      "question": {
+        "text": "מהי התוצאה?"
+      },
+      "inputs": [
+        {
+          "name": "result",
+          "label": "תוצאה ="
+        }
+      ],
+      "hints": [
+        "חלוקה ב-10 מזיזה כל ספרה מקום אחד ימינה.",
+        "הנקודה העשרונית זזה מקום אחד שמאלה: 58.2 הופך ל-5.82."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כאשר מחלקים ב-$$ 10 $$, כל ספרה זזה מקום אחד ימינה.",
+          "2. לכן הנקודה העשרונית זזה מקום אחד שמאלה.",
+          "3. לכן $$ 58.2 / 10 = 5.82 $$."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "decimals-easy-001",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "easy",
+  "instructions": "Identify the digit in the tenths place.",
+  "question": {
+    "text": "What digit is in the tenths place of 4.7?",
+    "mathExpression": [
+      "$$ 4.7 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "digit",
+      "label": "Digit =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "The tenths place is the first digit to the right of the decimal point.",
+    "In $$ 4.7 $$, the digit right after the decimal point is 7."
+  ],
+  "explanation": {
+    "steps": [
+      "1. In the decimal $$ 4.7 $$, the digit 4 is in the ones place.",
+      "2. The first digit to the right of the decimal point is the tenths digit.",
+      "3. That digit is $$ 7 $$, so the answer is 7."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "זהו את הספרה במקום העשיריות.",
+      "question": {
+        "text": "איזו ספרה נמצאת במקום העשיריות במספר 4.7?"
+      },
+      "inputs": [
+        {
+          "name": "digit",
+          "label": "ספרה ="
+        }
+      ],
+      "hints": [
+        "מקום העשיריות הוא הספרה הראשונה מימין לנקודה העשרונית.",
+        "ב-$$ 4.7 $$, הספרה שמיד אחרי הנקודה העשרונית היא 7."
+      ],
+      "explanation": {
+        "steps": [
+          "1. במספר העשרוני $$ 4.7 $$, הספרה 4 נמצאת במקום היחידות.",
+          "2. הספרה הראשונה מימין לנקודה העשרונית היא ספרת העשיריות.",
+          "3. הספרה היא $$ 7 $$, ולכן התשובה היא 7."
+        ]
+      }
+    }
+  }
+}

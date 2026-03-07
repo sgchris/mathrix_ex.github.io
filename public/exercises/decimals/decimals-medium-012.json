@@ -1,0 +1,62 @@
+{
+  "id": "decimals-medium-012",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "medium",
+  "instructions": "Subtract the decimals.",
+  "question": {
+    "text": "What is the difference?",
+    "mathExpression": [
+      "$$ 10.00 - 3.47 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "difference",
+      "label": "Difference =",
+      "inputType": "number",
+      "correctAnswer": "6.53"
+    }
+  ],
+  "hints": [
+    "Write both numbers with the same number of decimal places.",
+    "You will need to regroup from the ones place to subtract the hundredths and tenths."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Write the subtraction with decimal points aligned: $$ 10.00 - 3.47 $$.",
+      "2. Regroup so you can subtract the hundredths and tenths.",
+      "3. In the hundredths place, $$ 10 - 7 = 3 $$ hundredths.",
+      "4. In the tenths place, $$ 9 - 4 = 5 $$ tenths, and in the ones place, $$ 9 - 3 = 6 $$ ones.",
+      "5. The difference is $$ 6.53 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "חסרו את המספרים העשרוניים.",
+      "question": {
+        "text": "מהו ההפרש?"
+      },
+      "inputs": [
+        {
+          "name": "difference",
+          "label": "הפרש ="
+        }
+      ],
+      "hints": [
+        "כתבו את שני המספרים עם אותו מספר ספרות אחרי הנקודה העשרונית.",
+        "תצטרכו לבצע המרה כדי לחסר את המאיות ואת העשיריות."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כותבים את התרגיל כך שהנקודות העשרוניות יהיו מיושרות: $$ 10.00 - 3.47 $$.",
+          "2. מבצעים המרה כדי שאפשר יהיה לחסר את המאיות ואת העשיריות.",
+          "3. במקום המאיות, $$ 10 - 7 = 3 $$ מאיות.",
+          "4. במקום העשיריות, $$ 9 - 4 = 5 $$ עשיריות, ובמקום היחידות, $$ 9 - 3 = 6 $$ יחידות.",
+          "5. ההפרש הוא $$ 6.53 $$."
+        ]
+      }
+    }
+  }
+}

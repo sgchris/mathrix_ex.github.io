@@ -1,0 +1,62 @@
+{
+  "id": "decimals-hard-017",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "hard",
+  "instructions": "Multiply the decimals.",
+  "question": {
+    "text": "What is the product?",
+    "mathExpression": [
+      "$$ 3.6 * 0.4 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "product",
+      "label": "Product =",
+      "inputType": "number",
+      "correctAnswer": "1.44"
+    }
+  ],
+  "hints": [
+    "Ignore the decimal points first and multiply $$ 36 * 4 $$.",
+    "Then count the total decimal places in the factors: one in $$ 3.6 $$ and one in $$ 0.4 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Multiply the numbers as whole numbers: $$ 36 * 4 = 144 $$.",
+      "2. The factor $$ 3.6 $$ has 1 decimal place and $$ 0.4 $$ has 1 decimal place.",
+      "3. Altogether, the product must have 2 decimal places.",
+      "4. So $$ 144 $$ becomes $$ 1.44 $$.",
+      "5. Therefore $$ 3.6 * 0.4 = 1.44 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "הכפילו את המספרים העשרוניים.",
+      "question": {
+        "text": "מהי המכפלה?"
+      },
+      "inputs": [
+        {
+          "name": "product",
+          "label": "מכפלה ="
+        }
+      ],
+      "hints": [
+        "התעלמו תחילה מהנקודות העשרוניות והכפילו $$ 36 * 4 $$.",
+        "אחר כך ספרו את מספר הספרות הכולל אחרי הנקודה בשני הגורמים: אחת ב-$$ 3.6 $$ ואחת ב-$$ 0.4 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כופלים את המספרים כאילו הם שלמים: $$ 36 * 4 = 144 $$.",
+          "2. בגורם $$ 3.6 $$ יש ספרה אחת אחרי הנקודה ובגורם $$ 0.4 $$ יש ספרה אחת אחרי הנקודה.",
+          "3. בסך הכול, למכפלה חייבות להיות 2 ספרות אחרי הנקודה.",
+          "4. לכן $$ 144 $$ הופך ל-$$ 1.44 $$.",
+          "5. לכן $$ 3.6 * 0.4 = 1.44 $$."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "decimals-easy-009",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "easy",
+  "instructions": "Add the decimals.",
+  "question": {
+    "text": "What is the sum?",
+    "mathExpression": [
+      "$$ 1.25 + 0.5 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "sum",
+      "label": "Sum =",
+      "inputType": "number",
+      "correctAnswer": "1.75"
+    }
+  ],
+  "hints": [
+    "Write $$ 0.5 $$ as $$ 0.50 $$ so the place values line up.",
+    "Then add: hundredths, tenths, and ones."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Rewrite $$ 0.5 $$ as $$ 0.50 $$.",
+      "2. Add the hundredths: $$ 5 + 0 = 5 $$ hundredths.",
+      "3. Add the tenths: $$ 2 + 5 = 7 $$ tenths.",
+      "4. The ones digit stays $$ 1 $$, so the sum is $$ 1.75 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "חברו את המספרים העשרוניים.",
+      "question": {
+        "text": "מהו הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "sum",
+          "label": "סכום ="
+        }
+      ],
+      "hints": [
+        "כתבו את $$ 0.5 $$ בתור $$ 0.50 $$ כדי ליישר את ערכי המקום.",
+        "ואז חברו: מאיות, עשיריות ויחידות."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כותבים מחדש את $$ 0.5 $$ בתור $$ 0.50 $$.",
+          "2. מחברים את המאיות: $$ 5 + 0 = 5 $$ מאיות.",
+          "3. מחברים את העשיריות: $$ 2 + 5 = 7 $$ עשיריות.",
+          "4. ספרת היחידות נשארת $$ 1 $$, ולכן הסכום הוא $$ 1.75 $$."
+        ]
+      }
+    }
+  }
+}

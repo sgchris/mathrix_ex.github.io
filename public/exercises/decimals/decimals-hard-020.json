@@ -1,0 +1,60 @@
+{
+  "id": "decimals-hard-020",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "hard",
+  "instructions": "Solve the multi-step decimal problem.",
+  "question": {
+    "text": "A tank contains 15.6 liters of water. Four bottles are each filled with 2.35 liters from the tank. How many liters remain in the tank?",
+    "mathExpression": [
+      "$$ 15.6 - 4 * 2.35 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "remaining",
+      "label": "Remaining liters =",
+      "inputType": "number",
+      "correctAnswer": "6.2"
+    }
+  ],
+  "hints": [
+    "First find how much water is removed in total.",
+    "Then subtract that amount from 15.6 liters."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Each bottle gets $$ 2.35 $$ liters, and there are 4 bottles.",
+      "2. Multiply to find the total removed: $$ 4 * 2.35 = 9.4 $$ liters.",
+      "3. Subtract the removed amount from the starting amount: $$ 15.6 - 9.4 = 6.2 $$.",
+      "4. So $$ 6.2 $$ liters remain in the tank."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "פתרו את הבעיה הרב-שלבית עם מספרים עשרוניים.",
+      "question": {
+        "text": "מכל מכיל 15.6 ליטרים של מים. מהמכל ממלאים ארבעה בקבוקים, ובכל בקבוק 2.35 ליטרים. כמה ליטרים נשארים במכל?"
+      },
+      "inputs": [
+        {
+          "name": "remaining",
+          "label": "ליטרים שנותרו ="
+        }
+      ],
+      "hints": [
+        "תחילה מצאו כמה מים הוצאו בסך הכול.",
+        "אחר כך חסרו את הכמות הזאת מ-15.6 ליטרים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. בכל בקבוק יש $$ 2.35 $$ ליטרים, ויש 4 בקבוקים.",
+          "2. כופלים כדי למצוא את הכמות הכוללת שהוצאה: $$ 4 * 2.35 = 9.4 $$ ליטרים.",
+          "3. מחסרים את הכמות שהוצאה מהכמות ההתחלתית: $$ 15.6 - 9.4 = 6.2 $$.",
+          "4. לכן נשארים במכל $$ 6.2 $$ ליטרים."
+        ]
+      }
+    }
+  }
+}

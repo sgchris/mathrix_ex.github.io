@@ -6,6 +6,7 @@ import './TopicSidebar.css'
 const TOPIC_SYMBOLS = {
   algebra: 'x²',
   fractions: '½',
+  decimals: '0.1',
   percentages: '%',
 }
 

@@ -95,6 +95,37 @@
       "fractions-hard-024",
       "fractions-hard-025"
     ]
+    },
+    {
+      "id": "decimals",
+      "name": "Decimals",
+      "translations": {
+        "he": {
+          "name": "מספרים עשרוניים"
+        }
+      },
+      "exercises": [
+        "decimals-easy-001",
+        "decimals-easy-002",
+        "decimals-easy-003",
+        "decimals-easy-004",
+        "decimals-easy-005",
+        "decimals-easy-006",
+        "decimals-easy-007",
+        "decimals-easy-008",
+        "decimals-easy-009",
+        "decimals-easy-010",
+        "decimals-medium-011",
+        "decimals-medium-012",
+        "decimals-medium-013",
+        "decimals-medium-014",
+        "decimals-medium-015",
+        "decimals-medium-016",
+        "decimals-hard-017",
+        "decimals-hard-018",
+        "decimals-hard-019",
+        "decimals-hard-020"
+      ]
   },
   {
     "id": "percentages",

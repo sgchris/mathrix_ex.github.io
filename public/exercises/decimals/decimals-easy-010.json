@@ -1,0 +1,60 @@
+{
+  "id": "decimals-easy-010",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "easy",
+  "instructions": "Round the decimal to the nearest whole number.",
+  "question": {
+    "text": "What is 7.6 rounded to the nearest whole number?",
+    "mathExpression": [
+      "$$ 7.6 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "rounded",
+      "label": "Rounded number =",
+      "inputType": "number",
+      "correctAnswer": "8"
+    }
+  ],
+  "hints": [
+    "Look at the tenths digit to decide whether to round up or down.",
+    "Because the tenths digit is 6, which is at least 5, round 7 up to 8."
+  ],
+  "explanation": {
+    "steps": [
+      "1. To round $$ 7.6 $$ to the nearest whole number, look at the tenths digit.",
+      "2. The tenths digit is $$ 6 $$.",
+      "3. Since 6 is at least 5, round the whole number up from 7 to 8.",
+      "4. The rounded value is $$ 8 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "עגלו את המספר העשרוני למספר השלם הקרוב ביותר.",
+      "question": {
+        "text": "מהו 7.6 כאשר מעגלים למספר השלם הקרוב ביותר?"
+      },
+      "inputs": [
+        {
+          "name": "rounded",
+          "label": "מספר מעוגל ="
+        }
+      ],
+      "hints": [
+        "הסתכלו על ספרת העשיריות כדי להחליט אם לעגל למעלה או למטה.",
+        "מכיוון שספרת העשיריות היא 6, שהיא לפחות 5, מעגלים את 7 ל-8."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כדי לעגל את $$ 7.6 $$ למספר השלם הקרוב ביותר, מסתכלים על ספרת העשיריות.",
+          "2. ספרת העשיריות היא $$ 6 $$.",
+          "3. מכיוון ש-6 הוא לפחות 5, מעגלים את המספר השלם מ-7 ל-8.",
+          "4. הערך המעוגל הוא $$ 8 $$."
+        ]
+      }
+    }
+  }
+}

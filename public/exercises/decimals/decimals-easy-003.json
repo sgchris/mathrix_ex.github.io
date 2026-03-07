@@ -1,0 +1,60 @@
+{
+  "id": "decimals-easy-003",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "easy",
+  "instructions": "Add the decimals.",
+  "question": {
+    "text": "What is the sum?",
+    "mathExpression": [
+      "$$ 2.4 + 1.3 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "sum",
+      "label": "Sum =",
+      "inputType": "number",
+      "correctAnswer": "3.7"
+    }
+  ],
+  "hints": [
+    "Line up the decimal points.",
+    "Add the tenths and the ones separately: $$ 0.4 + 0.3 = 0.7 $$ and $$ 2 + 1 = 3 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Write the decimals so the decimal points line up.",
+      "2. Add the tenths: $$ 0.4 + 0.3 = 0.7 $$.",
+      "3. Add the ones: $$ 2 + 1 = 3 $$.",
+      "4. Combine the parts: $$ 3 + 0.7 = 3.7 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "חברו את המספרים העשרוניים.",
+      "question": {
+        "text": "מהו הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "sum",
+          "label": "סכום ="
+        }
+      ],
+      "hints": [
+        "יישרו את הנקודות העשרוניות.",
+        "חברו את העשיריות ואת היחידות בנפרד: $$ 0.4 + 0.3 = 0.7 $$ ו-$$ 2 + 1 = 3 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כותבים את המספרים כך שהנקודות העשרוניות יהיו מיושרות.",
+          "2. מחברים את העשיריות: $$ 0.4 + 0.3 = 0.7 $$.",
+          "3. מחברים את היחידות: $$ 2 + 1 = 3 $$.",
+          "4. מחברים את החלקים: $$ 3 + 0.7 = 3.7 $$."
+        ]
+      }
+    }
+  }
+}
