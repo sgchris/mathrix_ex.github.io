@@ -1,0 +1,58 @@
+{
+  "id": "decimals-level01-006",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "level01",
+  "instructions": "Multiply the decimal by 10.",
+  "question": {
+    "text": "What is the result?",
+    "mathExpression": [
+      "$$ 3.46 * 10 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "result",
+      "label": "Result =",
+      "inputType": "number",
+      "correctAnswer": "34.6"
+    }
+  ],
+  "hints": [
+    "Multiplying by 10 moves every digit one place to the left.",
+    "The decimal point moves one place to the right: 3.46 becomes 34.6."
+  ],
+  "explanation": {
+    "steps": [
+      "1. When you multiply by $$ 10 $$, each digit shifts one place to the left.",
+      "2. That means the decimal point appears one place to the right.",
+      "3. So $$ 3.46 * 10 = 34.6 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "הכפילו את המספר העשרוני ב-10.",
+      "question": {
+        "text": "מהי התוצאה?"
+      },
+      "inputs": [
+        {
+          "name": "result",
+          "label": "תוצאה ="
+        }
+      ],
+      "hints": [
+        "כפל ב-10 מזיז כל ספרה מקום אחד שמאלה.",
+        "הנקודה העשרונית זזה מקום אחד ימינה: 3.46 הופך ל-34.6."
+      ],
+      "explanation": {
+        "steps": [
+          "1. כאשר כופלים ב-$$ 10 $$, כל ספרה זזה מקום אחד שמאלה.",
+          "2. לכן הנקודה העשרונית נראית כאילו זזה מקום אחד ימינה.",
+          "3. לכן $$ 3.46 * 10 = 34.6 $$."
+        ]
+      }
+    }
+  }
+}

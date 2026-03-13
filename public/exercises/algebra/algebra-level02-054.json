@@ -1,0 +1,62 @@
+{
+  "id": "algebra-level02-054",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level02",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ \\frac{x}{5} = 7 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "35"
+    }
+  ],
+  "hints": [
+    "Multiply both sides by 5.",
+    "Then $$ x = 7 \\cdot 5 $$.",
+    "Now multiply 7 by 5."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{x}{5} = 7 $$.",
+      "2. Multiply both sides by 5: $$ 5 \\cdot \\frac{x}{5} = 7 \\cdot 5 $$.",
+      "3. Simplify: $$ x = 35 $$.",
+      "4. Check: $$ \\frac{35}{5} = 7 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "כפלו את שני האגפים ב-5.",
+        "אז מתקבל $$ x = 7 \\cdot 5 $$.",
+        "עכשיו כפלו 7 ב-5."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{x}{5} = 7 $$.",
+          "2. כופלים את שני האגפים ב-5: $$ 5 \\cdot \\frac{x}{5} = 7 \\cdot 5 $$.",
+          "3. מפשטים: $$ x = 35 $$.",
+          "4. בודקים: $$ \\frac{35}{5} = 7 $$ ✓"
+        ]
+      }
+    }
+  }
+}

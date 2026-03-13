@@ -1,0 +1,62 @@
+{
+  "id": "decimals-level05-018",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "level05",
+  "instructions": "Divide the decimals.",
+  "question": {
+    "text": "What is the quotient?",
+    "mathExpression": [
+      "$$ 8.4 / 0.7 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "quotient",
+      "label": "Quotient =",
+      "inputType": "number",
+      "correctAnswer": "12"
+    }
+  ],
+  "hints": [
+    "Make the divisor a whole number by multiplying both numbers by 10.",
+    "Then solve $$ 84 / 7 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 8.4 / 0.7 $$.",
+      "2. Multiply both the dividend and divisor by $$ 10 $$ to remove the decimal from the divisor.",
+      "3. That gives $$ 84 / 7 $$.",
+      "4. Compute: $$ 84 / 7 = 12 $$.",
+      "5. So $$ 8.4 / 0.7 = 12 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "חלקו את המספרים העשרוניים.",
+      "question": {
+        "text": "מהי המנה?"
+      },
+      "inputs": [
+        {
+          "name": "quotient",
+          "label": "מנה ="
+        }
+      ],
+      "hints": [
+        "הפכו את המחלק למספר שלם על ידי הכפלת שני המספרים ב-10.",
+        "אחר כך פתרו $$ 84 / 7 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 8.4 / 0.7 $$.",
+          "2. מכפילים גם את המחולק וגם את המחלק ב-$$ 10 $$ כדי להסיר את הנקודה מהמחלק.",
+          "3. כך מקבלים $$ 84 / 7 $$.",
+          "4. מחשבים: $$ 84 / 7 = 12 $$.",
+          "5. לכן $$ 8.4 / 0.7 = 12 $$."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "arithmetic-progression-level01-006",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the missing term in the arithmetic progression.",
+  "question": {
+    "text": "What number should replace the blank?",
+    "mathExpression": [
+      "$$ 6, 10, ?, 18, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "missingTerm",
+      "label": "Missing term =",
+      "inputType": "number",
+      "correctAnswer": "14"
+    }
+  ],
+  "hints": [
+    "Look at the jump from 6 to 10.",
+    "Add the same amount to 10 to find the missing term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. From $$ 6 $$ to $$ 10 $$, the increase is $$ 4 $$.",
+      "2. Add $$ 4 $$ to $$ 10 $$: $$ 10 + 4 = 14 $$.",
+      "3. Check with the next term: $$ 14 + 4 = 18 $$.",
+      "4. The missing term is $$ 14 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר החסר בסדרה החשבונית.",
+      "question": {
+        "text": "איזה מספר צריך להחליף את הרווח?"
+      },
+      "inputs": [
+        {
+          "name": "missingTerm",
+          "label": "האיבר החסר ="
+        }
+      ],
+      "hints": [
+        "בדקו את הקפיצה מ-6 ל-10.",
+        "הוסיפו את אותו מספר ל-10 כדי למצוא את האיבר החסר."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מ-$$ 6 $$ ל-$$ 10 $$ יש עלייה של $$ 4 $$.",
+          "2. מוסיפים $$ 4 $$ ל-$$ 10 $$: $$ 10 + 4 = 14 $$.",
+          "3. בודקים עם האיבר הבא: $$ 14 + 4 = 18 $$.",
+          "4. האיבר החסר הוא $$ 14 $$."
+        ]
+      }
+    }
+  }
+}

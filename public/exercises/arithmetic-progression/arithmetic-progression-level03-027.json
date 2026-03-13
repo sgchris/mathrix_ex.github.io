@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-027",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find the first term of the arithmetic progression.",
+  "question": {
+    "text": "What is the first term?",
+    "mathExpression": [
+      "$$ a_8 = 4, d = -3 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "firstTerm",
+      "label": "First term =",
+      "inputType": "number",
+      "correctAnswer": "25"
+    }
+  ],
+  "hints": [
+    "From the first term to the eighth term there are 7 equal steps.",
+    "Undo 7 steps of -3 by adding $$ 7 \\cdot 3 = 21 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. There are 7 steps from term 1 to term 8.",
+      "2. Since the common difference is $$ -3 $$, going backward means adding $$ 7 \\cdot 3 = 21 $$.",
+      "3. Compute: $$ 4 + 21 = 25 $$. So the first term is $$ 25 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר הראשון של הסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר הראשון?"
+      },
+      "inputs": [
+        {
+          "name": "firstTerm",
+          "label": "האיבר הראשון ="
+        }
+      ],
+      "hints": [
+        "מהאיבר הראשון לאיבר השמיני יש 7 צעדים שווים.",
+        "בטלו 7 צעדים של -3 על ידי הוספת $$ 7 \\cdot 3 = 21 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. יש 7 צעדים מאיבר 1 לאיבר 8.",
+          "2. מכיוון שההפרש הקבוע הוא $$ -3 $$, חזרה לאחור פירושה להוסיף $$ 7 \\cdot 3 = 21 $$.",
+          "3. מחשבים: $$ 4 + 21 = 25 $$. לכן האיבר הראשון הוא $$ 25 $$."
+        ]
+      }
+    }
+  }
+}

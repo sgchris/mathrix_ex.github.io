@@ -1,0 +1,74 @@
+{
+  "id": "fractions-level07-028",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Multiply the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the product?",
+    "mathExpression": [
+      "$$ \\frac{7}{9} \\times \\frac{6}{11} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "14"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "33"
+    }
+  ],
+  "hints": [
+    "Multiply numerators and denominators, but look for common factors first.",
+    "You can simplify 6 and 9 by dividing both by 3 before multiplying.",
+    "Then compute the product of the remaining numerators and denominators."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{7}{9} \\times \\frac{6}{11} $$.",
+      "2. Simplify before multiplying: $$ \\frac{6}{9} = \\frac{2}{3} $$, so the expression becomes $$ \\frac{7}{3} \\times \\frac{2}{11} $$.",
+      "3. Multiply numerators: $$ 7 \\times 2 = 14 $$.",
+      "4. Multiply denominators: $$ 3 \\times 11 = 33 $$.",
+      "5. The product is $$ \\frac{14}{33} $$, which is already in simplest form."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "כפלו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה המכפלה?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "כפלו מונים ומכנים, אבל חפשו קודם גורמים משותפים.",
+        "אפשר לצמצם את 6 ואת 9 על ידי חלוקה של שניהם ב-3 לפני הכפל.",
+        "אחר כך חשבו את מכפלת המונים ואת מכפלת המכנים שנותרו."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{7}{9} \\times \\frac{6}{11} $$.",
+          "2. מצמצמים לפני הכפל: $$ \\frac{6}{9} = \\frac{2}{3} $$, ולכן הביטוי הופך ל-$$ \\frac{7}{3} \\times \\frac{2}{11} $$.",
+          "3. כופלים מונים: $$ 7 \\times 2 = 14 $$.",
+          "4. כופלים מכנים: $$ 3 \\times 11 = 33 $$.",
+          "5. המכפלה היא $$ \\frac{14}{33} $$, והיא כבר בצורה המצומצמת ביותר."
+        ]
+      }
+    }
+  }
+}

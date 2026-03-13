@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-009",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "If the sequence starts at 2 and increases by 6 each time, what is the fourth term?",
+    "mathExpression": [
+      "$$ 2, 8, 14, 20, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "fourthTerm",
+      "label": "Fourth term =",
+      "inputType": "number",
+      "correctAnswer": "20"
+    }
+  ],
+  "hints": [
+    "Write the terms one by one.",
+    "Start at 2 and add 6 three times to reach the fourth term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with the first term $$ 2 $$.",
+      "2. Add $$ 6 $$ each time: second term $$ 8 $$, third term $$ 14 $$, fourth term $$ 20 $$.",
+      "3. The fourth term is $$ 20 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "אם הסדרה מתחילה ב-2 וגדלה ב-6 בכל פעם, מהו האיבר הרביעי?"
+      },
+      "inputs": [
+        {
+          "name": "fourthTerm",
+          "label": "האיבר הרביעי ="
+        }
+      ],
+      "hints": [
+        "כתבו את האיברים אחד אחרי השני.",
+        "התחילו ב-2 והוסיפו 6 שלוש פעמים כדי להגיע לאיבר הרביעי."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים באיבר הראשון $$ 2 $$.",
+          "2. מוסיפים $$ 6 $$ בכל פעם: האיבר השני $$ 8 $$, האיבר השלישי $$ 14 $$, והאיבר הרביעי $$ 20 $$.",
+          "3. האיבר הרביעי הוא $$ 20 $$."
+        ]
+      }
+    }
+  }
+}

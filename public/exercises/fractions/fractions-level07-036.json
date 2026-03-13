@@ -1,0 +1,76 @@
+{
+  "id": "fractions-level07-036",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Multiply the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the product?",
+    "mathExpression": [
+      "$$ \\frac{14}{15} \\times \\frac{9}{28} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "10"
+    }
+  ],
+  "hints": [
+    "Look for cross-cancellation before multiplying.",
+    "You can simplify 14 with 28, and 9 with 15.",
+    "Then multiply the simpler fractions."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{14}{15} \\times \\frac{9}{28} $$.",
+      "2. Simplify across the fractions: $$ \\frac{14}{28} = \\frac{1}{2} $$ and $$ \\frac{9}{15} = \\frac{3}{5} $$.",
+      "3. The expression becomes $$ \\frac{1}{5} \\times \\frac{3}{2} $$.",
+      "4. Multiply: $$ 1 \\times 3 = 3 $$ and $$ 5 \\times 2 = 10 $$.",
+      "5. The product is $$ \\frac{3}{10} $$.",
+      "6. Answer: numerator $$ 3 $$, denominator $$ 10 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "כפלו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה המכפלה?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "חפשו צמצום באלכסון לפני הכפל.",
+        "אפשר לצמצם את 14 עם 28, ואת 9 עם 15.",
+        "אחר כך כופלים את השברים הפשוטים יותר."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{14}{15} \\times \\frac{9}{28} $$.",
+          "2. מצמצמים בין השברים: $$ \\frac{14}{28} = \\frac{1}{2} $$ וגם $$ \\frac{9}{15} = \\frac{3}{5} $$.",
+          "3. הביטוי הופך ל-$$ \\frac{1}{5} \\times \\frac{3}{2} $$.",
+          "4. כופלים: $$ 1 \\times 3 = 3 $$ ו-$$ 5 \\times 2 = 10 $$.",
+          "5. המכפלה היא $$ \\frac{3}{10} $$.",
+          "6. תשובה: מונה $$ 3 $$, מכנה $$ 10 $$."
+        ]
+      }
+    }
+  }
+}

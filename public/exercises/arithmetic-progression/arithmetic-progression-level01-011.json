@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-011",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the next term in the arithmetic progression.",
+  "question": {
+    "text": "What is the next term after 35?",
+    "mathExpression": [
+      "$$ 50, 45, 40, 35, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "nextTerm",
+      "label": "Next term =",
+      "inputType": "number",
+      "correctAnswer": "30"
+    }
+  ],
+  "hints": [
+    "The sequence goes down by the same amount each time.",
+    "Subtract 5 from 35."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ -5 $$ because $$ 45 - 50 = -5 $$.",
+      "2. Continue by subtracting $$ 5 $$ from $$ 35 $$.",
+      "3. $$ 35 - 5 = 30 $$, so the next term is $$ 30 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר הבא בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר הבא אחרי 35?"
+      },
+      "inputs": [
+        {
+          "name": "nextTerm",
+          "label": "האיבר הבא ="
+        }
+      ],
+      "hints": [
+        "הסדרה יורדת בכל פעם באותה כמות.",
+        "חסרו 5 מ-35."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ -5 $$ כי $$ 45 - 50 = -5 $$.",
+          "2. ממשיכים על ידי חיסור $$ 5 $$ מ-$$ 35 $$.",
+          "3. $$ 35 - 5 = 30 $$, לכן האיבר הבא הוא $$ 30 $$."
+        ]
+      }
+    }
+  }
+}

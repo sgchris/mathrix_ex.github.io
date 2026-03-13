@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { AppContext } from '../../context/useApp'
+import { getExerciseLevelId } from '../../utils/levels'
 import './ExerciseHistorySidebar.css'
 
 export default function ExerciseHistorySidebar() {
@@ -11,13 +12,6 @@ export default function ExerciseHistorySidebar() {
 
   const history = topicHistory[activeTopic] || []
   const topicData = topics.find(t => t.id === activeTopic)
-
-  function getLevelFromId(exerciseId) {
-    if (exerciseId?.includes('-easy-')) return 'easy'
-    if (exerciseId?.includes('-medium-')) return 'medium'
-    if (exerciseId?.includes('-hard-')) return 'hard'
-    return null
-  }
 
   function handleSelect(exerciseId) {
     dispatch({ type: 'SELECT_EXERCISE', payload: { exerciseId } })
@@ -43,21 +37,27 @@ export default function ExerciseHistorySidebar() {
       </div>
       <div className="history-sidebar__list">
         {history.map((exerciseId, index) => (
-          <button
-            key={exerciseId}
-            className={`history-item${activeExerciseId === exerciseId ? ' history-item--active' : ''}`}
-            onClick={() => handleSelect(exerciseId)}
-          >
-            <span className="history-item__number">#{index + 1}</span>
-            {getLevelFromId(exerciseId) && (
-              <span
-                className={`level-dot level-dot--${getLevelFromId(exerciseId)}`}
-                title={t(`levels.${getLevelFromId(exerciseId)}`)}
-              />
-            )}
-            <span className="history-item__label">{t('history.exercise', { index: index + 1 })}</span>
-            <span className="history-item__status">{getStatusIcon(exerciseId)}</span>
-          </button>
+          (() => {
+            const levelId = getExerciseLevelId(exerciseId)
+
+            return (
+              <button
+                key={exerciseId}
+                className={`history-item${activeExerciseId === exerciseId ? ' history-item--active' : ''}`}
+                onClick={() => handleSelect(exerciseId)}
+              >
+                <span className="history-item__number">#{index + 1}</span>
+                {levelId && (
+                  <span
+                    className={`level-dot level-dot--${levelId}`}
+                    title={t(`levels.${levelId}`)}
+                  />
+                )}
+                <span className="history-item__label">{t('history.exercise', { index: index + 1 })}</span>
+                <span className="history-item__status">{getStatusIcon(exerciseId)}</span>
+              </button>
+            )
+          })()
         ))}
       </div>
     </aside>

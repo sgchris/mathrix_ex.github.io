@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-026",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find the common difference of the arithmetic progression.",
+  "question": {
+    "text": "What is the common difference?",
+    "mathExpression": [
+      "$$ a_1 = 8, a_6 = 33 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "difference",
+      "label": "Difference =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "From the first term to the sixth term there are 5 equal steps.",
+    "The total increase is $$ 33 - 8 = 25 $$. Divide by 5."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The total increase from term 1 to term 6 is $$ 33 - 8 = 25 $$.",
+      "2. There are 5 equal steps between these terms, so each step is $$ 25 \\div 5 = 5 $$.",
+      "3. Therefore the common difference is $$ 5 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את ההפרש הקבוע של הסדרה החשבונית.",
+      "question": {
+        "text": "מהו ההפרש הקבוע?"
+      },
+      "inputs": [
+        {
+          "name": "difference",
+          "label": "הפרש ="
+        }
+      ],
+      "hints": [
+        "מהאיבר הראשון לאיבר השישי יש 5 צעדים שווים.",
+        "הגידול הכולל הוא $$ 33 - 8 = 25 $$. חלקו ב-5."
+      ],
+      "explanation": {
+        "steps": [
+          "1. הגידול הכולל מאיבר 1 לאיבר 6 הוא $$ 33 - 8 = 25 $$.",
+          "2. יש 5 צעדים שווים בין האיברים האלה, לכן כל צעד הוא $$ 25 \\div 5 = 5 $$.",
+          "3. לכן ההפרש הקבוע הוא $$ 5 $$."
+        ]
+      }
+    }
+  }
+}

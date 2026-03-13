@@ -1,0 +1,68 @@
+{
+  "id": "fractions-level05-015",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level05",
+  "instructions": "Add the fractions.",
+  "question": {
+    "text": "What is the sum?",
+    "mathExpression": [
+      "$$ \\frac{2}{3} + \\frac{5}{5} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator:",
+      "inputType": "number",
+      "correctAnswer": "25"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator:",
+      "inputType": "number",
+      "correctAnswer": "15"
+    }
+  ],
+  "hints": [
+    "Find the least common multiple of the denominators.",
+    "The LCM of 3 and 5 is 15."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The expression is $$ \\frac{2}{3} + \\frac{5}{5} $$.",
+      "2. Convert fractions: $$ \\frac{10}{15} + \\frac{15}{15} $$.",
+      "3. Add the numerators: $$ \\frac{25}{15} $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חברו את השברים.",
+      "question": {
+        "text": "מה הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה:"
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה:"
+        }
+      ],
+      "hints": [
+        "מצאו את הכפולה המשותפת הקטנה ביותר של המכנים.",
+        "הכפולה המשותפת הקטנה ביותר של 3 ו-5 היא 15."
+      ],
+      "explanation": {
+        "steps": [
+          "1. הביטוי הוא $$ \\frac{2}{3} + \\frac{5}{5} $$.",
+          "2. ממירים את השברים: $$ \\frac{10}{15} + \\frac{15}{15} $$.",
+          "3. מחברים את המונים: $$ \\frac{25}{15} $$."
+        ]
+      }
+    }
+  }
+}

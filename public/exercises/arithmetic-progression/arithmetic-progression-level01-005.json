@@ -1,0 +1,60 @@
+{
+  "id": "arithmetic-progression-level01-005",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the missing term in the arithmetic progression.",
+  "question": {
+    "text": "What is the fifth term?",
+    "mathExpression": [
+      "$$ 8, 11, 14, 17, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "fifthTerm",
+      "label": "Fifth term =",
+      "inputType": "number",
+      "correctAnswer": "20"
+    }
+  ],
+  "hints": [
+    "The terms increase by 3 each time.",
+    "After 17, add 3 once more."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ 3 $$ because $$ 11 - 8 = 3 $$.",
+      "2. The fourth term is $$ 17 $$, so the fifth term is one step later.",
+      "3. Add $$ 3 $$: $$ 17 + 3 = 20 $$.",
+      "4. The fifth term is $$ 20 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר החסר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר החמישי?"
+      },
+      "inputs": [
+        {
+          "name": "fifthTerm",
+          "label": "האיבר החמישי ="
+        }
+      ],
+      "hints": [
+        "האיברים גדלים ב-3 בכל פעם.",
+        "אחרי 17 מוסיפים עוד 3."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ 3 $$ כי $$ 11 - 8 = 3 $$.",
+          "2. האיבר הרביעי הוא $$ 17 $$, ולכן האיבר החמישי מגיע צעד אחד אחריו.",
+          "3. מוסיפים $$ 3 $$: $$ 17 + 3 = 20 $$.",
+          "4. האיבר החמישי הוא $$ 20 $$."
+        ]
+      }
+    }
+  }
+}

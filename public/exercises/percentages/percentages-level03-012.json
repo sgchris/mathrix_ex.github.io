@@ -1,0 +1,56 @@
+{
+  "id": "percentages-level03-012",
+  "topicId": "percentages",
+  "topicName": "Percentages",
+  "difficulty": "level03",
+  "instructions": "Calculate the percentage.",
+  "question": {
+    "text": "What is 25% of 250?",
+    "mathExpression": [
+      "$$ 25\\% \\text{ of } 250 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "result",
+      "label": "Result:",
+      "inputType": "number",
+      "correctAnswer": "62.5"
+    }
+  ],
+  "hints": [
+    "Convert 25% to a decimal.",
+    "Multiply the decimal by 250."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Convert 25% to a decimal: $$ 0.25 $$.",
+      "2. Multiply by the value: $$ 0.25 \\times 250 = 62.5 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אחוזים",
+      "instructions": "חשבו את האחוז.",
+      "question": {
+        "text": "כמה הם 25% מתוך 250?"
+      },
+      "inputs": [
+        {
+          "name": "result",
+          "label": "תוצאה:"
+        }
+      ],
+      "hints": [
+        "המירו את 25% לשבר עשרוני.",
+        "כפלו את השבר העשרוני ב-250."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ממירים את 25% לשבר עשרוני: $$ 0.25 $$.",
+          "2. כופלים בערך: $$ 0.25 \\times 250 = 62.5 $$."
+        ]
+      }
+    }
+  }
+}

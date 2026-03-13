@@ -1,0 +1,58 @@
+{
+  "id": "percentages-level01-001",
+  "topicId": "percentages",
+  "topicName": "Percentages",
+  "difficulty": "level01",
+  "instructions": "Calculate the percentage of the number.",
+  "question": {
+    "text": "What is 50% of 80?",
+    "mathExpression": [
+      "$$ 50\\% \\text{ of } 80 = ? $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "answer",
+      "label": "Answer =",
+      "inputType": "number",
+      "correctAnswer": "40"
+    }
+  ],
+  "hints": [
+    "50% means half. What is half of 80?",
+    "You can also calculate it as $$ 80 \\times 0.50 $$. Multiply and you have your answer."
+  ],
+  "explanation": {
+    "steps": [
+      "1. 50% means 50 out of every 100, which is the same as $$ \\frac{1}{2} $$.",
+      "2. Calculate: $$ 80 \\times \\frac{50}{100} = 80 \\times 0.5 $$.",
+      "3. Result: $$ 80 \\times 0.5 = 40 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אחוזים",
+      "instructions": "חשבו את האחוז מתוך המספר.",
+      "question": {
+        "text": "כמה הם 50% מתוך 80?"
+      },
+      "inputs": [
+        {
+          "name": "answer",
+          "label": "תשובה ="
+        }
+      ],
+      "hints": [
+        "50% הם חצי. מהו חצי מ-80?",
+        "אפשר גם לחשב כך: $$ 80 \\times 0.50 $$. כפלו וקבלו את התשובה."
+      ],
+      "explanation": {
+        "steps": [
+          "1. 50% פירושם 50 מתוך כל 100, וזהה ל-$$ \\frac{1}{2} $$.",
+          "2. מחשבים: $$ 80 \\times \\frac{50}{100} = 80 \\times 0.5 $$.",
+          "3. התוצאה: $$ 80 \\times 0.5 = 40 $$."
+        ]
+      }
+    }
+  }
+}

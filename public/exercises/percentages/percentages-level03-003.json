@@ -1,0 +1,60 @@
+{
+  "id": "percentages-level03-003",
+  "topicId": "percentages",
+  "topicName": "Percentages",
+  "difficulty": "level03",
+  "instructions": "Calculate the sale price after the discount.",
+  "question": {
+    "text": "A shirt originally costs $60. It is on sale with a 20% discount. What is the final sale price in dollars?",
+    "mathExpression": [
+      "$$ \\text{Original price: } \\$60 \\quad \\text{Discount: } 20\\% $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "salePrice",
+      "label": "Sale price ($) =",
+      "inputType": "number",
+      "correctAnswer": "48"
+    }
+  ],
+  "hints": [
+    "First, figure out how much the discount is in dollars. What is 20% of $60?",
+    "The discount is $12 (since $$ 60 \\times 0.20 = 12 $$). Subtract that from the original price to get the sale price."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Find the discount amount: $$ 60 \\times \\frac{20}{100} = 60 \\times 0.20 = 12 $$.",
+      "2. Subtract the discount from the original price: $$ 60 - 12 = 48 $$.",
+      "3. The sale price is $48.",
+      "4. Alternative method: A 20% discount means you pay 80%, so $$ 60 \\times 0.80 = 48 $$ as well."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אחוזים",
+      "instructions": "חשבו את מחיר המבצע לאחר ההנחה.",
+      "question": {
+        "text": "מחירה המקורי של חולצה הוא $60. יש עליה הנחה של 20%. מהו מחיר המבצע הסופי בדולרים?"
+      },
+      "inputs": [
+        {
+          "name": "salePrice",
+          "label": "מחיר מבצע ($) ="
+        }
+      ],
+      "hints": [
+        "תחילה חשבו מה גובה ההנחה בדולרים. כמה הם 20% מתוך $60?",
+        "ההנחה היא $12 (כי $$ 60 \\times 0.20 = 12 $$). החסירו את הסכום הזה מהמחיר המקורי כדי לקבל את מחיר המבצע."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מוצאים את סכום ההנחה: $$ 60 \\times \\frac{20}{100} = 60 \\times 0.20 = 12 $$.",
+          "2. מחסרים את ההנחה מהמחיר המקורי: $$ 60 - 12 = 48 $$.",
+          "3. מחיר המבצע הוא $48.",
+          "4. דרך נוספת: הנחה של 20% פירושה שמשלמים 80%, לכן גם $$ 60 \\times 0.80 = 48 $$."
+        ]
+      }
+    }
+  }
+}

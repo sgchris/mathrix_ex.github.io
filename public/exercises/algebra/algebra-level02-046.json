@@ -1,0 +1,62 @@
+{
+  "id": "algebra-level02-046",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level02",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x - 4 = 9 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "13"
+    }
+  ],
+  "hints": [
+    "Undo the subtraction by adding 4 to both sides.",
+    "After adding 4 to both sides, you get $$ x = 13 $$.",
+    "Check your answer: does $$ 13 - 4 $$ equal 9?"
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x - 4 = 9 $$.",
+      "2. Add 4 to both sides to isolate x: $$ x - 4 + 4 = 9 + 4 $$.",
+      "3. Simplify: $$ x = 13 $$.",
+      "4. Check: $$ 13 - 4 = 9 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "בטלו את פעולת החיסור על ידי חיבור 4 לשני האגפים.",
+        "אחרי שמוסיפים 4 לשני האגפים, מתקבל $$ x = 13 $$.",
+        "בדקו את התשובה: האם $$ 13 - 4 $$ שווה ל-9?"
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ x - 4 = 9 $$.",
+          "2. מוסיפים 4 לשני האגפים כדי לבודד את x: $$ x - 4 + 4 = 9 + 4 $$.",
+          "3. מפשטים: $$ x = 13 $$.",
+          "4. בודקים: $$ 13 - 4 = 9 $$ ✓"
+        ]
+      }
+    }
+  }
+}

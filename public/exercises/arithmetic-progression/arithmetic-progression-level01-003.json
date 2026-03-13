@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-003",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the common difference of the arithmetic progression.",
+  "question": {
+    "text": "What is the common difference?",
+    "mathExpression": [
+      "$$ 5, 9, 13, 17, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "difference",
+      "label": "Difference =",
+      "inputType": "number",
+      "correctAnswer": "4"
+    }
+  ],
+  "hints": [
+    "Subtract one term from the next term.",
+    "Try $$ 9 - 5 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Find the difference between consecutive terms: $$ 9 - 5 = 4 $$.",
+      "2. Check again: $$ 13 - 9 = 4 $$. The difference stays the same.",
+      "3. The common difference is $$ 4 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את ההפרש הקבוע של הסדרה החשבונית.",
+      "question": {
+        "text": "מהו ההפרש הקבוע?"
+      },
+      "inputs": [
+        {
+          "name": "difference",
+          "label": "הפרש ="
+        }
+      ],
+      "hints": [
+        "חסרו איבר אחד מהאיבר שאחריו.",
+        "נסו לחשב $$ 9 - 5 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מחשבים את ההפרש בין איברים עוקבים: $$ 9 - 5 = 4 $$.",
+          "2. בודקים שוב: $$ 13 - 9 = 4 $$. ההפרש נשאר קבוע.",
+          "3. לכן ההפרש הקבוע הוא $$ 4 $$."
+        ]
+      }
+    }
+  }
+}

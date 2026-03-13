@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-044",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 3x + 4 = 19 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Subtract 4 from both sides to remove the constant.",
+    "Then divide both sides by 3."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 3x + 4 = 19 $$.",
+      "2. Subtract 4 from both sides: $$ 3x = 19 - 4 = 15 $$.",
+      "3. Divide both sides by 3: $$ x = \\frac{15}{3} = 5 $$.",
+      "4. Check: $$ 3 \\times 5 + 4 = 15 + 4 = 19 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "חסרו 4 משני האגפים כדי להסיר את הקבוע.",
+        "אחר כך חלקו את שני האגפים ב-3."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 3x + 4 = 19 $$.",
+          "2. מחסרים 4 משני האגפים: $$ 3x = 19 - 4 = 15 $$.",
+          "3. מחלקים את שני האגפים ב-3: $$ x = \\frac{15}{3} = 5 $$.",
+          "4. בודקים: $$ 3 \\times 5 + 4 = 15 + 4 = 19 $$ ✓"
+        ]
+      }
+    }
+  }
+}

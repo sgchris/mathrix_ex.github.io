@@ -1,19 +1,18 @@
 import { useContext } from 'react'
 import { AppContext } from '../../context/useApp'
+import { DEFAULT_LEVEL_ID, getAvailableLevels, resolveTopicLevel } from '../../utils/levels'
 import './LevelSelectorBar.css'
-
-const LEVELS = [
-  { id: 'easy', label: 'Easy' },
-  { id: 'medium', label: 'Medium' },
-  { id: 'hard', label: 'Hard' },
-]
 
 export default function LevelSelectorBar() {
   const { appState, dispatch, topics, t } = useContext(AppContext)
-  const selectedLevel = appState.selectedLevel || 'easy'
+  const topicData = topics.find(topic => topic.id === appState.activeTopic)
+  const availableLevels = getAvailableLevels(topicData?.exercises || [])
+  const selectedLevel = resolveTopicLevel(
+    topicData?.exercises || [],
+    appState.selectedLevel || DEFAULT_LEVEL_ID
+  )
 
   function handleSelect(level) {
-    const topicData = topics.find(t => t.id === appState.activeTopic)
     dispatch({
       type: 'SET_LEVEL',
       payload: { level, exercises: topicData?.exercises || [] },
@@ -24,14 +23,14 @@ export default function LevelSelectorBar() {
     <div className="level-selector-bar">
       <span className="level-selector-bar__label">{t('difficulty')}</span>
       <div className="level-selector-bar__pills">
-        {LEVELS.map(({ id, label }) => (
+        {availableLevels.map(({ id }) => (
           <button
             key={id}
             className={`level-pill level-pill--${id}${selectedLevel === id ? ' level-pill--active' : ''}`}
             onClick={() => handleSelect(id)}
             disabled={selectedLevel === id}
           >
-            {t(`levels.${id}`) || label}
+            {t(`levels.${id}`)}
           </button>
         ))}
       </div>

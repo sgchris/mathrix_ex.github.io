@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-007",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the next term in the arithmetic progression.",
+  "question": {
+    "text": "What is the next term after 40?",
+    "mathExpression": [
+      "$$ 25, 30, 35, 40, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "nextTerm",
+      "label": "Next term =",
+      "inputType": "number",
+      "correctAnswer": "45"
+    }
+  ],
+  "hints": [
+    "The sequence increases by the same amount.",
+    "Add 5 to 40."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Consecutive terms differ by $$ 5 $$ because $$ 30 - 25 = 5 $$.",
+      "2. Add $$ 5 $$ to the last shown term: $$ 40 + 5 = 45 $$.",
+      "3. The next term is $$ 45 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר הבא בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר הבא אחרי 40?"
+      },
+      "inputs": [
+        {
+          "name": "nextTerm",
+          "label": "האיבר הבא ="
+        }
+      ],
+      "hints": [
+        "הסדרה גדלה בכל פעם באותה כמות.",
+        "הוסיפו 5 ל-40."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש בין איברים עוקבים הוא $$ 5 $$ כי $$ 30 - 25 = 5 $$.",
+          "2. מוסיפים $$ 5 $$ לאיבר האחרון המוצג: $$ 40 + 5 = 45 $$.",
+          "3. האיבר הבא הוא $$ 45 $$."
+        ]
+      }
+    }
+  }
+}

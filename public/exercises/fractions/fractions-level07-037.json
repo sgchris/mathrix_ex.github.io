@@ -1,0 +1,76 @@
+{
+  "id": "fractions-level07-037",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Divide the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the quotient?",
+    "mathExpression": [
+      "$$ \\frac{7}{12} \\div \\frac{14}{27} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "9"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "8"
+    }
+  ],
+  "hints": [
+    "Multiply by the reciprocal of the second fraction.",
+    "Rewrite the expression as $$ \\frac{7}{12} \\times \\frac{27}{14} $$.",
+    "Simplify before multiplying."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{7}{12} \\div \\frac{14}{27} $$.",
+      "2. Rewrite as multiplication by the reciprocal: $$ \\frac{7}{12} \\times \\frac{27}{14} $$.",
+      "3. Simplify across the fractions: $$ \\frac{7}{14} = \\frac{1}{2} $$ and $$ \\frac{27}{12} = \\frac{9}{4} $$.",
+      "4. Multiply: $$ \\frac{1}{4} \\times \\frac{9}{2} = \\frac{9}{8} $$.",
+      "5. The quotient is $$ \\frac{9}{8} $$.",
+      "6. Answer: numerator $$ 9 $$, denominator $$ 8 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חלקו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה המנה?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "כפלו בהופכי של השבר השני.",
+        "כתבו מחדש את הביטוי בתור $$ \\frac{7}{12} \\times \\frac{27}{14} $$.",
+        "צמצמו לפני הכפל."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{7}{12} \\div \\frac{14}{27} $$.",
+          "2. כותבים מחדש ככפל בהופכי: $$ \\frac{7}{12} \\times \\frac{27}{14} $$.",
+          "3. מצמצמים בין השברים: $$ \\frac{7}{14} = \\frac{1}{2} $$ וגם $$ \\frac{27}{12} = \\frac{9}{4} $$.",
+          "4. כופלים: $$ \\frac{1}{4} \\times \\frac{9}{2} = \\frac{9}{8} $$.",
+          "5. המנה היא $$ \\frac{9}{8} $$.",
+          "6. תשובה: מונה $$ 9 $$, מכנה $$ 8 $$."
+        ]
+      }
+    }
+  }
+}

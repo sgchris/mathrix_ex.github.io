@@ -1,0 +1,76 @@
+{
+  "id": "fractions-level07-033",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Divide the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the quotient?",
+    "mathExpression": [
+      "$$ \\frac{4}{9} \\div \\frac{10}{27} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "6"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Replace division by multiplication with the reciprocal.",
+    "Rewrite as $$ \\frac{4}{9} \\times \\frac{27}{10} $$.",
+    "Simplify before multiplying."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{4}{9} \\div \\frac{10}{27} $$.",
+      "2. Multiply by the reciprocal: $$ \\frac{4}{9} \\times \\frac{27}{10} $$.",
+      "3. Simplify: $$ \\frac{27}{9} = 3 $$ and $$ \\frac{4}{10} = \\frac{2}{5} $$.",
+      "4. Multiply the remaining factors: $$ \\frac{2}{1} \\times \\frac{3}{5} = \\frac{6}{5} $$.",
+      "5. The quotient is $$ \\frac{6}{5} $$.",
+      "6. Answer: numerator $$ 6 $$, denominator $$ 5 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חלקו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה המנה?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "החליפו חילוק בכפל בהופכי.",
+        "כתבו מחדש בתור $$ \\frac{4}{9} \\times \\frac{27}{10} $$.",
+        "צמצמו לפני הכפל."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{4}{9} \\div \\frac{10}{27} $$.",
+          "2. כופלים בהופכי: $$ \\frac{4}{9} \\times \\frac{27}{10} $$.",
+          "3. מצמצמים: $$ \\frac{27}{9} = 3 $$ וגם $$ \\frac{4}{10} = \\frac{2}{5} $$.",
+          "4. כופלים את הגורמים שנותרו: $$ \\frac{2}{1} \\times \\frac{3}{5} = \\frac{6}{5} $$.",
+          "5. המנה היא $$ \\frac{6}{5} $$.",
+          "6. תשובה: מונה $$ 6 $$, מכנה $$ 5 $$."
+        ]
+      }
+    }
+  }
+}

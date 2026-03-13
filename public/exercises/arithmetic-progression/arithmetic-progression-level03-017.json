@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-017",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find the first term of the arithmetic progression.",
+  "question": {
+    "text": "What is the first term?",
+    "mathExpression": [
+      "$$ a_5 = 23, d = 4 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "firstTerm",
+      "label": "First term =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "To go from the first term to the fifth term, you add the common difference 4 times.",
+    "Subtract $$ 4 \\cdot 4 = 16 $$ from 23."
+  ],
+  "explanation": {
+    "steps": [
+      "1. From the first term to the fifth term there are 4 equal steps.",
+      "2. The total increase is $$ 4 \\cdot 4 = 16 $$.",
+      "3. Subtract from the fifth term: $$ 23 - 16 = 7 $$. So the first term is $$ 7 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר הראשון של הסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר הראשון?"
+      },
+      "inputs": [
+        {
+          "name": "firstTerm",
+          "label": "האיבר הראשון ="
+        }
+      ],
+      "hints": [
+        "כדי להגיע מהאיבר הראשון לאיבר החמישי, מוסיפים את ההפרש הקבוע 4 פעמים.",
+        "חסרו $$ 4 \\cdot 4 = 16 $$ מתוך 23."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מהאיבר הראשון לאיבר החמישי יש 4 צעדים שווים.",
+          "2. הגידול הכולל הוא $$ 4 \\cdot 4 = 16 $$.",
+          "3. מחסרים מהאיבר החמישי: $$ 23 - 16 = 7 $$. לכן האיבר הראשון הוא $$ 7 $$."
+        ]
+      }
+    }
+  }
+}

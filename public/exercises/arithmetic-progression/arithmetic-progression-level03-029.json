@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-029",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find which term has the given value.",
+  "question": {
+    "text": "Which term is 71?",
+    "mathExpression": [
+      "$$ -1, 5, 11, 17, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "termNumber",
+      "label": "Term number =",
+      "inputType": "number",
+      "correctAnswer": "13"
+    }
+  ],
+  "hints": [
+    "The common difference is 6.",
+    "From -1 to 71 the increase is 72, which is 12 jumps of 6."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ 5 - (-1) = 6 $$.",
+      "2. The increase from the first term to 71 is $$ 71 - (-1) = 72 $$, and $$ 72 \\div 6 = 12 $$.",
+      "3. Twelve jumps after the first term means term $$ 13 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איזה איבר מקבל את הערך הנתון.",
+      "question": {
+        "text": "איזה איבר הוא 71?"
+      },
+      "inputs": [
+        {
+          "name": "termNumber",
+          "label": "מספר האיבר ="
+        }
+      ],
+      "hints": [
+        "ההפרש הקבוע הוא 6.",
+        "מ--1 עד 71 יש עליה של 72, וזה שווה ל-12 קפיצות של 6."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ 5 - (-1) = 6 $$.",
+          "2. העליה מהאיבר הראשון עד 71 היא $$ 71 - (-1) = 72 $$, וגם $$ 72 \\div 6 = 12 $$.",
+          "3. שתים עשרה קפיצות אחרי האיבר הראשון פירושן איבר מספר $$ 13 $$."
+        ]
+      }
+    }
+  }
+}

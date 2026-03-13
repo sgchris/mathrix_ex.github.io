@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-016",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "What is the tenth term?",
+    "mathExpression": [
+      "$$ 7, 12, 17, 22, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "tenthTerm",
+      "label": "Tenth term =",
+      "inputType": "number",
+      "correctAnswer": "52"
+    }
+  ],
+  "hints": [
+    "The common difference is 5.",
+    "Start from 7 and add 5 nine times to reach the tenth term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ 12 - 7 = 5 $$.",
+      "2. The tenth term is $$ a_{10} = 7 + 9 \\cdot 5 $$ because there are 9 jumps from the first term to the tenth term.",
+      "3. Compute: $$ 7 + 45 = 52 $$. So the tenth term is $$ 52 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר העשירי?"
+      },
+      "inputs": [
+        {
+          "name": "tenthTerm",
+          "label": "האיבר העשירי ="
+        }
+      ],
+      "hints": [
+        "ההפרש הקבוע הוא 5.",
+        "התחילו מ-7 והוסיפו 5 תשע פעמים כדי להגיע לאיבר העשירי."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ 12 - 7 = 5 $$.",
+          "2. האיבר העשירי הוא $$ a_{10} = 7 + 9 \\cdot 5 $$ כי יש 9 קפיצות מהאיבר הראשון לאיבר העשירי.",
+          "3. מחשבים: $$ 7 + 45 = 52 $$. לכן האיבר העשירי הוא $$ 52 $$."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "fractions-level07-032",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Multiply the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the product?",
+    "mathExpression": [
+      "$$ \\frac{9}{14} \\times \\frac{21}{25} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "27"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "50"
+    }
+  ],
+  "hints": [
+    "Check for cross-cancellation before multiplying.",
+    "You can simplify 21 and 14 by dividing both by 7.",
+    "Then multiply the remaining numerators and denominators."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{9}{14} \\times \\frac{21}{25} $$.",
+      "2. Simplify across the fractions: $$ \\frac{21}{14} = \\frac{3}{2} $$.",
+      "3. The expression becomes $$ \\frac{9}{2} \\times \\frac{3}{25} $$.",
+      "4. Multiply numerators: $$ 9 \\times 3 = 27 $$.",
+      "5. Multiply denominators: $$ 2 \\times 25 = 50 $$.",
+      "6. The product is $$ \\frac{27}{50} $$.",
+      "7. Answer: numerator $$ 27 $$, denominator $$ 50 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "כפלו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה המכפלה?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "בדקו אם אפשר לצמצם באלכסון לפני הכפל.",
+        "אפשר לצמצם את 21 ואת 14 על ידי חלוקה של שניהם ב-7.",
+        "אחר כך כופלים את המונים ואת המכנים שנותרו."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{9}{14} \\times \\frac{21}{25} $$.",
+          "2. מצמצמים בין השברים: $$ \\frac{21}{14} = \\frac{3}{2} $$.",
+          "3. הביטוי הופך ל-$$ \\frac{9}{2} \\times \\frac{3}{25} $$.",
+          "4. כופלים מונים: $$ 9 \\times 3 = 27 $$.",
+          "5. כופלים מכנים: $$ 2 \\times 25 = 50 $$.",
+          "6. המכפלה היא $$ \\frac{27}{50} $$.",
+          "7. תשובה: מונה $$ 27 $$, מכנה $$ 50 $$."
+        ]
+      }
+    }
+  }
+}

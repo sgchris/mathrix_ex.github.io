@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-004",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the next term in the arithmetic progression.",
+  "question": {
+    "text": "What is the next term after 21?",
+    "mathExpression": [
+      "$$ 30, 27, 24, 21, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "nextTerm",
+      "label": "Next term =",
+      "inputType": "number",
+      "correctAnswer": "18"
+    }
+  ],
+  "hints": [
+    "This sequence is going down by the same amount each time.",
+    "Subtract 3 from 21."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The sequence decreases by $$ 3 $$ each step: $$ 27 - 30 = -3 $$ and $$ 24 - 27 = -3 $$.",
+      "2. Continue the pattern by subtracting $$ 3 $$ from $$ 21 $$.",
+      "3. $$ 21 - 3 = 18 $$, so the next term is $$ 18 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר הבא בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר הבא אחרי 21?"
+      },
+      "inputs": [
+        {
+          "name": "nextTerm",
+          "label": "האיבר הבא ="
+        }
+      ],
+      "hints": [
+        "הסדרה הזאת יורדת בכל פעם באותה כמות.",
+        "חסרו 3 מ-21."
+      ],
+      "explanation": {
+        "steps": [
+          "1. הסדרה קטנה ב-$$ 3 $$ בכל צעד: $$ 27 - 30 = -3 $$ וגם $$ 24 - 27 = -3 $$.",
+          "2. ממשיכים את הדפוס על ידי חיסור $$ 3 $$ מ-$$ 21 $$.",
+          "3. $$ 21 - 3 = 18 $$, לכן האיבר הבא הוא $$ 18 $$."
+        ]
+      }
+    }
+  }
+}

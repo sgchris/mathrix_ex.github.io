@@ -1,10 +1,12 @@
 import { useContext } from 'react'
 import { AppContext } from '../../context/useApp'
 import { getSupportedLocales } from '../../utils/localization'
+import { DEFAULT_LEVEL_ID, resolveTopicLevel } from '../../utils/levels'
 import './TopicSidebar.css'
 
 const TOPIC_SYMBOLS = {
   algebra: 'x²',
+  'arithmetic-progression': 'aₙ',
   fractions: '½',
   decimals: '0.1',
   percentages: '%',
@@ -20,7 +22,10 @@ export default function TopicSidebar() {
       payload: {
         topicId: topic.id,
         exercises: topic.exercises,
-        selectedLevel: appState.selectedLevel || 'easy',
+        selectedLevel: resolveTopicLevel(
+          topic.exercises,
+          appState.selectedLevel || DEFAULT_LEVEL_ID
+        ),
       },
     })
   }

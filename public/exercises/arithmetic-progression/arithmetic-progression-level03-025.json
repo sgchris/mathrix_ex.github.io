@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-025",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "What is the seventh term?",
+    "mathExpression": [
+      "$$ a_2 = 11, d = 6 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "seventhTerm",
+      "label": "Seventh term =",
+      "inputType": "number",
+      "correctAnswer": "41"
+    }
+  ],
+  "hints": [
+    "From the second term to the seventh term there are 5 equal steps.",
+    "Add $$ 5 \\cdot 6 = 30 $$ to 11."
+  ],
+  "explanation": {
+    "steps": [
+      "1. From term 2 to term 7 there are 5 steps.",
+      "2. The total increase is $$ 5 \\cdot 6 = 30 $$.",
+      "3. Add to the second term: $$ 11 + 30 = 41 $$. So the seventh term is $$ 41 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר השביעי?"
+      },
+      "inputs": [
+        {
+          "name": "seventhTerm",
+          "label": "האיבר השביעי ="
+        }
+      ],
+      "hints": [
+        "מהאיבר השני לאיבר השביעי יש 5 צעדים שווים.",
+        "הוסיפו $$ 5 \\cdot 6 = 30 $$ ל-11."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מאיבר 2 לאיבר 7 יש 5 צעדים.",
+          "2. הגידול הכולל הוא $$ 5 \\cdot 6 = 30 $$.",
+          "3. מוסיפים לאיבר השני: $$ 11 + 30 = 41 $$. לכן האיבר השביעי הוא $$ 41 $$."
+        ]
+      }
+    }
+  }
+}

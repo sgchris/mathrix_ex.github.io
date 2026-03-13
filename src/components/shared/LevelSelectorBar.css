@@ -45,21 +45,33 @@
   background: var(--color-surface);
 }
 
-.level-pill--easy.level-pill--active {
+.level-pill--level01.level-pill--active {
   background: #22c55e;
   border-color: #22c55e;
   color: #fff;
 }
 
-.level-pill--medium.level-pill--active {
+.level-pill--level02.level-pill--active {
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #fff;
+}
+
+.level-pill--level03.level-pill--active {
   background: #f97316;
   border-color: #f97316;
   color: #fff;
 }
 
-.level-pill--hard.level-pill--active {
+.level-pill--level05.level-pill--active {
   background: #ef4444;
   border-color: #ef4444;
+  color: #fff;
+}
+
+.level-pill--level07.level-pill--active {
+  background: #7c3aed;
+  border-color: #7c3aed;
   color: #fff;
 }
 

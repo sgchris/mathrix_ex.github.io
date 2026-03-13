@@ -1,0 +1,76 @@
+{
+  "id": "fractions-level07-029",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Divide the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the quotient?",
+    "mathExpression": [
+      "$$ \\frac{5}{8} \\div \\frac{15}{16} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "2"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    }
+  ],
+  "hints": [
+    "To divide by a fraction, multiply by its reciprocal.",
+    "Rewrite the expression as $$ \\frac{5}{8} \\times \\frac{16}{15} $$.",
+    "Simplify before multiplying if you can."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{5}{8} \\div \\frac{15}{16} $$.",
+      "2. Change division to multiplication by the reciprocal: $$ \\frac{5}{8} \\times \\frac{16}{15} $$.",
+      "3. Simplify: $$ \\frac{16}{8} = 2 $$ and $$ \\frac{5}{15} = \\frac{1}{3} $$.",
+      "4. Multiply the simplified fractions: $$ 1 \\times 2 = 2 $$ and $$ 1 \\times 3 = 3 $$.",
+      "5. The quotient is $$ \\frac{2}{3} $$.",
+      "6. Answer: numerator $$ 2 $$, denominator $$ 3 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חלקו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה המנה?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "כדי לחלק בשבר, כופלים בהופכי שלו.",
+        "כתבו מחדש את הביטוי בתור $$ \\frac{5}{8} \\times \\frac{16}{15} $$.",
+        "צמצמו לפני הכפל אם אפשר."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{5}{8} \\div \\frac{15}{16} $$.",
+          "2. מחליפים חילוק בכפל בהופכי: $$ \\frac{5}{8} \\times \\frac{16}{15} $$.",
+          "3. מצמצמים: $$ \\frac{16}{8} = 2 $$ וגם $$ \\frac{5}{15} = \\frac{1}{3} $$.",
+          "4. כופלים את השברים המצומצמים: $$ 1 \\times 2 = 2 $$ ו-$$ 1 \\times 3 = 3 $$.",
+          "5. המנה היא $$ \\frac{2}{3} $$.",
+          "6. תשובה: מונה $$ 2 $$, מכנה $$ 3 $$."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "percentages-level05-016",
+  "topicId": "percentages",
+  "topicName": "Percentages",
+  "difficulty": "level05",
+  "instructions": "Calculate the percentage increase.",
+  "question": {
+    "text": "A value increases from 150 to 180. What is the percentage increase?",
+    "mathExpression": [
+      "$$ \\text{Increase from } 150 \\text{ to } 180 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "increase",
+      "label": "Percentage Increase (%):",
+      "inputType": "number",
+      "correctAnswer": "20"
+    }
+  ],
+  "hints": [
+    "Find the absolute difference.",
+    "Divide the difference by the original value and multiply by 100."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Find the difference: $$ 180 - 150 = 30 $$.",
+      "2. Divide by original: $$ \\frac{30}{150} $$.",
+      "3. Convert to percentage: $$ (\\frac{30}{150}) \\times 100 \\approx 20\\% $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אחוזים",
+      "instructions": "חשבו את אחוז העלייה.",
+      "question": {
+        "text": "ערך גדל מ-150 ל-180. מהו אחוז העלייה?"
+      },
+      "inputs": [
+        {
+          "name": "increase",
+          "label": "אחוז עלייה (%):"
+        }
+      ],
+      "hints": [
+        "מצאו את ההפרש המוחלט.",
+        "חלקו את ההפרש בערך המקורי והכפילו ב-100."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מוצאים את ההפרש: $$ 180 - 150 = 30 $$.",
+          "2. מחלקים בערך המקורי: $$ \\frac{30}{150} $$.",
+          "3. ממירים לאחוזים: $$ (\\frac{30}{150}) \\times 100 \\approx 20\\% $$."
+        ]
+      }
+    }
+  }
+}

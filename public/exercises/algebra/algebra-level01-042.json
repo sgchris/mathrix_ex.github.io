@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-042",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 5x + 2 = 17 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    }
+  ],
+  "hints": [
+    "Subtract 2 from both sides first to simplify.",
+    "Then divide both sides by 5."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 5x + 2 = 17 $$.",
+      "2. Subtract 2 from both sides: $$ 5x = 17 - 2 = 15 $$.",
+      "3. Divide both sides by 5: $$ x = \\frac{15}{5} = 3 $$.",
+      "4. Check: $$ 5 \\times 3 + 2 = 15 + 2 = 17 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "חסרו 2 משני האגפים קודם כדי לפשט.",
+        "אחר כך חלקו את שני האגפים ב-5."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 5x + 2 = 17 $$.",
+          "2. מחסרים 2 משני האגפים: $$ 5x = 17 - 2 = 15 $$.",
+          "3. מחלקים את שני האגפים ב-5: $$ x = \\frac{15}{5} = 3 $$.",
+          "4. בודקים: $$ 5 \\times 3 + 2 = 15 + 2 = 17 $$ ✓"
+        ]
+      }
+    }
+  }
+}

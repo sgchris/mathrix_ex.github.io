@@ -21,9 +21,11 @@ const UI_MESSAGES = {
     closeMenu: 'Close menu',
     difficulty: 'Difficulty:',
     levels: {
-      easy: 'Easy',
-      medium: 'Medium',
-      hard: 'Hard',
+      level01: 'Level 1',
+      level02: 'Level 2',
+      level03: 'Level 3',
+      level05: 'Level 5',
+      level07: 'Level 7',
     },
     emptyState: {
       title: 'Pick a topic to get started',
@@ -68,9 +70,11 @@ const UI_MESSAGES = {
     closeMenu: 'סגרו תפריט',
     difficulty: 'רמה:',
     levels: {
-      easy: 'קל',
-      medium: 'בינוני',
-      hard: 'קשה',
+      level01: 'רמה 1',
+      level02: 'רמה 2',
+      level03: 'רמה 3',
+      level05: 'רמה 5',
+      level07: 'רמה 7',
     },
     emptyState: {
       title: 'בחרו נושא כדי להתחיל',

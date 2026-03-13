@@ -1,0 +1,62 @@
+{
+  "id": "algebra-level02-055",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level02",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 16 = x + 9 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "Subtract 9 from both sides.",
+    "That gives $$ 16 - 9 = x $$.",
+    "Now compute $$ 16 - 9 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 16 = x + 9 $$.",
+      "2. Subtract 9 from both sides: $$ 16 - 9 = x + 9 - 9 $$.",
+      "3. Simplify: $$ 7 = x $$, so $$ x = 7 $$.",
+      "4. Check: $$ 7 + 9 = 16 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "חסרו 9 משני האגפים.",
+        "כך מתקבל $$ 16 - 9 = x $$.",
+        "עכשיו חשבו $$ 16 - 9 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 16 = x + 9 $$.",
+          "2. מחסרים 9 משני האגפים: $$ 16 - 9 = x + 9 - 9 $$.",
+          "3. מפשטים: $$ 7 = x $$, ולכן $$ x = 7 $$.",
+          "4. בודקים: $$ 7 + 9 = 16 $$ ✓"
+        ]
+      }
+    }
+  }
+}

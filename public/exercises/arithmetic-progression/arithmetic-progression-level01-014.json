@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-014",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "If the first term is 7 and the common difference is 4, what is the fifth term?",
+    "mathExpression": [
+      "$$ 7, 11, 15, 19, 23, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "fifthTerm",
+      "label": "Fifth term =",
+      "inputType": "number",
+      "correctAnswer": "23"
+    }
+  ],
+  "hints": [
+    "Start at 7 and add 4 repeatedly.",
+    "The fifth term is reached after four jumps from the first term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Begin with the first term $$ 7 $$.",
+      "2. Add $$ 4 $$ four times: $$ 11, 15, 19, 23 $$.",
+      "3. The fifth term is $$ 23 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "אם האיבר הראשון הוא 7 וההפרש הקבוע הוא 4, מהו האיבר החמישי?"
+      },
+      "inputs": [
+        {
+          "name": "fifthTerm",
+          "label": "האיבר החמישי ="
+        }
+      ],
+      "hints": [
+        "התחילו ב-7 והוסיפו 4 שוב ושוב.",
+        "לאיבר החמישי מגיעים אחרי ארבע קפיצות מהאיבר הראשון."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים באיבר הראשון $$ 7 $$.",
+          "2. מוסיפים $$ 4 $$ ארבע פעמים: $$ 11, 15, 19, 23 $$.",
+          "3. האיבר החמישי הוא $$ 23 $$."
+        ]
+      }
+    }
+  }
+}

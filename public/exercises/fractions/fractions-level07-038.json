@@ -1,0 +1,74 @@
+{
+  "id": "fractions-level07-038",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Add the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the sum?",
+    "mathExpression": [
+      "$$ \\frac{11}{20} + \\frac{13}{30} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "59"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "60"
+    }
+  ],
+  "hints": [
+    "Find the least common denominator of 20 and 30.",
+    "Use 60, then rewrite the fractions as $$ \\frac{33}{60} $$ and $$ \\frac{26}{60} $$.",
+    "Add the numerators and simplify if needed."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The least common denominator of 20 and 30 is 60.",
+      "2. Convert $$ \\frac{11}{20} = \\frac{33}{60} $$ and $$ \\frac{13}{30} = \\frac{26}{60} $$.",
+      "3. Add: $$ \\frac{33}{60} + \\frac{26}{60} = \\frac{59}{60} $$.",
+      "4. Since 59 is prime and does not divide 60, the fraction is already simplified.",
+      "5. Answer: numerator $$ 59 $$, denominator $$ 60 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חברו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "מצאו את המכנה המשותף הקטן ביותר של 20 ושל 30.",
+        "השתמשו ב-60, ואז כתבו מחדש את השברים בתור $$ \\frac{33}{60} $$ ו-$$ \\frac{26}{60} $$.",
+        "חברו את המונים וצמצמו אם צריך."
+      ],
+      "explanation": {
+        "steps": [
+          "1. המכנה המשותף הקטן ביותר של 20 ושל 30 הוא 60.",
+          "2. ממירים: $$ \\frac{11}{20} = \\frac{33}{60} $$ ו-$$ \\frac{13}{30} = \\frac{26}{60} $$.",
+          "3. מחברים: $$ \\frac{33}{60} + \\frac{26}{60} = \\frac{59}{60} $$.",
+          "4. מכיוון ש-59 הוא מספר ראשוני ואינו מחלק את 60, השבר כבר מצומצם.",
+          "5. תשובה: מונה $$ 59 $$, מכנה $$ 60 $$."
+        ]
+      }
+    }
+  }
+}

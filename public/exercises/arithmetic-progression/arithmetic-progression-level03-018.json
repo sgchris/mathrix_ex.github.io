@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-018",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find which term has the given value.",
+  "question": {
+    "text": "Which term is 46?",
+    "mathExpression": [
+      "$$ 10, 14, 18, 22, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "termNumber",
+      "label": "Term number =",
+      "inputType": "number",
+      "correctAnswer": "10"
+    }
+  ],
+  "hints": [
+    "The common difference is 4.",
+    "Count how many jumps of 4 are needed from 10 to 46, then add 1 for the first term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The difference is $$ 14 - 10 = 4 $$.",
+      "2. From 10 to 46 the increase is $$ 46 - 10 = 36 $$. That is $$ 36 \\div 4 = 9 $$ jumps.",
+      "3. The first term is term 1, so 9 jumps later is term $$ 10 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איזה איבר מקבל את הערך הנתון.",
+      "question": {
+        "text": "איזה איבר הוא 46?"
+      },
+      "inputs": [
+        {
+          "name": "termNumber",
+          "label": "מספר האיבר ="
+        }
+      ],
+      "hints": [
+        "ההפרש הקבוע הוא 4.",
+        "ספרו כמה קפיצות של 4 צריך מ-10 עד 46, ואז הוסיפו 1 עבור האיבר הראשון."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הוא $$ 14 - 10 = 4 $$.",
+          "2. מ-10 עד 46 יש גידול של $$ 46 - 10 = 36 $$. זה שווה ל-$$ 36 \\div 4 = 9 $$ קפיצות.",
+          "3. האיבר הראשון הוא איבר מספר 1, לכן 9 קפיצות אחריו הוא איבר מספר $$ 10 $$."
+        ]
+      }
+    }
+  }
+}

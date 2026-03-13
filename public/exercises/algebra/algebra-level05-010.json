@@ -1,0 +1,72 @@
+{
+  "id": "algebra-level05-010",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level05",
+  "instructions": "Solve the absolute value equation.",
+  "question": {
+    "text": "Find both solutions for x.",
+    "mathExpression": [
+      "$$ |2x - 5| = 9 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x1",
+      "label": "Smaller solution =",
+      "inputType": "number",
+      "correctAnswer": "-2"
+    },
+    {
+      "name": "x2",
+      "label": "Larger solution =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "If $$ |A| = 9 $$, then either $$ A = 9 $$ or $$ A = -9 $$.",
+    "Set up and solve both equations: $$ 2x - 5 = 9 $$ and $$ 2x - 5 = -9 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ |2x - 5| = 9 $$.",
+      "2. Create two cases: $$ 2x - 5 = 9 $$ and $$ 2x - 5 = -9 $$.",
+      "3. Case 1: $$ 2x = 14 $$, so $$ x = 7 $$.",
+      "4. Case 2: $$ 2x = -4 $$, so $$ x = -2 $$.",
+      "5. Check: $$ |2(7)-5|=|9|=9 $$ and $$ |2(-2)-5|=|-9|=9 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו את משוואת הערך המוחלט.",
+      "question": {
+        "text": "מצאו את שני הפתרונות של x."
+      },
+      "inputs": [
+        {
+          "name": "x1",
+          "label": "פתרון קטן יותר ="
+        },
+        {
+          "name": "x2",
+          "label": "פתרון גדול יותר ="
+        }
+      ],
+      "hints": [
+        "אם $$ |A| = 9 $$, אז או ש-$$ A = 9 $$ או ש-$$ A = -9 $$.",
+        "הרכיבו ופתרו את שתי המשוואות: $$ 2x - 5 = 9 $$ ו-$$ 2x - 5 = -9 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ |2x - 5| = 9 $$.",
+          "2. יוצרים שני מקרים: $$ 2x - 5 = 9 $$ ו-$$ 2x - 5 = -9 $$.",
+          "3. מקרה 1: $$ 2x = 14 $$, ולכן $$ x = 7 $$.",
+          "4. מקרה 2: $$ 2x = -4 $$, ולכן $$ x = -2 $$.",
+          "5. בודקים: $$ |2(7)-5|=|9|=9 $$ וגם $$ |2(-2)-5|=|-9|=9 $$ ✓"
+        ]
+      }
+    }
+  }
+}

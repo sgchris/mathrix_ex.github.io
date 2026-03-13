@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-024",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find which term has the given value.",
+  "question": {
+    "text": "Which term is 58?",
+    "mathExpression": [
+      "$$ 13, 18, 23, 28, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "termNumber",
+      "label": "Term number =",
+      "inputType": "number",
+      "correctAnswer": "10"
+    }
+  ],
+  "hints": [
+    "The common difference is 5.",
+    "From 13 to 58 the increase is 45, which is 9 jumps of 5."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ 18 - 13 = 5 $$.",
+      "2. The increase from the first term to 58 is $$ 58 - 13 = 45 $$, and $$ 45 \\div 5 = 9 $$.",
+      "3. Nine jumps after the first term means term $$ 10 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איזה איבר מקבל את הערך הנתון.",
+      "question": {
+        "text": "איזה איבר הוא 58?"
+      },
+      "inputs": [
+        {
+          "name": "termNumber",
+          "label": "מספר האיבר ="
+        }
+      ],
+      "hints": [
+        "ההפרש הקבוע הוא 5.",
+        "מ-13 עד 58 יש עליה של 45, וזה שווה ל-9 קפיצות של 5."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ 18 - 13 = 5 $$.",
+          "2. העליה מהאיבר הראשון עד 58 היא $$ 58 - 13 = 45 $$, וגם $$ 45 \\div 5 = 9 $$.",
+          "3. תשע קפיצות אחרי האיבר הראשון פירושן איבר מספר $$ 10 $$."
+        ]
+      }
+    }
+  }
+}

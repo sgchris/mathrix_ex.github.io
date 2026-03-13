@@ -1,0 +1,56 @@
+{
+  "id": "percentages-level03-013",
+  "topicId": "percentages",
+  "topicName": "Percentages",
+  "difficulty": "level03",
+  "instructions": "Calculate the percentage.",
+  "question": {
+    "text": "What is 30% of 300?",
+    "mathExpression": [
+      "$$ 30\\% \\text{ of } 300 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "result",
+      "label": "Result:",
+      "inputType": "number",
+      "correctAnswer": "90"
+    }
+  ],
+  "hints": [
+    "Convert 30% to a decimal.",
+    "Multiply the decimal by 300."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Convert 30% to a decimal: $$ 0.3 $$.",
+      "2. Multiply by the value: $$ 0.3 \\times 300 = 90 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אחוזים",
+      "instructions": "חשבו את האחוז.",
+      "question": {
+        "text": "כמה הם 30% מתוך 300?"
+      },
+      "inputs": [
+        {
+          "name": "result",
+          "label": "תוצאה:"
+        }
+      ],
+      "hints": [
+        "המירו את 30% לשבר עשרוני.",
+        "כפלו את השבר העשרוני ב-300."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ממירים את 30% לשבר עשרוני: $$ 0.3 $$.",
+          "2. כופלים בערך: $$ 0.3 \\times 300 = 90 $$."
+        ]
+      }
+    }
+  }
+}

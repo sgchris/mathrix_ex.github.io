@@ -6,6 +6,7 @@ import {
   areInputsComplete,
   inputsMatchFailedAttempt,
 } from '../../utils/exerciseUtils'
+import { DEFAULT_LEVEL_ID, filterExerciseIdsByLevel, resolveTopicLevel } from '../../utils/levels'
 import ActionBar from './ActionBar'
 import HintArea from './HintArea'
 import ExerciseDisplay from './ExerciseDisplay'
@@ -98,13 +99,13 @@ export default function ExerciseArea() {
   const canNext = isCompleted
 
   const topicData = topics.find(t => t.id === activeTopic)
-  const level = selectedLevel || 'easy'
+  const level = resolveTopicLevel(topicData?.exercises ?? [], selectedLevel || DEFAULT_LEVEL_ID)
   const solvedIds = new Set(
     Object.entries(exerciseStates)
       .filter(([, es]) => es.status === 'solved')
       .map(([id]) => id)
   )
-  const levelExercises = (topicData?.exercises ?? []).filter(id => id.includes(`-${level}-`))
+  const levelExercises = filterExerciseIdsByLevel(topicData?.exercises ?? [], level)
   const remainingExercises = levelExercises.filter(id => !solvedIds.has(id) && id !== activeExerciseId)
   const hasNextExercise = remainingExercises.length > 0
 

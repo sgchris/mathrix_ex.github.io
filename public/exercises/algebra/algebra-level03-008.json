@@ -1,0 +1,75 @@
+{
+  "id": "algebra-level03-008",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level03",
+  "instructions": "Solve the system of equations.",
+  "question": {
+    "text": "What are the values of x and y?",
+    "mathExpression": [
+      "$$ 4x - 3y = 7 $$",
+      "$$ x + y = 7 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "4"
+    },
+    {
+      "name": "y",
+      "label": "y =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    }
+  ],
+  "hints": [
+    "From $$ x + y = 7 $$, isolate one variable: $$ x = 7 - y $$.",
+    "Substitute into $$ 4x - 3y = 7 $$ and solve for y first."
+  ],
+  "explanation": {
+    "steps": [
+      "1. From $$ x + y = 7 $$, write $$ x = 7 - y $$.",
+      "2. Substitute into the first equation: $$ 4(7 - y) - 3y = 7 $$.",
+      "3. Expand and combine terms: $$ 28 - 4y - 3y = 7 $$, so $$ 28 - 7y = 7 $$.",
+      "4. Subtract 28: $$ -7y = -21 $$, then divide by -7: $$ y = 3 $$.",
+      "5. Substitute back: $$ x = 7 - 3 = 4 $$.",
+      "6. Check: $$ 4(4) - 3(3) = 16 - 9 = 7 $$ and $$ 4 + 3 = 7 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו את מערכת המשוואות.",
+      "question": {
+        "text": "מה הערכים של x ו-y?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        },
+        {
+          "name": "y",
+          "label": "y ="
+        }
+      ],
+      "hints": [
+        "מהמשוואה $$ x + y = 7 $$, מבודדים משתנה אחד: $$ x = 7 - y $$.",
+        "הציבו במשוואה $$ 4x - 3y = 7 $$ ופתרו קודם עבור y."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתוך $$ x + y = 7 $$, כותבים $$ x = 7 - y $$.",
+          "2. מציבים במשוואה הראשונה: $$ 4(7 - y) - 3y = 7 $$.",
+          "3. פותחים סוגריים ומאחדים איברים: $$ 28 - 4y - 3y = 7 $$, ולכן $$ 28 - 7y = 7 $$.",
+          "4. מחסרים 28: $$ -7y = -21 $$, ואז מחלקים ב-$$ -7 $$: $$ y = 3 $$.",
+          "5. מציבים חזרה: $$ x = 7 - 3 = 4 $$.",
+          "6. בודקים: $$ 4(4) - 3(3) = 16 - 9 = 7 $$ וגם $$ 4 + 3 = 7 $$ ✓"
+        ]
+      }
+    }
+  }
+}

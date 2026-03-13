@@ -1,0 +1,74 @@
+{
+  "id": "fractions-level07-030",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Add the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the sum?",
+    "mathExpression": [
+      "$$ \\frac{3}{10} + \\frac{7}{15} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "23"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "30"
+    }
+  ],
+  "hints": [
+    "Find the least common denominator of 10 and 15.",
+    "Use 30, then rewrite the fractions as $$ \\frac{9}{30} $$ and $$ \\frac{14}{30} $$.",
+    "Add the numerators and simplify if possible."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The least common denominator of 10 and 15 is 30.",
+      "2. Convert $$ \\frac{3}{10} = \\frac{9}{30} $$ and $$ \\frac{7}{15} = \\frac{14}{30} $$.",
+      "3. Add: $$ \\frac{9}{30} + \\frac{14}{30} = \\frac{23}{30} $$.",
+      "4. The fraction $$ \\frac{23}{30} $$ is already in simplest form.",
+      "5. Answer: numerator $$ 23 $$, denominator $$ 30 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חברו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "מצאו את המכנה המשותף הקטן ביותר של 10 ושל 15.",
+        "השתמשו ב-30, ואז כתבו מחדש את השברים כ-$$ \\frac{9}{30} $$ ו-$$ \\frac{14}{30} $$.",
+        "חברו את המונים וצמצמו אם אפשר."
+      ],
+      "explanation": {
+        "steps": [
+          "1. המכנה המשותף הקטן ביותר של 10 ושל 15 הוא 30.",
+          "2. ממירים: $$ \\frac{3}{10} = \\frac{9}{30} $$ ו-$$ \\frac{7}{15} = \\frac{14}{30} $$.",
+          "3. מחברים: $$ \\frac{9}{30} + \\frac{14}{30} = \\frac{23}{30} $$.",
+          "4. השבר $$ \\frac{23}{30} $$ כבר בצורה המצומצמת ביותר.",
+          "5. תשובה: מונה $$ 23 $$, מכנה $$ 30 $$."
+        ]
+      }
+    }
+  }
+}

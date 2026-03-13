@@ -1,16 +1,22 @@
 import { useReducer, useEffect, useState } from 'react'
 import { fetchTopics } from '../utils/exerciseUtils'
+import {
+  DEFAULT_LEVEL_ID,
+  filterExerciseIdsByLevel,
+  normalizeLevelId,
+  resolveTopicLevel,
+} from '../utils/levels'
 import { getLocale, translate } from '../utils/localization'
 import { AppContext } from './useApp'
 
-const STORAGE_KEY = 'mathrix_state'
+const STORAGE_KEY = 'mathrix_state_v2'
 
 const initialState = {
   activeTopic: null,
   activeExerciseId: null,
   topicHistory: {},
   exerciseStates: {},
-  selectedLevel: 'easy',
+  selectedLevel: DEFAULT_LEVEL_ID,
   language: 'en',
 }
 
@@ -33,6 +39,7 @@ function reducer(state, action) {
     case 'SELECT_TOPIC': {
       const { topicId, exercises, selectedLevel } = action.payload
       const existingHistory = state.topicHistory[topicId] || []
+      const resolvedLevel = resolveTopicLevel(exercises || [], selectedLevel)
       let firstExerciseId
       let history
 
@@ -40,8 +47,7 @@ function reducer(state, action) {
         history = existingHistory
         firstExerciseId = existingHistory[existingHistory.length - 1]
       } else {
-        const level = selectedLevel || 'easy'
-        const pool = (exercises || []).filter(id => id.includes(`-${level}-`))
+        const pool = filterExerciseIdsByLevel(exercises || [], resolvedLevel)
         const candidates = pool.length > 0 ? pool : (exercises || [])
         firstExerciseId = candidates.length > 0
           ? candidates[Math.floor(Math.random() * candidates.length)]
@@ -53,6 +59,7 @@ function reducer(state, action) {
         ...state,
         activeTopic: topicId,
         activeExerciseId: firstExerciseId,
+        selectedLevel: resolvedLevel,
         topicHistory: {
           ...state.topicHistory,
           [topicId]: history,
@@ -179,7 +186,8 @@ function reducer(state, action) {
 
     case 'SET_LEVEL': {
       const { level, exercises } = action.payload
-      const baseState = { ...state, selectedLevel: level }
+      const normalizedLevel = resolveTopicLevel(exercises || [], level)
+      const baseState = { ...state, selectedLevel: normalizedLevel }
 
       if (!state.activeTopic || !exercises || exercises.length === 0) return baseState
 
@@ -188,7 +196,7 @@ function reducer(state, action) {
           .filter(([, es]) => es.status === 'solved')
           .map(([id]) => id)
       )
-      const levelPool = exercises.filter(id => id.includes(`-${level}-`))
+      const levelPool = filterExerciseIdsByLevel(exercises, normalizedLevel)
       // Prefer unsolved; fall back to any exercise in the pool if all are solved
       const unsolved = levelPool.filter(
         id => !solvedIds.has(id) && id !== state.activeExerciseId
@@ -242,7 +250,14 @@ export default function AppProvider({ children }) {
   const [appState, dispatch] = useReducer(reducer, null, () => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY)
-      return saved ? { ...initialState, ...JSON.parse(saved) } : initialState
+      if (!saved) return initialState
+
+      const parsedState = JSON.parse(saved)
+      return {
+        ...initialState,
+        ...parsedState,
+        selectedLevel: normalizeLevelId(parsedState.selectedLevel),
+      }
     } catch {
       return initialState
     }

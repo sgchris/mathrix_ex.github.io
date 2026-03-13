@@ -1,0 +1,58 @@
+{
+  "id": "decimals-level01-002",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "level01",
+  "instructions": "Convert the fraction to a decimal.",
+  "question": {
+    "text": "Write this fraction as a decimal.",
+    "mathExpression": [
+      "$$ 3/10 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "decimal",
+      "label": "Decimal =",
+      "inputType": "number",
+      "correctAnswer": "0.3"
+    }
+  ],
+  "hints": [
+    "A denominator of 10 means tenths.",
+    "$$ 3/10 $$ means 3 tenths, which is written as 0.3."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The fraction $$ 3/10 $$ means 3 tenths.",
+      "2. Tenths are written in the first place to the right of the decimal point.",
+      "3. So $$ 3/10 = 0.3 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "המירו את השבר למספר עשרוני.",
+      "question": {
+        "text": "כתבו את השבר הזה כמספר עשרוני."
+      },
+      "inputs": [
+        {
+          "name": "decimal",
+          "label": "מספר עשרוני ="
+        }
+      ],
+      "hints": [
+        "מכנה 10 פירושו עשיריות.",
+        "$$ 3/10 $$ פירושו 3 עשיריות, וכותבים זאת כ-0.3."
+      ],
+      "explanation": {
+        "steps": [
+          "1. השבר $$ 3/10 $$ פירושו 3 עשיריות.",
+          "2. עשיריות נכתבות במקום הראשון מימין לנקודה העשרונית.",
+          "3. לכן $$ 3/10 = 0.3 $$."
+        ]
+      }
+    }
+  }
+}

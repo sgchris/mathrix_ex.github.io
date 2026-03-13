@@ -1,0 +1,73 @@
+{
+  "id": "algebra-level03-005",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level03",
+  "instructions": "Solve the system of equations.",
+  "question": {
+    "text": "What are the values of x and y?",
+    "mathExpression": [
+      "$$ 2x + 3y = 12 $$",
+      "$$ x - y = 1 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    },
+    {
+      "name": "y",
+      "label": "y =",
+      "inputType": "number",
+      "correctAnswer": "2"
+    }
+  ],
+  "hints": [
+    "Try expressing x in terms of y using the second equation. Since $$ x - y = 1 $$, we get $$ x = y + 1 $$.",
+    "Substitute $$ (y + 1) $$ in place of x in the first equation and solve for y."
+  ],
+  "explanation": {
+    "steps": [
+      "1. From the second equation $$ x - y = 1 $$, isolate x: $$ x = y + 1 $$.",
+      "2. Substitute into the first equation: $$ 2(y + 1) + 3y = 12 $$.",
+      "3. Expand: $$ 2y + 2 + 3y = 12 $$, combine terms: $$ 5y + 2 = 12 $$.",
+      "4. Subtract 2 from both sides: $$ 5y = 10 $$, so $$ y = 2 $$.",
+      "5. Substitute back: $$ x = 2 + 1 = 3 $$. Check: $$ 2(3) + 3(2) = 6 + 6 = 12 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו את מערכת המשוואות.",
+      "question": {
+        "text": "מה הערכים של x ו-y?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        },
+        {
+          "name": "y",
+          "label": "y ="
+        }
+      ],
+      "hints": [
+        "נסו לבטא את x באמצעות y בעזרת המשוואה השנייה. מאחר ש-$$ x - y = 1 $$, נקבל $$ x = y + 1 $$.",
+        "הציבו $$ (y + 1) $$ במקום x במשוואה הראשונה ופתרו עבור y."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מהמשוואה השנייה $$ x - y = 1 $$, מבודדים את x: $$ x = y + 1 $$.",
+          "2. מציבים במשוואה הראשונה: $$ 2(y + 1) + 3y = 12 $$.",
+          "3. פותחים סוגריים: $$ 2y + 2 + 3y = 12 $$, ומאחדים איברים: $$ 5y + 2 = 12 $$.",
+          "4. מחסרים 2 משני האגפים: $$ 5y = 10 $$, ולכן $$ y = 2 $$.",
+          "5. מציבים חזרה: $$ x = 2 + 1 = 3 $$. בודקים: $$ 2(3) + 3(2) = 6 + 6 = 12 $$ ✓"
+        ]
+      }
+    }
+  }
+}

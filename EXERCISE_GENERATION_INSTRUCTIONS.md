@@ -5,18 +5,23 @@ This guide explains how to generate new math exercise JSON files for the Mathrix
 ## 1. Directory Structure
 All exercises are stored in `public/exercises/`. Inside this directory, there are folders for each topic:
 - `algebra/`
+- `arithmetic-progression/`
+- `decimals/`
 - `fractions/`
 - `percentages/`
 
 When generating a new exercise, save it inside the corresponding topic folder.
 
+For the `arithmetic-progression` topic, difficulty should scale by school grade: `level01` starts as an easy 6th-grade sequence exercise set, and higher levels should gradually introduce harder work suitable for later grades.
+
 ## 2. File Naming Convention
 Exercise files must be named using the following format:
-`[topicId]-[difficulty]-[sequence_number].json`
+`[topicId]-[level_number]-[sequence_number].json`
 
 **Examples:**
-- `algebra-easy-006.json`
-- `fractions-hard-001.json`
+- `algebra-level01-006.json`
+- `arithmetic-progression-level01-001.json`
+- `fractions-level05-001.json`
 
 ## 3. Updating the Index (`topics.json`)
 After creating an exercise JSON file, you **must** update the index file located at `public/exercises/topics.json`. Find the corresponding topic object by its `id` and append the new file's name (without the `.json` extension) to its `exercises` array.
@@ -26,10 +31,10 @@ After creating an exercise JSON file, you **must** update the index file located
   "id": "algebra",
   "name": "Algebra",
   "exercises": [
-    "algebra-easy-001",
-    "algebra-easy-002",
+    "algebra-level01-001",
+    "algebra-level01-002",
     "...",
-    "algebra-easy-006" // <- Add new exercise ID here
+    "algebra-level01-006" // <- Add new exercise ID here
   ]
 }
 ```
@@ -39,10 +44,10 @@ Every exercise file must strictly follow this JSON structure:
 
 ```json
 {
-  "id": "algebra-easy-001",           // Must match the file name (without .json)
+  "id": "algebra-level01-001",        // Must match the file name (without .json)
   "topicId": "algebra",               // Matches the folder name and topic ID
   "topicName": "Algebra",             // Display name of the topic
-  "difficulty": "easy",               // e.g., "easy", "medium", "hard"
+  "difficulty": "level01",            // Use level ids such as "level01", "level02", "level03", "level05", "level07"
   "instructions": "Solve for x.",     // High-level instruction to the user
   "question": {
     "text": "What is the value of x?",
@@ -105,6 +110,7 @@ Every exercise file must strictly follow this JSON structure:
 - **Multiple Inputs**: For things like fractions, provide multiple elements in the `inputs` array (e.g., one for `numerator` and one for `denominator`).
 - **Steps**: In the `explanation.steps` array, make each step clear and easy to read. Number the steps naturally (1., 2., 3., etc.).
 - **Consistency**: Maintain consistency with existing ID sequencing (e.g., pad sequences with zeroes like `001`, `002`).
+- **Topic Registration**: When adding a new topic, create its folder, add its metadata object to `public/exercises/topics.json`, and include a Hebrew translation for the topic name there as well.
 - **Hebrew Required**: Every exercise must include a complete `translations.he` overlay for all human-readable exercise content: `topicName`, `instructions`, `question.text`, `inputs[].label`, `hints`, and `explanation.steps`.
 - **Keep Structure in Base Fields**: Do not translate `id`, `topicId`, `difficulty`, `inputs[].name`, `inputs[].inputType`, or `inputs[].correctAnswer`. These remain in the base exercise object.
 - **Preserve Math Unless Language Is Inside It**: Keep math expressions in the base object unless the expression itself contains natural-language text that also needs localization.

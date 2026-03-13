@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-023",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "What is the fifteenth term?",
+    "mathExpression": [
+      "$$ -2, 1, 4, 7, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "fifteenthTerm",
+      "label": "Fifteenth term =",
+      "inputType": "number",
+      "correctAnswer": "40"
+    }
+  ],
+  "hints": [
+    "The common difference is 3.",
+    "From the first term to the fifteenth term there are 14 equal steps."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ 1 - (-2) = 3 $$.",
+      "2. The fifteenth term is $$ a_{15} = -2 + 14 \\cdot 3 $$.",
+      "3. Compute: $$ -2 + 42 = 40 $$. So the fifteenth term is $$ 40 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר החמישה עשר?"
+      },
+      "inputs": [
+        {
+          "name": "fifteenthTerm",
+          "label": "האיבר החמישה עשר ="
+        }
+      ],
+      "hints": [
+        "ההפרש הקבוע הוא 3.",
+        "מהאיבר הראשון לאיבר החמישה עשר יש 14 צעדים שווים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ 1 - (-2) = 3 $$.",
+          "2. האיבר החמישה עשר הוא $$ a_{15} = -2 + 14 \\cdot 3 $$.",
+          "3. מחשבים: $$ -2 + 42 = 40 $$. לכן האיבר החמישה עשר הוא $$ 40 $$."
+        ]
+      }
+    }
+  }
+}

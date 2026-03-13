@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-002",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the next term in the arithmetic progression.",
+  "question": {
+    "text": "What is the next term after 21?",
+    "mathExpression": [
+      "$$ 12, 15, 18, 21, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "nextTerm",
+      "label": "Next term =",
+      "inputType": "number",
+      "correctAnswer": "24"
+    }
+  ],
+  "hints": [
+    "Check the difference between 12 and 15.",
+    "Keep adding the same difference to continue the pattern."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The difference between each pair of terms is $$ 3 $$.",
+      "2. Add $$ 3 $$ to the last term: $$ 21 + 3 = 24 $$.",
+      "3. The next term is $$ 24 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר הבא בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר הבא אחרי 21?"
+      },
+      "inputs": [
+        {
+          "name": "nextTerm",
+          "label": "האיבר הבא ="
+        }
+      ],
+      "hints": [
+        "בדקו מהו ההפרש בין 12 ל-15.",
+        "המשיכו להוסיף את אותו ההפרש כדי להמשיך את הדפוס."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש בין כל שני איברים עוקבים הוא $$ 3 $$.",
+          "2. מוסיפים $$ 3 $$ לאיבר האחרון: $$ 21 + 3 = 24 $$.",
+          "3. האיבר הבא הוא $$ 24 $$."
+        ]
+      }
+    }
+  }
+}

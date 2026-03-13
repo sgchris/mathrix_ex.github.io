@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-030",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Use two known terms to find another term in the arithmetic progression.",
+  "question": {
+    "text": "What is the eleventh term?",
+    "mathExpression": [
+      "$$ a_3 = 12, a_9 = 36 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "eleventhTerm",
+      "label": "Eleventh term =",
+      "inputType": "number",
+      "correctAnswer": "44"
+    }
+  ],
+  "hints": [
+    "From the third term to the ninth term there are 6 equal steps.",
+    "First find the common difference, then move 2 more steps from the ninth term to the eleventh term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The change from $$ a_3 $$ to $$ a_9 $$ is $$ 36 - 12 = 24 $$ across 6 steps, so the common difference is $$ 24 \\div 6 = 4 $$.",
+      "2. From the ninth term to the eleventh term there are 2 more steps.",
+      "3. Add twice the difference: $$ 36 + 2 \\cdot 4 = 44 $$. So the eleventh term is $$ 44 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "השתמשו בשני איברים ידועים כדי למצוא איבר אחר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר האחד עשר?"
+      },
+      "inputs": [
+        {
+          "name": "eleventhTerm",
+          "label": "האיבר האחד עשר ="
+        }
+      ],
+      "hints": [
+        "מהאיבר השלישי לאיבר התשיעי יש 6 צעדים שווים.",
+        "קודם מצאו את ההפרש הקבוע, ואז זוזו עוד 2 צעדים מהאיבר התשיעי אל האיבר האחד עשר."
+      ],
+      "explanation": {
+        "steps": [
+          "1. השינוי מ-$$ a_3 $$ אל $$ a_9 $$ הוא $$ 36 - 12 = 24 $$ לאורך 6 צעדים, לכן ההפרש הקבוע הוא $$ 24 \\div 6 = 4 $$.",
+          "2. מהאיבר התשיעי לאיבר האחד עשר יש עוד 2 צעדים.",
+          "3. מוסיפים פעמיים את ההפרש: $$ 36 + 2 \\cdot 4 = 44 $$. לכן האיבר האחד עשר הוא $$ 44 $$."
+        ]
+      }
+    }
+  }
+}

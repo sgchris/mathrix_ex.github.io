@@ -1,0 +1,74 @@
+{
+  "id": "fractions-level07-034",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Add the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the sum?",
+    "mathExpression": [
+      "$$ \\frac{5}{12} + \\frac{7}{18} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "29"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "36"
+    }
+  ],
+  "hints": [
+    "Find the least common denominator of 12 and 18.",
+    "Use 36, then rewrite the fractions as $$ \\frac{15}{36} $$ and $$ \\frac{14}{36} $$.",
+    "Add the numerators."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The least common denominator of 12 and 18 is 36.",
+      "2. Convert $$ \\frac{5}{12} = \\frac{15}{36} $$ and $$ \\frac{7}{18} = \\frac{14}{36} $$.",
+      "3. Add: $$ \\frac{15}{36} + \\frac{14}{36} = \\frac{29}{36} $$.",
+      "4. Since 29 and 36 have no common factor greater than 1, the result is simplified.",
+      "5. Answer: numerator $$ 29 $$, denominator $$ 36 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חברו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "מצאו את המכנה המשותף הקטן ביותר של 12 ושל 18.",
+        "השתמשו ב-36, ואז כתבו מחדש את השברים בתור $$ \\frac{15}{36} $$ ו-$$ \\frac{14}{36} $$.",
+        "חברו את המונים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. המכנה המשותף הקטן ביותר של 12 ושל 18 הוא 36.",
+          "2. ממירים: $$ \\frac{5}{12} = \\frac{15}{36} $$ ו-$$ \\frac{7}{18} = \\frac{14}{36} $$.",
+          "3. מחברים: $$ \\frac{15}{36} + \\frac{14}{36} = \\frac{29}{36} $$.",
+          "4. מכיוון של-29 ול-36 אין מחלק משותף גדול מ-1, התוצאה מצומצמת.",
+          "5. תשובה: מונה $$ 29 $$, מכנה $$ 36 $$."
+        ]
+      }
+    }
+  }
+}

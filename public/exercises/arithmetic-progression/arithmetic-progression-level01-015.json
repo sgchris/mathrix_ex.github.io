@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-015",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "What is the eighth term?",
+    "mathExpression": [
+      "$$ 60, 55, 50, 45, 40, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "eighthTerm",
+      "label": "Eighth term =",
+      "inputType": "number",
+      "correctAnswer": "25"
+    }
+  ],
+  "hints": [
+    "The sequence decreases by 5 each time.",
+    "Continue the terms after 40: 35, 30, 25."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ -5 $$.",
+      "2. Continue the sequence: $$ 60, 55, 50, 45, 40, 35, 30, 25 $$.",
+      "3. The eighth term is $$ 25 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר השמיני?"
+      },
+      "inputs": [
+        {
+          "name": "eighthTerm",
+          "label": "האיבר השמיני ="
+        }
+      ],
+      "hints": [
+        "הסדרה קטנה ב-5 בכל פעם.",
+        "המשיכו את האיברים אחרי 40: 35, 30, 25."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ -5 $$.",
+          "2. ממשיכים את הסדרה: $$ 60, 55, 50, 45, 40, 35, 30, 25 $$.",
+          "3. האיבר השמיני הוא $$ 25 $$."
+        ]
+      }
+    }
+  }
+}

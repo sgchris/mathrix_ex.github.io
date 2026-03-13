@@ -1,0 +1,60 @@
+{
+  "id": "arithmetic-progression-level01-010",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "What is the sixth term?",
+    "mathExpression": [
+      "$$ 9, 13, 17, 21, 25, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "sixthTerm",
+      "label": "Sixth term =",
+      "inputType": "number",
+      "correctAnswer": "29"
+    }
+  ],
+  "hints": [
+    "Look at the difference between 9 and 13.",
+    "After the fifth term 25, add the common difference once."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ 4 $$ because $$ 13 - 9 = 4 $$.",
+      "2. The fifth term shown is $$ 25 $$.",
+      "3. Add $$ 4 $$ once more: $$ 25 + 4 = 29 $$.",
+      "4. The sixth term is $$ 29 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר השישי?"
+      },
+      "inputs": [
+        {
+          "name": "sixthTerm",
+          "label": "האיבר השישי ="
+        }
+      ],
+      "hints": [
+        "בדקו את ההפרש בין 9 ל-13.",
+        "אחרי האיבר החמישי 25, הוסיפו את ההפרש הקבוע פעם אחת."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ 4 $$ כי $$ 13 - 9 = 4 $$.",
+          "2. האיבר החמישי המוצג הוא $$ 25 $$.",
+          "3. מוסיפים עוד $$ 4 $$: $$ 25 + 4 = 29 $$.",
+          "4. האיבר השישי הוא $$ 29 $$."
+        ]
+      }
+    }
+  }
+}

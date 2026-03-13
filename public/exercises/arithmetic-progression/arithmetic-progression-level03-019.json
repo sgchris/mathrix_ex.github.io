@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-019",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find the missing term in the arithmetic progression.",
+  "question": {
+    "text": "What number is missing?",
+    "mathExpression": [
+      "$$ 5, \\square, 17, 23, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "missingTerm",
+      "label": "Missing term =",
+      "inputType": "number",
+      "correctAnswer": "11"
+    }
+  ],
+  "hints": [
+    "From 17 to 23 the increase is 6, so the common difference is 6.",
+    "Add 6 to 5 to get the missing term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Use the known consecutive terms: $$ 23 - 17 = 6 $$. So the common difference is 6.",
+      "2. Add 6 to the first term: $$ 5 + 6 = 11 $$.",
+      "3. Check: $$ 11 + 6 = 17 $$. The missing term is $$ 11 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר החסר בסדרה החשבונית.",
+      "question": {
+        "text": "איזה מספר חסר?"
+      },
+      "inputs": [
+        {
+          "name": "missingTerm",
+          "label": "האיבר החסר ="
+        }
+      ],
+      "hints": [
+        "מ-17 ל-23 יש עליה של 6, לכן ההפרש הקבוע הוא 6.",
+        "הוסיפו 6 ל-5 כדי לקבל את האיבר החסר."
+      ],
+      "explanation": {
+        "steps": [
+          "1. משתמשים בשני איברים עוקבים ידועים: $$ 23 - 17 = 6 $$. לכן ההפרש הקבוע הוא 6.",
+          "2. מוסיפים 6 לאיבר הראשון: $$ 5 + 6 = 11 $$.",
+          "3. בודקים: $$ 11 + 6 = 17 $$. האיבר החסר הוא $$ 11 $$."
+        ]
+      }
+    }
+  }
+}

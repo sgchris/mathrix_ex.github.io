@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-031",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 3x - 5 = 10 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Start by adding 5 to both sides to undo the subtraction.",
+    "Then divide both sides by 3."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 3x - 5 = 10 $$.",
+      "2. Add 5 to both sides: $$ 3x = 10 + 5 = 15 $$.",
+      "3. Divide both sides by 3: $$ x = \\frac{15}{3} = 5 $$.",
+      "4. Check: $$ 3 \\times 5 - 5 = 15 - 5 = 10 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "התחילו בהוספת 5 לשני האגפים כדי לבטל את החיסור.",
+        "אחר כך חלקו את שני האגפים ב-3."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 3x - 5 = 10 $$.",
+          "2. מוסיפים 5 לשני האגפים: $$ 3x = 10 + 5 = 15 $$.",
+          "3. מחלקים את שני האגפים ב-3: $$ x = \\frac{15}{3} = 5 $$.",
+          "4. בודקים: $$ 3 \\times 5 - 5 = 15 - 5 = 10 $$ ✓"
+        ]
+      }
+    }
+  }
+}

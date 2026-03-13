@@ -1,0 +1,59 @@
+{
+  "id": "decimals-level01-005",
+  "topicId": "decimals",
+  "topicName": "Decimals",
+  "difficulty": "level01",
+  "instructions": "Compare the decimals.",
+  "question": {
+    "text": "Which decimal is greater?",
+    "mathExpression": [
+      "$$ 2.9 $$",
+      "$$ 2.54 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "greater",
+      "label": "Greater decimal =",
+      "inputType": "number",
+      "correctAnswer": "2.9"
+    }
+  ],
+  "hints": [
+    "Compare the ones digits first.",
+    "The ones digits are both 2, so compare the tenths: 9 tenths is greater than 5 tenths."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Both numbers have the same ones digit: $$ 2 $$.",
+      "2. Compare the tenths digits: $$ 2.9 $$ has 9 tenths and $$ 2.54 $$ has 5 tenths.",
+      "3. Since $$ 9 > 5 $$, $$ 2.9 $$ is greater."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "מספרים עשרוניים",
+      "instructions": "השוו בין המספרים העשרוניים.",
+      "question": {
+        "text": "איזה מספר עשרוני גדול יותר?"
+      },
+      "inputs": [
+        {
+          "name": "greater",
+          "label": "המספר הגדול יותר ="
+        }
+      ],
+      "hints": [
+        "השוו קודם את ספרות היחידות.",
+        "ספרות היחידות בשני המספרים הן 2, לכן משווים את העשיריות: 9 עשיריות גדולות מ-5 עשיריות."
+      ],
+      "explanation": {
+        "steps": [
+          "1. לשני המספרים אותה ספרת יחידות: $$ 2 $$.",
+          "2. משווים את ספרות העשיריות: ב-$$ 2.9 $$ יש 9 עשיריות וב-$$ 2.54 $$ יש 5 עשיריות.",
+          "3. מכיוון ש-$$ 9 > 5 $$, המספר $$ 2.9 $$ גדול יותר."
+        ]
+      }
+    }
+  }
+}

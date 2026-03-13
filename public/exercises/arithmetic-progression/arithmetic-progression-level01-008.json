@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-008",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the common difference of the arithmetic progression.",
+  "question": {
+    "text": "What is the common difference?",
+    "mathExpression": [
+      "$$ 100, 90, 80, 70, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "difference",
+      "label": "Difference =",
+      "inputType": "number",
+      "correctAnswer": "-10"
+    }
+  ],
+  "hints": [
+    "Subtract the first term from the second term.",
+    "$$ 90 - 100 = -10 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Find the change from one term to the next: $$ 90 - 100 = -10 $$.",
+      "2. Check again: $$ 80 - 90 = -10 $$.",
+      "3. The common difference is $$ -10 $$ because the sequence decreases by 10 each step."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את ההפרש הקבוע של הסדרה החשבונית.",
+      "question": {
+        "text": "מהו ההפרש הקבוע?"
+      },
+      "inputs": [
+        {
+          "name": "difference",
+          "label": "הפרש ="
+        }
+      ],
+      "hints": [
+        "חסרו את האיבר הראשון מהאיבר השני.",
+        "$$ 90 - 100 = -10 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מחשבים את השינוי מאיבר אחד לבא אחריו: $$ 90 - 100 = -10 $$.",
+          "2. בודקים שוב: $$ 80 - 90 = -10 $$.",
+          "3. ההפרש הקבוע הוא $$ -10 $$ כי הסדרה קטנה ב-10 בכל צעד."
+        ]
+      }
+    }
+  }
+}

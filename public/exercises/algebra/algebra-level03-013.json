@@ -1,0 +1,58 @@
+{
+  "id": "algebra-level03-013",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level03",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 4x + 7 = 27 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Isolate the term with x.",
+    "Subtract 7 from both sides."
+  ],
+  "explanation": {
+    "steps": [
+      "1. We start with $$ 4x + 7 = 27 $$.",
+      "2. Subtract 7 from both sides: $$ 4x = 20 $$.",
+      "3. Divide by 4: $$ x = 5 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "בודדו את האיבר עם x.",
+        "חסרו 7 משני האגפים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 4x + 7 = 27 $$.",
+          "2. מחסרים 7 משני האגפים: $$ 4x = 20 $$.",
+          "3. מחלקים ב-4: $$ x = 5 $$."
+        ]
+      }
+    }
+  }
+}

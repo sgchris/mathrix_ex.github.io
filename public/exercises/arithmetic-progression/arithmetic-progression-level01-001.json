@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-001",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the next term in the arithmetic progression.",
+  "question": {
+    "text": "What is the next term after 13?",
+    "mathExpression": [
+      "$$ 4, 7, 10, 13, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "nextTerm",
+      "label": "Next term =",
+      "inputType": "number",
+      "correctAnswer": "16"
+    }
+  ],
+  "hints": [
+    "Look at how much the sequence increases each time.",
+    "Each term is 3 more than the one before it."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Compare consecutive terms: $$ 7 - 4 = 3 $$ and $$ 10 - 7 = 3 $$. The common difference is 3.",
+      "2. Add 3 to the last shown term: $$ 13 + 3 = 16 $$.",
+      "3. The next term is $$ 16 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר הבא בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר הבא אחרי 13?"
+      },
+      "inputs": [
+        {
+          "name": "nextTerm",
+          "label": "האיבר הבא ="
+        }
+      ],
+      "hints": [
+        "בדקו בכמה הסדרה גדלה בכל פעם.",
+        "כל איבר גדול ב-3 מהאיבר שלפניו."
+      ],
+      "explanation": {
+        "steps": [
+          "1. משווים בין איברים עוקבים: $$ 7 - 4 = 3 $$ וגם $$ 10 - 7 = 3 $$. ההפרש הקבוע הוא 3.",
+          "2. מוסיפים 3 לאיבר האחרון שמופיע: $$ 13 + 3 = 16 $$.",
+          "3. לכן האיבר הבא הוא $$ 16 $$."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "fractions-level07-026",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Add the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the sum?",
+    "mathExpression": [
+      "$$ \\frac{5}{6} + \\frac{7}{8} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "41"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "24"
+    }
+  ],
+  "hints": [
+    "Find a common denominator for 6 and 8.",
+    "The least common denominator is 24. Convert the fractions to $$ \\frac{20}{24} $$ and $$ \\frac{21}{24} $$.",
+    "Add the numerators and then check whether the result can be simplified further."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Find the least common denominator of 6 and 8. It is 24.",
+      "2. Convert $$ \\frac{5}{6} $$ to $$ \\frac{20}{24} $$ and $$ \\frac{7}{8} $$ to $$ \\frac{21}{24} $$.",
+      "3. Add: $$ \\frac{20}{24} + \\frac{21}{24} = \\frac{41}{24} $$.",
+      "4. The numerator 41 and denominator 24 have no common factor greater than 1, so the simplest form is $$ \\frac{41}{24} $$.",
+      "5. Answer: numerator $$ 41 $$, denominator $$ 24 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חברו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה הסכום?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "מצאו מכנה משותף ל-6 ול-8.",
+        "המכנה המשותף הקטן ביותר הוא 24. המירו את השברים ל-$$ \\frac{20}{24} $$ ו-$$ \\frac{21}{24} $$.",
+        "חברו את המונים ואז בדקו אם אפשר לצמצם עוד."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מוצאים את המכנה המשותף הקטן ביותר של 6 ו-8. הוא 24.",
+          "2. ממירים את $$ \\frac{5}{6} $$ ל-$$ \\frac{20}{24} $$ ואת $$ \\frac{7}{8} $$ ל-$$ \\frac{21}{24} $$.",
+          "3. מחברים: $$ \\frac{20}{24} + \\frac{21}{24} = \\frac{41}{24} $$.",
+          "4. למונה 41 ולמכנה 24 אין מחלק משותף גדול מ-1, לכן הצורה המצומצמת היא $$ \\frac{41}{24} $$.",
+          "5. תשובה: מונה $$ 41 $$, מכנה $$ 24 $$."
+        ]
+      }
+    }
+  }
+}

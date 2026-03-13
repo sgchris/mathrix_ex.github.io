@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-045",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x - 9 = 6 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "15"
+    }
+  ],
+  "hints": [
+    "A number minus 9 equals 6. What is that number?",
+    "Add 9 to both sides to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x - 9 = 6 $$.",
+      "2. Add 9 to both sides: $$ x = 6 + 9 $$.",
+      "3. Simplify: $$ x = 15 $$.",
+      "4. Check: $$ 15 - 9 = 6 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "מספר פחות 9 שווה 6. מהו המספר הזה?",
+        "הוסיפו 9 לשני האגפים כדי לבודד את x."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ x - 9 = 6 $$.",
+          "2. מוסיפים 9 לשני האגפים: $$ x = 6 + 9 $$.",
+          "3. מפשטים: $$ x = 15 $$.",
+          "4. בודקים: $$ 15 - 9 = 6 $$ ✓"
+        ]
+      }
+    }
+  }
+}

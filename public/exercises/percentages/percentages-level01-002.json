@@ -1,0 +1,58 @@
+{
+  "id": "percentages-level01-002",
+  "topicId": "percentages",
+  "topicName": "Percentages",
+  "difficulty": "level01",
+  "instructions": "Calculate the percentage of the number.",
+  "question": {
+    "text": "What is 25% of 200?",
+    "mathExpression": [
+      "$$ 25\\% \\text{ of } 200 = ? $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "answer",
+      "label": "Answer =",
+      "inputType": "number",
+      "correctAnswer": "50"
+    }
+  ],
+  "hints": [
+    "25% means one quarter. What is one quarter of 200?",
+    "You can also calculate it as $$ 200 \\times 0.25 $$."
+  ],
+  "explanation": {
+    "steps": [
+      "1. 25% means 25 out of 100, which equals $$ \\frac{1}{4} $$.",
+      "2. Calculate: $$ 200 \\times \\frac{25}{100} = 200 \\times 0.25 $$.",
+      "3. Result: $$ 200 \\times 0.25 = 50 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אחוזים",
+      "instructions": "חשבו את האחוז מתוך המספר.",
+      "question": {
+        "text": "כמה הם 25% מתוך 200?"
+      },
+      "inputs": [
+        {
+          "name": "answer",
+          "label": "תשובה ="
+        }
+      ],
+      "hints": [
+        "25% הם רבע. מהו רבע מ-200?",
+        "אפשר גם לחשב כך: $$ 200 \\times 0.25 $$."
+      ],
+      "explanation": {
+        "steps": [
+          "1. 25% פירושם 25 מתוך 100, וזה שווה ל-$$ \\frac{1}{4} $$.",
+          "2. מחשבים: $$ 200 \\times \\frac{25}{100} = 200 \\times 0.25 $$.",
+          "3. התוצאה: $$ 200 \\times 0.25 = 50 $$."
+        ]
+      }
+    }
+  }
+}

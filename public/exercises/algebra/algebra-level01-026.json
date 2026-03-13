@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-026",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x + 8 = 15 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "Think about what number, when added to 8, gives 15.",
+    "Subtract 8 from both sides to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x + 8 = 15 $$.",
+      "2. Subtract 8 from both sides: $$ x + 8 - 8 = 15 - 8 $$.",
+      "3. Simplify: $$ x = 7 $$.",
+      "4. Check: $$ 7 + 8 = 15 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "חשבו איזה מספר, כשמוסיפים לו 8, נותן 15.",
+        "חסרו 8 משני האגפים כדי לבודד את x."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ x + 8 = 15 $$.",
+          "2. מחסרים 8 משני האגפים: $$ x + 8 - 8 = 15 - 8 $$.",
+          "3. מפשטים: $$ x = 7 $$.",
+          "4. בודקים: $$ 7 + 8 = 15 $$ ✓"
+        ]
+      }
+    }
+  }
+}

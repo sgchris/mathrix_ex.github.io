@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-021",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find the common difference of the arithmetic progression.",
+  "question": {
+    "text": "What is the common difference?",
+    "mathExpression": [
+      "$$ a_3 = 14, a_7 = 30 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "difference",
+      "label": "Difference =",
+      "inputType": "number",
+      "correctAnswer": "4"
+    }
+  ],
+  "hints": [
+    "From the third term to the seventh term there are 4 equal steps.",
+    "The total increase is $$ 30 - 14 = 16 $$. Divide by 4."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The change from the third term to the seventh term is $$ 30 - 14 = 16 $$.",
+      "2. From term 3 to term 7 there are 4 steps, so each step is $$ 16 \\div 4 = 4 $$.",
+      "3. Therefore the common difference is $$ 4 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את ההפרש הקבוע של הסדרה החשבונית.",
+      "question": {
+        "text": "מהו ההפרש הקבוע?"
+      },
+      "inputs": [
+        {
+          "name": "difference",
+          "label": "הפרש ="
+        }
+      ],
+      "hints": [
+        "מהאיבר השלישי לאיבר השביעי יש 4 צעדים שווים.",
+        "הגידול הכולל הוא $$ 30 - 14 = 16 $$. חלקו ב-4."
+      ],
+      "explanation": {
+        "steps": [
+          "1. השינוי מהאיבר השלישי לאיבר השביעי הוא $$ 30 - 14 = 16 $$.",
+          "2. מאיבר 3 לאיבר 7 יש 4 צעדים, לכן כל צעד הוא $$ 16 \\div 4 = 4 $$.",
+          "3. לכן ההפרש הקבוע הוא $$ 4 $$."
+        ]
+      }
+    }
+  }
+}

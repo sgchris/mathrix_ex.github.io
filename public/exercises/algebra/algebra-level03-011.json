@@ -1,0 +1,58 @@
+{
+  "id": "algebra-level03-011",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level03",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 2x + 3 = 13 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Isolate the term with x.",
+    "Subtract 3 from both sides."
+  ],
+  "explanation": {
+    "steps": [
+      "1. We start with $$ 2x + 3 = 13 $$.",
+      "2. Subtract 3 from both sides: $$ 2x = 10 $$.",
+      "3. Divide by 2: $$ x = 5 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "בודדו את האיבר עם x.",
+        "חסרו 3 משני האגפים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 2x + 3 = 13 $$.",
+          "2. מחסרים 3 משני האגפים: $$ 2x = 10 $$.",
+          "3. מחלקים ב-2: $$ x = 5 $$."
+        ]
+      }
+    }
+  }
+}

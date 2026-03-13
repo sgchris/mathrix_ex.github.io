@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-013",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find the common difference of the arithmetic progression.",
+  "question": {
+    "text": "What is the common difference?",
+    "mathExpression": [
+      "$$ 14, 19, 24, 29, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "difference",
+      "label": "Difference =",
+      "inputType": "number",
+      "correctAnswer": "5"
+    }
+  ],
+  "hints": [
+    "Subtract 14 from 19.",
+    "Check that the same result appears again from 19 to 24."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Compute the difference: $$ 19 - 14 = 5 $$.",
+      "2. Check again: $$ 24 - 19 = 5 $$.",
+      "3. The common difference is $$ 5 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את ההפרש הקבוע של הסדרה החשבונית.",
+      "question": {
+        "text": "מהו ההפרש הקבוע?"
+      },
+      "inputs": [
+        {
+          "name": "difference",
+          "label": "הפרש ="
+        }
+      ],
+      "hints": [
+        "חסרו 14 מ-19.",
+        "בדקו שאותה תוצאה מתקבלת שוב מ-19 ל-24."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מחשבים את ההפרש: $$ 19 - 14 = 5 $$.",
+          "2. בודקים שוב: $$ 24 - 19 = 5 $$.",
+          "3. ההפרש הקבוע הוא $$ 5 $$."
+        ]
+      }
+    }
+  }
+}

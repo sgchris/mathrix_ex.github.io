@@ -1,0 +1,74 @@
+{
+  "id": "fractions-level07-031",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Subtract the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the difference?",
+    "mathExpression": [
+      "$$ \\frac{7}{8} - \\frac{5}{12} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "11"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "24"
+    }
+  ],
+  "hints": [
+    "Use a common denominator for 8 and 12.",
+    "The least common denominator is 24. Rewrite the fractions as $$ \\frac{21}{24} $$ and $$ \\frac{10}{24} $$.",
+    "Subtract the numerators."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The least common denominator of 8 and 12 is 24.",
+      "2. Convert $$ \\frac{7}{8} = \\frac{21}{24} $$ and $$ \\frac{5}{12} = \\frac{10}{24} $$.",
+      "3. Subtract: $$ \\frac{21}{24} - \\frac{10}{24} = \\frac{11}{24} $$.",
+      "4. Since 11 and 24 have no common factor greater than 1, the result is already simplified.",
+      "5. Answer: numerator $$ 11 $$, denominator $$ 24 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "חסרו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה ההפרש?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "השתמשו במכנה משותף ל-8 ול-12.",
+        "המכנה המשותף הקטן ביותר הוא 24. כתבו מחדש את השברים בתור $$ \\frac{21}{24} $$ ו-$$ \\frac{10}{24} $$.",
+        "חסרו את המונים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. המכנה המשותף הקטן ביותר של 8 ושל 12 הוא 24.",
+          "2. ממירים: $$ \\frac{7}{8} = \\frac{21}{24} $$ ו-$$ \\frac{5}{12} = \\frac{10}{24} $$.",
+          "3. מחסרים: $$ \\frac{21}{24} - \\frac{10}{24} = \\frac{11}{24} $$.",
+          "4. מכיוון של-11 ול-24 אין מחלק משותף גדול מ-1, התוצאה כבר מצומצמת.",
+          "5. תשובה: מונה $$ 11 $$, מכנה $$ 24 $$."
+        ]
+      }
+    }
+  }
+}

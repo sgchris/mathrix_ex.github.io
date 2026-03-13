@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-020",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "What is the twelfth term?",
+    "mathExpression": [
+      "$$ 100, 93, 86, 79, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "twelfthTerm",
+      "label": "Twelfth term =",
+      "inputType": "number",
+      "correctAnswer": "23"
+    }
+  ],
+  "hints": [
+    "The sequence decreases by 7 each time.",
+    "From the first term to the twelfth term there are 11 equal steps."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The common difference is $$ 93 - 100 = -7 $$.",
+      "2. The twelfth term is $$ a_{12} = 100 + 11 \\cdot (-7) $$.",
+      "3. Compute: $$ 100 - 77 = 23 $$. So the twelfth term is $$ 23 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר השנים עשר?"
+      },
+      "inputs": [
+        {
+          "name": "twelfthTerm",
+          "label": "האיבר השנים עשר ="
+        }
+      ],
+      "hints": [
+        "הסדרה קטנה ב-7 בכל פעם.",
+        "מהאיבר הראשון לאיבר השנים עשר יש 11 צעדים שווים."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ההפרש הקבוע הוא $$ 93 - 100 = -7 $$.",
+          "2. האיבר השנים עשר הוא $$ a_{12} = 100 + 11 \\cdot (-7) $$.",
+          "3. מחשבים: $$ 100 - 77 = 23 $$. לכן האיבר השנים עשר הוא $$ 23 $$."
+        ]
+      }
+    }
+  }
+}

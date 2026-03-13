@@ -1,0 +1,72 @@
+{
+  "id": "algebra-level03-007",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level03",
+  "instructions": "Solve the quadratic equation.",
+  "question": {
+    "text": "Find both roots of the equation.",
+    "mathExpression": [
+      "$$ x^2 - 5x + 6 = 0 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x1",
+      "label": "First root =",
+      "inputType": "number",
+      "correctAnswer": "2"
+    },
+    {
+      "name": "x2",
+      "label": "Second root =",
+      "inputType": "number",
+      "correctAnswer": "3"
+    }
+  ],
+  "hints": [
+    "Look for two numbers that multiply to $$ 6 $$ and add to $$ -5 $$.",
+    "Rewrite as $$ (x - 2)(x - 3) = 0 $$ and use the zero-product rule."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x^2 - 5x + 6 = 0 $$.",
+      "2. Factor: $$ x^2 - 5x + 6 = (x - 2)(x - 3) $$.",
+      "3. Set each factor equal to zero: $$ x - 2 = 0 $$ or $$ x - 3 = 0 $$.",
+      "4. Solve each equation: $$ x = 2 $$ and $$ x = 3 $$.",
+      "5. Both values satisfy the original equation, so the roots are 2 and 3."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו את המשוואה הריבועית.",
+      "question": {
+        "text": "מצאו את שני השורשים של המשוואה."
+      },
+      "inputs": [
+        {
+          "name": "x1",
+          "label": "שורש ראשון ="
+        },
+        {
+          "name": "x2",
+          "label": "שורש שני ="
+        }
+      ],
+      "hints": [
+        "חפשו שני מספרים שמכפלתם $$ 6 $$ וסכומם $$ -5 $$.",
+        "כתבו מחדש כ-$$ (x - 2)(x - 3) = 0 $$ והשתמשו בכלל המכפלה האפסית."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ x^2 - 5x + 6 = 0 $$.",
+          "2. מפרקים לגורמים: $$ x^2 - 5x + 6 = (x - 2)(x - 3) $$.",
+          "3. משווים כל גורם לאפס: $$ x - 2 = 0 $$ או $$ x - 3 = 0 $$.",
+          "4. פותרים כל משוואה: $$ x = 2 $$ ו-$$ x = 3 $$.",
+          "5. שני הערכים מקיימים את המשוואה המקורית, לכן השורשים הם 2 ו-3."
+        ]
+      }
+    }
+  }
+}

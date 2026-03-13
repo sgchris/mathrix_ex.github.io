@@ -101,14 +101,22 @@
   display: inline-block;
 }
 
-.level-dot--easy {
+.level-dot--level01 {
   background-color: #22c55e;
 }
 
-.level-dot--medium {
+.level-dot--level02 {
+  background-color: #0ea5e9;
+}
+
+.level-dot--level03 {
   background-color: #f97316;
 }
 
-.level-dot--hard {
+.level-dot--level05 {
   background-color: #ef4444;
+}
+
+.level-dot--level07 {
+  background-color: #7c3aed;
 }

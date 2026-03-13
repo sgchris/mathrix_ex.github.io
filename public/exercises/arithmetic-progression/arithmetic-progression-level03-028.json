@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level03-028",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level03",
+  "instructions": "Find the missing term in the arithmetic progression.",
+  "question": {
+    "text": "What number is missing?",
+    "mathExpression": [
+      "$$ -11, -7, \\square, 1, 5, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "missingTerm",
+      "label": "Missing term =",
+      "inputType": "number",
+      "correctAnswer": "-3"
+    }
+  ],
+  "hints": [
+    "The sequence increases by 4 each time.",
+    "Add 4 to -7 or subtract 4 from 1."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Compare known terms: $$ -7 - (-11) = 4 $$ and $$ 5 - 1 = 4 $$. The common difference is 4.",
+      "2. Add 4 to $$ -7 $$: $$ -7 + 4 = -3 $$.",
+      "3. Check: $$ -3 + 4 = 1 $$. The missing term is $$ -3 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו את האיבר החסר בסדרה החשבונית.",
+      "question": {
+        "text": "איזה מספר חסר?"
+      },
+      "inputs": [
+        {
+          "name": "missingTerm",
+          "label": "האיבר החסר ="
+        }
+      ],
+      "hints": [
+        "הסדרה גדלה ב-4 בכל פעם.",
+        "הוסיפו 4 ל-7- או חסרו 4 מ-1."
+      ],
+      "explanation": {
+        "steps": [
+          "1. משווים איברים ידועים: $$ -7 - (-11) = 4 $$ וגם $$ 5 - 1 = 4 $$. ההפרש הקבוע הוא 4.",
+          "2. מוסיפים 4 ל-$$ -7 $$: $$ -7 + 4 = -3 $$.",
+          "3. בודקים: $$ -3 + 4 = 1 $$. האיבר החסר הוא $$ -3 $$."
+        ]
+      }
+    }
+  }
+}

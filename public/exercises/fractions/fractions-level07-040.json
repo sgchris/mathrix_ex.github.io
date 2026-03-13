@@ -1,0 +1,76 @@
+{
+  "id": "fractions-level07-040",
+  "topicId": "fractions",
+  "topicName": "Fractions",
+  "difficulty": "level07",
+  "instructions": "Multiply the fractions. Give your answer in its simplest form.",
+  "question": {
+    "text": "What is the product?",
+    "mathExpression": [
+      "$$ \\frac{10}{27} \\times \\frac{9}{25} $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "numerator",
+      "label": "Numerator =",
+      "inputType": "number",
+      "correctAnswer": "2"
+    },
+    {
+      "name": "denominator",
+      "label": "Denominator =",
+      "inputType": "number",
+      "correctAnswer": "15"
+    }
+  ],
+  "hints": [
+    "Simplify before multiplying.",
+    "You can simplify 10 with 25, and 9 with 27.",
+    "Then multiply the remaining numerators and denominators."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ \\frac{10}{27} \\times \\frac{9}{25} $$.",
+      "2. Simplify across the fractions: $$ \\frac{10}{25} = \\frac{2}{5} $$ and $$ \\frac{9}{27} = \\frac{1}{3} $$.",
+      "3. The expression becomes $$ \\frac{2}{3} \\times \\frac{1}{5} $$.",
+      "4. Multiply: $$ 2 \\times 1 = 2 $$ and $$ 3 \\times 5 = 15 $$.",
+      "5. The product is $$ \\frac{2}{15} $$.",
+      "6. Answer: numerator $$ 2 $$, denominator $$ 15 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "שברים",
+      "instructions": "כפלו את השברים. כתבו את התשובה בצורה המצומצמת ביותר.",
+      "question": {
+        "text": "מה המכפלה?"
+      },
+      "inputs": [
+        {
+          "name": "numerator",
+          "label": "מונה ="
+        },
+        {
+          "name": "denominator",
+          "label": "מכנה ="
+        }
+      ],
+      "hints": [
+        "צמצמו לפני הכפל.",
+        "אפשר לצמצם את 10 עם 25, ואת 9 עם 27.",
+        "אחר כך כופלים את המונים ואת המכנים שנותרו."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ \\frac{10}{27} \\times \\frac{9}{25} $$.",
+          "2. מצמצמים בין השברים: $$ \\frac{10}{25} = \\frac{2}{5} $$ וגם $$ \\frac{9}{27} = \\frac{1}{3} $$.",
+          "3. הביטוי הופך ל-$$ \\frac{2}{3} \\times \\frac{1}{5} $$.",
+          "4. כופלים: $$ 2 \\times 1 = 2 $$ ו-$$ 3 \\times 5 = 15 $$.",
+          "5. המכפלה היא $$ \\frac{2}{15} $$.",
+          "6. תשובה: מונה $$ 2 $$, מכנה $$ 15 $$."
+        ]
+      }
+    }
+  }
+}

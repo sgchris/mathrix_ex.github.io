@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-039",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 6x = 42 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "6 times x equals 42. What is 42 divided by 6?",
+    "Divide both sides by 6 to isolate x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 6x = 42 $$.",
+      "2. Divide both sides by 6: $$ \\frac{6x}{6} = \\frac{42}{6} $$.",
+      "3. Simplify: $$ x = 7 $$.",
+      "4. Check: $$ 6 \\times 7 = 42 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "6 כפול x שווה 42. כמה זה 42 חלקי 6?",
+        "חלקו את שני האגפים ב-6 כדי לבודד את x."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 6x = 42 $$.",
+          "2. מחלקים את שני האגפים ב-6: $$ \\frac{6x}{6} = \\frac{42}{6} $$.",
+          "3. מפשטים: $$ x = 7 $$.",
+          "4. בודקים: $$ 6 \\times 7 = 42 $$ ✓"
+        ]
+      }
+    }
+  }
+}

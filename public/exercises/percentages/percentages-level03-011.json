@@ -1,0 +1,56 @@
+{
+  "id": "percentages-level03-011",
+  "topicId": "percentages",
+  "topicName": "Percentages",
+  "difficulty": "level03",
+  "instructions": "Calculate the percentage.",
+  "question": {
+    "text": "What is 20% of 200?",
+    "mathExpression": [
+      "$$ 20\\% \\text{ of } 200 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "result",
+      "label": "Result:",
+      "inputType": "number",
+      "correctAnswer": "40"
+    }
+  ],
+  "hints": [
+    "Convert 20% to a decimal.",
+    "Multiply the decimal by 200."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Convert 20% to a decimal: $$ 0.2 $$.",
+      "2. Multiply by the value: $$ 0.2 \\times 200 = 40 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אחוזים",
+      "instructions": "חשבו את האחוז.",
+      "question": {
+        "text": "כמה הם 20% מתוך 200?"
+      },
+      "inputs": [
+        {
+          "name": "result",
+          "label": "תוצאה:"
+        }
+      ],
+      "hints": [
+        "המירו את 20% לשבר עשרוני.",
+        "כפלו את השבר העשרוני ב-200."
+      ],
+      "explanation": {
+        "steps": [
+          "1. ממירים את 20% לשבר עשרוני: $$ 0.2 $$.",
+          "2. כופלים בערך: $$ 0.2 \\times 200 = 40 $$."
+        ]
+      }
+    }
+  }
+}

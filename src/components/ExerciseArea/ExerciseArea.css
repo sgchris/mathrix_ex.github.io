@@ -89,19 +89,29 @@
   letter-spacing: 0.06em;
 }
 
-.difficulty-badge--easy {
+.difficulty-badge--level01 {
   background: #dcfce7;
   color: #166534;
 }
 
-.difficulty-badge--medium {
+.difficulty-badge--level02 {
+  background: #e0f2fe;
+  color: #075985;
+}
+
+.difficulty-badge--level03 {
   background: #fef3c7;
   color: #92400e;
 }
 
-.difficulty-badge--hard {
+.difficulty-badge--level05 {
   background: #fee2e2;
   color: #991b1b;
+}
+
+.difficulty-badge--level07 {
+  background: #ede9fe;
+  color: #5b21b6;
 }
 
 .exercise-area__instructions {

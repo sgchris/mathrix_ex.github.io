@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-030",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ 2x + 3 = 11 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "4"
+    }
+  ],
+  "hints": [
+    "First, subtract 3 from both sides to simplify.",
+    "After removing the constant, divide both sides by 2 to find x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ 2x + 3 = 11 $$.",
+      "2. Subtract 3 from both sides: $$ 2x = 11 - 3 = 8 $$.",
+      "3. Divide both sides by 2: $$ x = \\frac{8}{2} = 4 $$.",
+      "4. Check: $$ 2 \\times 4 + 3 = 8 + 3 = 11 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "קודם חסרו 3 משני האגפים כדי לפשט.",
+        "אחרי שמסירים את הקבוע, חלקו את שני האגפים ב-2 כדי למצוא את x."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ 2x + 3 = 11 $$.",
+          "2. מחסרים 3 משני האגפים: $$ 2x = 11 - 3 = 8 $$.",
+          "3. מחלקים את שני האגפים ב-2: $$ x = \\frac{8}{2} = 4 $$.",
+          "4. בודקים: $$ 2 \\times 4 + 3 = 8 + 3 = 11 $$ ✓"
+        ]
+      }
+    }
+  }
+}

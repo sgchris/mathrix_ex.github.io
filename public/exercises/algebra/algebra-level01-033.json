@@ -1,0 +1,60 @@
+{
+  "id": "algebra-level01-033",
+  "topicId": "algebra",
+  "topicName": "Algebra",
+  "difficulty": "level01",
+  "instructions": "Solve for x.",
+  "question": {
+    "text": "What is the value of x?",
+    "mathExpression": [
+      "$$ x - 7 = 0 $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "x",
+      "label": "x =",
+      "inputType": "number",
+      "correctAnswer": "7"
+    }
+  ],
+  "hints": [
+    "A number minus 7 equals 0. What must that number be?",
+    "Add 7 to both sides to solve for x."
+  ],
+  "explanation": {
+    "steps": [
+      "1. Start with $$ x - 7 = 0 $$.",
+      "2. Add 7 to both sides: $$ x = 0 + 7 $$.",
+      "3. Simplify: $$ x = 7 $$.",
+      "4. Check: $$ 7 - 7 = 0 $$ ✓"
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "אלגברה",
+      "instructions": "פתרו עבור x.",
+      "question": {
+        "text": "מה הערך של x?"
+      },
+      "inputs": [
+        {
+          "name": "x",
+          "label": "x ="
+        }
+      ],
+      "hints": [
+        "מספר פחות 7 שווה 0. מה חייב להיות המספר הזה?",
+        "הוסיפו 7 לשני האגפים כדי לפתור עבור x."
+      ],
+      "explanation": {
+        "steps": [
+          "1. מתחילים עם $$ x - 7 = 0 $$.",
+          "2. מוסיפים 7 לשני האגפים: $$ x = 0 + 7 $$.",
+          "3. מפשטים: $$ x = 7 $$.",
+          "4. בודקים: $$ 7 - 7 = 0 $$ ✓"
+        ]
+      }
+    }
+  }
+}

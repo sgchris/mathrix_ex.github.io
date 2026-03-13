@@ -1,0 +1,58 @@
+{
+  "id": "arithmetic-progression-level01-012",
+  "topicId": "arithmetic-progression",
+  "topicName": "Arithmetic Progression",
+  "difficulty": "level01",
+  "instructions": "Find a later term in the arithmetic progression.",
+  "question": {
+    "text": "What is the seventh term?",
+    "mathExpression": [
+      "$$ 3, 8, 13, ... $$"
+    ]
+  },
+  "inputs": [
+    {
+      "name": "seventhTerm",
+      "label": "Seventh term =",
+      "inputType": "number",
+      "correctAnswer": "33"
+    }
+  ],
+  "hints": [
+    "The common difference is 5.",
+    "Starting from 3, move forward six equal steps to reach the seventh term."
+  ],
+  "explanation": {
+    "steps": [
+      "1. The sequence increases by $$ 5 $$ each time.",
+      "2. Write the terms: $$ 3, 8, 13, 18, 23, 28, 33 $$.",
+      "3. The seventh term is $$ 33 $$."
+    ]
+  },
+  "translations": {
+    "he": {
+      "topicName": "סדרה חשבונית",
+      "instructions": "מצאו איבר מאוחר יותר בסדרה החשבונית.",
+      "question": {
+        "text": "מהו האיבר השביעי?"
+      },
+      "inputs": [
+        {
+          "name": "seventhTerm",
+          "label": "האיבר השביעי ="
+        }
+      ],
+      "hints": [
+        "ההפרש הקבוע הוא 5.",
+        "התחילו מ-3 והתקדמו שישה צעדים שווים כדי להגיע לאיבר השביעי."
+      ],
+      "explanation": {
+        "steps": [
+          "1. הסדרה גדלה ב-$$ 5 $$ בכל פעם.",
+          "2. כותבים את האיברים: $$ 3, 8, 13, 18, 23, 28, 33 $$.",
+          "3. האיבר השביעי הוא $$ 33 $$."
+        ]
+      }
+    }
+  }
+}
