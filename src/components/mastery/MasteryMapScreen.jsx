@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import { AppContext } from '../../context/useApp'
 import {
-  buildMasteryData,
   filterMasterySkills,
   getGradeBands,
   getLocalizedSkillLabel,
@@ -73,14 +72,8 @@ function getRecencyLabel(timestamp, t) {
 }
 
 export default function MasteryMapScreen() {
-  const { appState, dispatch, topics, t } = useContext(AppContext)
+  const { appState, dispatch, topics, t, masteryData } = useContext(AppContext)
   const profile = appState.onboarding.learnerProfile
-  const masteryData = buildMasteryData({
-    topics,
-    exerciseStates: appState.exerciseStates,
-    onboarding: appState.onboarding,
-    mastery: appState.mastery,
-  })
   const filteredSkills = sortMasterySkills(
     filterMasterySkills(masteryData.skills, appState.mastery.filters),
     appState.mastery.filters.sort,

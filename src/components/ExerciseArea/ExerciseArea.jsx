@@ -13,6 +13,10 @@ import {
   getRecommendedLaunchSelection,
 } from '../../utils/onboarding'
 import { getSkillIdForExercise } from '../../utils/mastery'
+import {
+  getRecommendationNextTitleKey,
+  getRecommendationPrimaryActionKey,
+} from '../../utils/recommendations'
 import ActionBar from './ActionBar'
 import HintArea from './HintArea'
 import ExerciseDisplay from './ExerciseDisplay'
@@ -20,6 +24,9 @@ import AnswerInputs from './AnswerInputs'
 import ReasoningTextbox from './ReasoningTextbox'
 import ExplanationArea from './ExplanationArea'
 import PathBadge from '../onboarding/PathBadge'
+import RecommendationCard from '../recommendations/RecommendationCard'
+import RecommendationAlternatives from '../recommendations/RecommendationAlternatives'
+import RecommendationStrip from '../recommendations/RecommendationStrip'
 import './ExerciseArea.css'
 
 const EMPTY_EX_STATE = {
@@ -33,9 +40,22 @@ const EMPTY_EX_STATE = {
 }
 
 export default function ExerciseArea() {
-  const { appState, dispatch, topics, language, shouldShowOnboardingPrompt, t } = useContext(AppContext)
+  const {
+    appState,
+    dispatch,
+    topics,
+    language,
+    shouldShowOnboardingPrompt,
+    t,
+    masteryData,
+    startRecommendation,
+    dismissRecommendation,
+    openMasteryMapSelection,
+  } = useContext(AppContext)
   const { activeExerciseId, activeTopic, exerciseStates, selectedLevel } = appState
   const profile = appState.onboarding.learnerProfile
+  const primaryRecommendation = appState.recommendations.primary?.id ? appState.recommendations.primary : null
+  const alternativeRecommendations = appState.recommendations.alternatives || []
   const requestKey = activeExerciseId && activeTopic
     ? `${activeTopic}:${activeExerciseId}:${language}`
     : null
@@ -82,57 +102,14 @@ export default function ExerciseArea() {
   }
 
   function openPathOverview() {
-    dispatch({
-      type: 'OPEN_MASTERY_MAP',
-      payload: {
-        mastery: {
-          selectedSkillId: null,
-          filters: {
-            ...appState.mastery.filters,
-            gradeBand: profile.recommendedGradeBand || 'all',
-          },
-          expandedTopicIds: profile.recommendedTopics,
-        },
-      },
+    openMasteryMapSelection({
+      skillId: null,
+      topicId: profile.recommendedTopics?.[0] || null,
+      expandedTopicIds: profile.recommendedTopics,
     })
   }
 
   if (!activeExerciseId) {
-    if (appState.onboarding.status === 'completed' && profile.recommendedTopics.length > 0) {
-      const solvedCount = countSolvedInPath(profile, exerciseStates)
-      const nextTopic = profile.recommendedTopics[0]
-      const nextTopicName = topics.find(topic => topic.id === nextTopic)?.name || nextTopic
-
-      return (
-        <div className="exercise-area exercise-area--empty">
-          <div className="exercise-area__placeholder exercise-area__placeholder--path">
-            <div className="exercise-area__placeholder-icon">🧭</div>
-            <h2>{t('onboarding.home.continuePath', { pathTitle: t(getPathTitleKey(profile.recommendedGradeBand)) })}</h2>
-            <p>{t('onboarding.home.nextRecommendedTopic', { topic: nextTopicName })}</p>
-            <p>{solvedCount > 0 ? t('onboarding.home.solvedInPath', { count: solvedCount }) : t('onboarding.home.ready')}</p>
-            <div className="exercise-area__path-chips">
-              {profile.recommendedTopics.map((topicId, index) => (
-                <PathBadge
-                  key={topicId}
-                  index={index}
-                  label={topics.find(topic => topic.id === topicId)?.name || topicId}
-                  subtle={true}
-                />
-              ))}
-            </div>
-            <div className="exercise-area__placeholder-actions">
-              <button className="answer-action-btn answer-action-btn--primary" onClick={startRecommendedTopic}>
-                {t('onboarding.home.startRecommended')}
-              </button>
-              <button className="answer-action-btn answer-action-btn--next" onClick={openPathOverview}>
-                {t('onboarding.home.seePath')}
-              </button>
-            </div>
-          </div>
-        </div>
-      )
-    }
-
     if (shouldShowOnboardingPrompt) {
       return (
         <div className="exercise-area exercise-area--empty">
@@ -148,6 +125,85 @@ export default function ExerciseArea() {
                 {t('onboarding.setupCard.secondary')}
               </button>
             </div>
+          </div>
+        </div>
+      )
+    }
+
+    if (primaryRecommendation) {
+      const solvedCount = countSolvedInPath(profile, exerciseStates)
+      const hasPath = appState.onboarding.status === 'completed' && profile.recommendedTopics.length > 0
+
+      return (
+        <div className="exercise-area exercise-area--empty">
+          <div className="exercise-area__recommendation-home">
+            <div className="exercise-area__recommendation-header">
+              <div>
+                <p className="exercise-area__recommendation-eyebrow">{t('recommendations.homeEyebrow')}</p>
+                <h2>{t('recommendations.homeTitle')}</h2>
+                <p>{t('recommendations.homeDescription')}</p>
+              </div>
+              {hasPath && (
+                <div className="exercise-area__recommendation-path">
+                  <strong>{t('onboarding.home.continuePath', { pathTitle: t(getPathTitleKey(profile.recommendedGradeBand)) })}</strong>
+                  <p>{solvedCount > 0 ? t('onboarding.home.solvedInPath', { count: solvedCount }) : t('onboarding.home.ready')}</p>
+                </div>
+              )}
+            </div>
+
+            {hasPath && (
+              <div className="exercise-area__path-chips exercise-area__path-chips--home">
+                {profile.recommendedTopics.map((topicId, index) => (
+                  <PathBadge
+                    key={topicId}
+                    index={index}
+                    label={topics.find(topic => topic.id === topicId)?.name || topicId}
+                    subtle={true}
+                  />
+                ))}
+              </div>
+            )}
+
+            <RecommendationCard
+              recommendation={primaryRecommendation}
+              alternative={alternativeRecommendations[0] || null}
+              topics={topics}
+              masteryData={masteryData}
+              language={language}
+              t={t}
+              variant="home"
+              onStart={startRecommendation}
+              onDismiss={dismissRecommendation}
+              onOpenMap={recommendation => openMasteryMapSelection({
+                skillId: recommendation.skillId,
+                topicId: recommendation.topicId,
+              })}
+            />
+
+            <RecommendationAlternatives
+              recommendations={alternativeRecommendations}
+              topics={topics}
+              masteryData={masteryData}
+              language={language}
+              t={t}
+              onStart={startRecommendation}
+              onDismiss={dismissRecommendation}
+              onOpenMap={recommendation => openMasteryMapSelection({
+                skillId: recommendation.skillId,
+                topicId: recommendation.topicId,
+              })}
+            />
+
+            <div className="exercise-area__placeholder-actions exercise-area__placeholder-actions--home">
+              <button className="answer-action-btn answer-action-btn--primary" onClick={startRecommendedTopic}>
+                {t('onboarding.home.startRecommended')}
+              </button>
+              <button className="answer-action-btn answer-action-btn--next" onClick={openPathOverview}>
+                {t('recommendations.actions.openMap')}
+              </button>
+            </div>
+
+            <p className="exercise-area__manual-note">{t('recommendations.manualNote')}</p>
           </div>
         </div>
       )
@@ -201,7 +257,8 @@ export default function ExerciseArea() {
   )
   const levelExercises = filterExerciseIdsByLevel(topicData?.exercises ?? [], level)
   const remainingExercises = levelExercises.filter(id => !solvedIds.has(id) && id !== activeExerciseId)
-  const hasNextExercise = remainingExercises.length > 0
+  const hasRecommendationNext = !!primaryRecommendation?.exerciseId
+  const hasNextExercise = hasRecommendationNext || remainingExercises.length > 0
 
   const attemptsLeft = 3 - exState.attempts
   const currentSkillId = getSkillIdForExercise(activeExerciseId)
@@ -226,6 +283,11 @@ export default function ExerciseArea() {
   }
 
   function handleNext() {
+    if (primaryRecommendation?.exerciseId) {
+      startRecommendation(primaryRecommendation)
+      return
+    }
+
     if (remainingExercises.length === 0) return
     const nextExerciseId = remainingExercises[Math.floor(Math.random() * remainingExercises.length)]
     dispatch({
@@ -251,16 +313,18 @@ export default function ExerciseArea() {
   function handleOpenSkillMap() {
     if (!currentSkillId) return
 
-    dispatch({
-      type: 'OPEN_MASTERY_MAP',
-      payload: {
-        mastery: {
-          selectedSkillId: currentSkillId,
-          expandedTopicIds: [activeTopic],
-        },
-      },
+    openMasteryMapSelection({
+      skillId: currentSkillId,
+      topicId: activeTopic,
     })
   }
+
+  const nextLabel = primaryRecommendation?.id
+    ? t(getRecommendationPrimaryActionKey(primaryRecommendation.type))
+    : t('actions.next')
+  const nextTitle = primaryRecommendation?.id
+    ? t(getRecommendationNextTitleKey(primaryRecommendation.type))
+    : t('actions.nextTitle')
 
   return (
     <div className="exercise-area">
@@ -269,11 +333,32 @@ export default function ExerciseArea() {
         canHint={canHint}
         canNext={canNext}
         hasNextExercise={hasNextExercise}
+        nextLabel={nextLabel}
+        nextTitle={nextTitle}
         onCheck={handleCheckAnswers}
         onHint={handleHint}
         onHowToSolve={handleHowToSolve}
         onNext={handleNext}
       />
+
+      {isCompleted && primaryRecommendation && (
+        <div className="exercise-area__recommendation-strip">
+          <RecommendationStrip
+            recommendation={primaryRecommendation}
+            alternative={alternativeRecommendations[0] || null}
+            topics={topics}
+            masteryData={masteryData}
+            language={language}
+            t={t}
+            onStart={startRecommendation}
+            onDismiss={dismissRecommendation}
+            onOpenMap={recommendation => openMasteryMapSelection({
+              skillId: recommendation.skillId,
+              topicId: recommendation.topicId,
+            })}
+          />
+        </div>
+      )}
 
       {exState.hintIndex > 0 && (
         <HintArea hints={exercise.hints} hintIndex={exState.hintIndex} />
@@ -324,6 +409,8 @@ export default function ExerciseArea() {
           hasNextExercise={hasNextExercise}
           onCheck={handleCheckAnswers}
           onNext={handleNext}
+          nextLabel={nextLabel}
+          nextTitle={nextTitle}
         />
 
         <ReasoningTextbox

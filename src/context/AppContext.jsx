@@ -23,7 +23,12 @@ import {
   hasMeaningfulHistory,
   normalizeOnboardingState,
 } from '../utils/onboarding'
-import { createInitialMasteryState, normalizeMasteryState } from '../utils/mastery'
+import { buildMasteryData, createInitialMasteryState, normalizeMasteryState } from '../utils/mastery'
+import {
+  buildRecommendations,
+  createInitialRecommendationsState,
+  normalizeRecommendationsState,
+} from '../utils/recommendations'
 import { AppContext } from './useApp'
 
 const ANONYMOUS_STORAGE_KEY = 'mathrix_state_v3'
@@ -42,6 +47,7 @@ const initialState = {
   language: 'en',
   onboarding: createInitialOnboardingState(),
   mastery: createInitialMasteryState(),
+  recommendations: createInitialRecommendationsState(),
   lastModifiedAt: 0,
 }
 
@@ -52,6 +58,7 @@ function normalizePersistedState(parsedState = {}) {
     selectedLevel: normalizeLevelId(parsedState.selectedLevel),
     onboarding: normalizeOnboardingState(parsedState.onboarding),
     mastery: normalizeMasteryState(parsedState.mastery),
+    recommendations: normalizeRecommendationsState(parsedState.recommendations),
     lastModifiedAt: parsedState.lastModifiedAt || 0,
   }
 }
@@ -419,6 +426,53 @@ function reducer(state, action) {
       })
     }
 
+    case 'SET_RECOMMENDATIONS': {
+      if (statesAreEqual(state.recommendations, action.payload.recommendations)) {
+        return state
+      }
+
+      return touchState({
+        ...state,
+        recommendations: normalizeRecommendationsState(action.payload.recommendations),
+      })
+    }
+
+    case 'ACCEPT_RECOMMENDATION': {
+      return touchState({
+        ...state,
+        recommendations: {
+          ...state.recommendations,
+          lastAction: {
+            acceptedAt: Date.now(),
+            dismissedAt: state.recommendations.lastAction.dismissedAt,
+            type: action.payload.recommendationType,
+            recommendationId: action.payload.recommendationId,
+          },
+        },
+      })
+    }
+
+    case 'DISMISS_RECOMMENDATION': {
+      const recommendationId = action.payload.recommendationId
+      const nextDismissedIds = state.recommendations.dismissedRecommendationIds.includes(recommendationId)
+        ? state.recommendations.dismissedRecommendationIds
+        : [...state.recommendations.dismissedRecommendationIds, recommendationId]
+
+      return touchState({
+        ...state,
+        recommendations: {
+          ...state.recommendations,
+          dismissedRecommendationIds: nextDismissedIds,
+          lastAction: {
+            acceptedAt: state.recommendations.lastAction.acceptedAt,
+            dismissedAt: Date.now(),
+            type: action.payload.recommendationType,
+            recommendationId,
+          },
+        },
+      })
+    }
+
     case 'RESET_MASTERY_FILTERS': {
       return touchState({
         ...state,
@@ -586,6 +640,12 @@ export default function AppProvider({ children }) {
   const isOnboardingBlocking = appState.onboarding.status === 'in_progress'
     || (appState.onboarding.status === 'not_started' && !hasSavedWork)
   const shouldShowOnboardingPrompt = hasSavedWork && appState.onboarding.status === 'not_started'
+  const masteryData = buildMasteryData({
+    topics,
+    exerciseStates: appState.exerciseStates,
+    onboarding: appState.onboarding,
+    mastery: appState.mastery,
+  })
 
   appStateRef.current = appState
 
@@ -627,9 +687,90 @@ export default function AppProvider({ children }) {
     return translate(appState.language, key, params)
   }
 
+  function openPracticeSelection(selection) {
+    if (!selection?.topicId || !selection?.exerciseId) return false
+
+    const topic = topics.find(entry => entry.id === selection.topicId)
+    dispatch({
+      type: 'OPEN_EXERCISE',
+      payload: {
+        topicId: selection.topicId,
+        exercises: topic?.exercises || [],
+        exerciseId: selection.exerciseId,
+        selectedLevel: selection.levelId,
+      },
+    })
+
+    return true
+  }
+
+  function startRecommendation(recommendation) {
+    if (!recommendation?.id) return false
+
+    dispatch({
+      type: 'ACCEPT_RECOMMENDATION',
+      payload: {
+        recommendationId: recommendation.id,
+        recommendationType: recommendation.type,
+      },
+    })
+
+    return openPracticeSelection(recommendation)
+  }
+
+  function dismissRecommendation(recommendation) {
+    if (!recommendation?.id) return
+
+    dispatch({
+      type: 'DISMISS_RECOMMENDATION',
+      payload: {
+        recommendationId: recommendation.id,
+        recommendationType: recommendation.type,
+      },
+    })
+  }
+
+  function openMasteryMapSelection({ skillId = null, topicId = null, expandedTopicIds = null } = {}) {
+    dispatch({
+      type: 'OPEN_MASTERY_MAP',
+      payload: {
+        mastery: {
+          selectedSkillId: skillId,
+          expandedTopicIds: Array.isArray(expandedTopicIds)
+            ? expandedTopicIds
+            : (topicId ? [topicId] : appState.mastery.expandedTopicIds),
+          filters: {
+            ...appState.mastery.filters,
+            gradeBand: appState.onboarding.learnerProfile.recommendedGradeBand || appState.mastery.filters.gradeBand,
+          },
+        },
+      },
+    })
+  }
+
   useEffect(() => {
     fetchTopics(appState.language).then(setTopics).catch(console.error)
   }, [appState.language])
+
+  useEffect(() => {
+    if (!topics.length) return
+
+    const nextRecommendations = buildRecommendations({
+      appState,
+      topics,
+      masteryData,
+      previousRecommendations: appState.recommendations,
+    })
+
+    if (!statesAreEqual(nextRecommendations, appState.recommendations)) {
+      dispatch({
+        type: 'SET_RECOMMENDATIONS',
+        payload: {
+          recommendations: nextRecommendations,
+        },
+      })
+    }
+  }, [appState, topics, masteryData])
 
   useEffect(() => {
     document.documentElement.lang = locale.lang
@@ -860,9 +1001,14 @@ export default function AppProvider({ children }) {
         hasSavedWork,
         isOnboardingBlocking,
         shouldShowOnboardingPrompt,
+        masteryData,
         setLanguage,
         signInWithGoogle,
         signOutUser,
+        openPracticeSelection,
+        startRecommendation,
+        dismissRecommendation,
+        openMasteryMapSelection,
         t,
       }}
     >

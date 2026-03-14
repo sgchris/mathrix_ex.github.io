@@ -58,7 +58,7 @@ Manual test instructions:
 - Finish an exercise, use the new map link, and confirm the corresponding skill detail opens and `Practice now` launches a matching exercise in that skill.
 - Repeat the flow in Hebrew and verify translated labels, mirrored layout, and bottom-sheet behavior on mobile width.
 
-### [ ] 3. Adaptive Recommendation Engine for "What Should I Do Next?"
+### [x] 3. Adaptive Recommendation Engine for "What Should I Do Next?"
 Description: Replace the mostly manual next-step flow with a recommendation engine that proposes the next best exercise, topic, or review set based on mistakes, solved history, and recency. This is a must because students often do not know what to practice after finishing one exercise, and that uncertainty reduces session length and return rate.
 
 User story: As a learner, I want Mathrix to recommend the next exercise automatically so I can stay in flow without planning my own study path.
@@ -67,6 +67,24 @@ Example 1: After two failed percentages exercises, Mathrix suggests an easier pe
 Example 2: After several correct fraction exercises, Mathrix suggests decimals because it is the next relevant skill in the learner's path.
 
 Priority: P0
+
+Developer notes:
+- Added a persisted `recommendations` state slice plus a central recommendation derivation utility that reuses onboarding and mastery signals instead of creating a separate progress model.
+- Replaced the random post-completion next-step behavior with recommendation-driven launches, dismissals, and mastery-map deep links.
+- Added recommendation UI across the empty-state home, topic sidebar, mobile drawer via the sidebar, and post-exercise strip with English/Hebrew localization and RTL-safe layouts.
+
+What changed:
+- Introduced recommendation types for continue, level up, recovery, bridge, and review, derived from recent outcomes, hint usage, recency, and mastery state.
+- Added shared recommendation components for spotlight cards, alternatives, reason sheets, badges, and post-exercise strips.
+- Updated provider helpers and persistence so accepted and dismissed recommendations survive reloads and sync with the rest of the app state.
+
+Manual test instructions:
+- Open the app with existing practice history, land on the practice home with no active exercise, and confirm a primary recommendation plus two alternatives appear instead of the generic empty state.
+- Solve several exercises correctly in the same topic with low hint use and confirm the post-exercise strip shifts from `Continue` to either `Level Up` or `Try Next Topic` when appropriate.
+- Fail an exercise or use multiple hints, then confirm the next recommendation changes to a supportive recovery suggestion and the main Next action starts that recommended review exercise.
+- Dismiss a recommendation in the sidebar or exercise area and confirm a different recommendation replaces it for the current state.
+- Use `Why this?` and `See on map` in both English and Hebrew, and verify the explanation sheet copy, RTL layout, and mastery-map deep link behave correctly on desktop and mobile widths.
+- Refresh the page after accepting a recommendation and confirm the recommendation state, active practice context, and follow-up suggestions resume correctly.
 
 ### [ ] 4. Daily Practice Loop with Streaks, Streak Freeze, and Smart Reminders
 Description: Introduce a daily practice system with short missions, streak tracking, a limited streak-freeze mechanic, and optional reminder prompts stored locally. This is a must because repeat usage in this age group is driven by simple ritual and visible continuity, not only by content depth.

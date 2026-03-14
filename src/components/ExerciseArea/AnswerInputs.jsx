@@ -15,6 +15,8 @@ export default function AnswerInputs({
   canCheck,
   canNext,
   hasNextExercise,
+  nextLabel,
+  nextTitle,
   onCheck,
   onNext,
 }) {
@@ -70,9 +72,9 @@ export default function AnswerInputs({
           className="answer-action-btn answer-action-btn--next"
           disabled={!canNext || !hasNextExercise}
           onClick={onNext}
-          title={t('actions.nextTitle')}
+          title={nextTitle || t('actions.nextTitle')}
         >
-          {t('actions.next')}
+          {nextLabel || t('actions.next')}
           <ArrowRightIcon className="answer-action-btn__icon answer-action-btn__icon--right" />
         </button>
       </div>

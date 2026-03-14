@@ -5,6 +5,7 @@ import { getPathTitleKey } from '../../utils/onboarding'
 import { DEFAULT_LEVEL_ID, resolveTopicLevel } from '../../utils/levels'
 import AuthPanel from '../shared/AuthPanel'
 import PathBadge from '../onboarding/PathBadge'
+import RecommendationSpotlight from '../recommendations/RecommendationSpotlight'
 import './TopicSidebar.css'
 
 const TOPIC_SYMBOLS = {
@@ -16,10 +17,23 @@ const TOPIC_SYMBOLS = {
 }
 
 export default function TopicSidebar() {
-  const { appState, dispatch, topics, language, setLanguage, t } = useContext(AppContext)
+  const {
+    appState,
+    dispatch,
+    topics,
+    language,
+    setLanguage,
+    t,
+    masteryData,
+    startRecommendation,
+    dismissRecommendation,
+    openMasteryMapSelection,
+  } = useContext(AppContext)
   const localeOptions = getSupportedLocales()
   const pathTopics = appState.onboarding.learnerProfile.recommendedTopics || []
   const hasPath = appState.onboarding.status === 'completed' && pathTopics.length > 0
+  const primaryRecommendation = appState.recommendations.primary?.id ? appState.recommendations.primary : null
+  const primaryAlternative = appState.recommendations.alternatives?.[0] || null
 
   function openMasteryMap() {
     dispatch({
@@ -75,6 +89,20 @@ export default function TopicSidebar() {
           {t('mastery.title')}
         </button>
       </div>
+      <RecommendationSpotlight
+        recommendation={primaryRecommendation}
+        alternative={primaryAlternative}
+        topics={topics}
+        masteryData={masteryData}
+        language={language}
+        t={t}
+        onStart={startRecommendation}
+        onDismiss={dismissRecommendation}
+        onOpenMap={recommendation => openMasteryMapSelection({
+          skillId: recommendation.skillId,
+          topicId: recommendation.topicId,
+        })}
+      />
       <nav className="topic-sidebar__nav">
         {hasPath && (
           <button className="topic-sidebar__path-section" onClick={openMasteryMap}>

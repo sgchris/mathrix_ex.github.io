@@ -21,6 +21,66 @@
   max-width: 560px;
 }
 
+.exercise-area__recommendation-home {
+  width: min(920px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 24px;
+}
+
+.exercise-area__recommendation-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.exercise-area__recommendation-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.exercise-area__recommendation-header h2 {
+  font-size: 1.8rem;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.exercise-area__recommendation-header p,
+.exercise-area__manual-note,
+.exercise-area__recommendation-path p {
+  color: var(--color-text-secondary);
+}
+
+.exercise-area__recommendation-path {
+  min-width: 220px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(137, 151, 179, 0.18);
+  padding: 14px 16px;
+}
+
+.exercise-area__path-chips--home {
+  justify-content: flex-start;
+  margin-top: 0;
+}
+
+.exercise-area__placeholder-actions--home {
+  justify-content: flex-start;
+  margin-top: 0;
+}
+
+.exercise-area__recommendation-strip {
+  padding: 16px 32px 0;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
 .exercise-area__placeholder-icon {
   font-size: 3rem;
   margin-bottom: 16px;
@@ -87,8 +147,24 @@
     padding: 20px 16px;
   }
 
+  .exercise-area__recommendation-home {
+    padding: 20px 16px;
+  }
+
+  .exercise-area__recommendation-header {
+    flex-direction: column;
+  }
+
   .exercise-area__placeholder-actions {
     flex-direction: column;
+  }
+
+  .exercise-area__placeholder-actions--home {
+    align-items: stretch;
+  }
+
+  .exercise-area__recommendation-strip {
+    padding: 12px 16px 0;
   }
   
   .exercise-area__content {

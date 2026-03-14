@@ -12,6 +12,8 @@ export default function ActionBar({
   canHint,
   canNext,
   hasNextExercise,
+  nextLabel,
+  nextTitle,
   onCheck,
   onHint,
   onHowToSolve,
@@ -54,9 +56,9 @@ export default function ActionBar({
         className="action-btn action-btn--next"
         disabled={!canNext || !hasNextExercise}
         onClick={onNext}
-        title={t('actions.nextTitle')}
+        title={nextTitle || t('actions.nextTitle')}
       >
-        {t('actions.next')}
+        {nextLabel || t('actions.next')}
         <ArrowRightIcon className="action-btn__icon action-btn__icon--right" />
       </button>
     </div>
