@@ -4,7 +4,7 @@ This backlog is ordered from highest product impact to lower-priority polish. It
 
 ## P0
 
-### [ ] 1. Diagnostic Onboarding and Personalized Grade Path
+### [x] 1. Diagnostic Onboarding and Personalized Grade Path
 Description: Add a first-run diagnostic that places each learner on an appropriate starting path by grade band and skill confidence. This is a must because the app currently expects the learner to choose a topic and difficulty manually, which creates friction and makes the experience feel less guided for younger students.
 
 User story: As a new student, I want Mathrix to quickly figure out what level fits me so I can start with exercises that feel challenging but not discouraging.
@@ -13,6 +13,23 @@ Example 1: A 12-year-old answers 6 mixed starter questions and is placed into a 
 Example 2: A returning learner who performs strongly in algebra is moved toward pre-algebra and arithmetic progression instead of repeating easy content.
 
 Priority: P0
+
+Developer notes:
+- Added a persisted onboarding gate above the existing shell, including welcome, grade-band selection, 6-question diagnostic, placement result, manual starting-point adjustment, and kickoff into the recommended first exercise.
+- Existing learners with prior history are not hard-blocked; they see a setup card in the main area and can keep using manual topic selection.
+- The learner profile now persists through the main app state, localStorage, and the existing Firebase sync flow.
+
+What changed:
+- Introduced onboarding state, diagnostic scoring, learner-profile persistence, and personalized topic/level recommendations.
+- Added a full-surface onboarding UI with English/Hebrew localization and RTL-safe layouts.
+- Updated the topic sidebar and empty state to surface the learner path after onboarding completes.
+
+Manual test instructions:
+- Open the app with a clean local state and confirm the onboarding flow appears before the normal shell.
+- Complete the flow in English, accept the recommendation, and verify the first recommended exercise opens with the suggested topic and difficulty.
+- Refresh mid-diagnostic and confirm the exact onboarding step and question resume correctly.
+- Switch to Hebrew during onboarding and verify translated copy, mirrored layout, and correct path completion behavior.
+- Load the app with existing saved exercise history but without onboarding data and confirm the app stays usable while showing the personalized-path setup card.
 
 ### [ ] 2. Mastery Map by Skill, Topic, and Grade
 Description: Build a visual mastery map that shows progress at the skill level, not just exercise history. This is a must because students need to see what they have mastered, what is weak, and what comes next if Mathrix is going to become a habit-forming study tool rather than a random exercise player.

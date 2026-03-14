@@ -7,12 +7,18 @@ import {
   inputsMatchFailedAttempt,
 } from '../../utils/exerciseUtils'
 import { DEFAULT_LEVEL_ID, filterExerciseIdsByLevel, resolveTopicLevel } from '../../utils/levels'
+import {
+  countSolvedInPath,
+  getPathTitleKey,
+  getRecommendedLaunchSelection,
+} from '../../utils/onboarding'
 import ActionBar from './ActionBar'
 import HintArea from './HintArea'
 import ExerciseDisplay from './ExerciseDisplay'
 import AnswerInputs from './AnswerInputs'
 import ReasoningTextbox from './ReasoningTextbox'
 import ExplanationArea from './ExplanationArea'
+import PathBadge from '../onboarding/PathBadge'
 import './ExerciseArea.css'
 
 const EMPTY_EX_STATE = {
@@ -26,8 +32,9 @@ const EMPTY_EX_STATE = {
 }
 
 export default function ExerciseArea() {
-  const { appState, dispatch, topics, language, t } = useContext(AppContext)
+  const { appState, dispatch, topics, language, shouldShowOnboardingPrompt, t } = useContext(AppContext)
   const { activeExerciseId, activeTopic, exerciseStates, selectedLevel } = appState
+  const profile = appState.onboarding.learnerProfile
   const requestKey = activeExerciseId && activeTopic
     ? `${activeTopic}:${activeExerciseId}:${language}`
     : null
@@ -58,7 +65,74 @@ export default function ExerciseArea() {
   const exercise = isCurrentExercise ? loadedExercise.data : null
   const error = isCurrentExercise ? loadedExercise.error : null
 
+  function startRecommendedTopic() {
+    const launchSelection = getRecommendedLaunchSelection(profile, topics, exerciseStates)
+    if (!launchSelection) return
+
+    const topic = topics.find(entry => entry.id === launchSelection.topicId)
+    dispatch({
+      type: 'SELECT_TOPIC',
+      payload: {
+        topicId: launchSelection.topicId,
+        exercises: topic?.exercises || [],
+        selectedLevel: launchSelection.levelId,
+      },
+    })
+  }
+
   if (!activeExerciseId) {
+    if (appState.onboarding.status === 'completed' && profile.recommendedTopics.length > 0) {
+      const solvedCount = countSolvedInPath(profile, exerciseStates)
+      const nextTopic = profile.recommendedTopics[0]
+      const nextTopicName = topics.find(topic => topic.id === nextTopic)?.name || nextTopic
+
+      return (
+        <div className="exercise-area exercise-area--empty">
+          <div className="exercise-area__placeholder exercise-area__placeholder--path">
+            <div className="exercise-area__placeholder-icon">🧭</div>
+            <h2>{t('onboarding.home.continuePath', { pathTitle: t(getPathTitleKey(profile.recommendedGradeBand)) })}</h2>
+            <p>{t('onboarding.home.nextRecommendedTopic', { topic: nextTopicName })}</p>
+            <p>{solvedCount > 0 ? t('onboarding.home.solvedInPath', { count: solvedCount }) : t('onboarding.home.ready')}</p>
+            <div className="exercise-area__path-chips">
+              {profile.recommendedTopics.map((topicId, index) => (
+                <PathBadge
+                  key={topicId}
+                  index={index}
+                  label={topics.find(topic => topic.id === topicId)?.name || topicId}
+                  subtle={true}
+                />
+              ))}
+            </div>
+            <div className="exercise-area__placeholder-actions">
+              <button className="answer-action-btn answer-action-btn--primary" onClick={startRecommendedTopic}>
+                {t('onboarding.home.startRecommended')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    if (shouldShowOnboardingPrompt) {
+      return (
+        <div className="exercise-area exercise-area--empty">
+          <div className="exercise-area__placeholder exercise-area__placeholder--path">
+            <div className="exercise-area__placeholder-icon">🧩</div>
+            <h2>{t('onboarding.setupCard.title')}</h2>
+            <p>{t('onboarding.setupCard.description')}</p>
+            <div className="exercise-area__placeholder-actions">
+              <button className="answer-action-btn answer-action-btn--primary" onClick={() => dispatch({ type: 'RESET_ONBOARDING' })}>
+                {t('onboarding.setupCard.primary')}
+              </button>
+              <button className="answer-action-btn answer-action-btn--next" onClick={() => dispatch({ type: 'SKIP_ONBOARDING' })}>
+                {t('onboarding.setupCard.secondary')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     return (
       <div className="exercise-area exercise-area--empty">
         <div className="exercise-area__placeholder">

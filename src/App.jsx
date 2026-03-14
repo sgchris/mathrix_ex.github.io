@@ -7,15 +7,20 @@ import ExerciseHistorySidebar from './components/ExerciseHistorySidebar/Exercise
 import ExerciseArea from './components/ExerciseArea/ExerciseArea'
 import MobileDrawer from './components/shared/MobileDrawer'
 import LevelSelectorBar from './components/shared/LevelSelectorBar'
+import OnboardingGate from './components/onboarding/OnboardingGate'
 import './App.css'
 
 function AppLayout() {
-  const { appState, t } = useContext(AppContext)
+  const { appState, isOnboardingBlocking, t } = useContext(AppContext)
   const hasActiveTopic = !!appState.activeTopic
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false)
 
   const toggleDrawer = () => setIsMobileDrawerOpen(!isMobileDrawerOpen)
   const closeDrawer = () => setIsMobileDrawerOpen(false)
+
+  if (isOnboardingBlocking) {
+    return <OnboardingGate />
+  }
 
   return (
     <>

@@ -30,10 +30,53 @@
   letter-spacing: -0.5px;
 }
 
+.topic-sidebar__quick-checkup {
+  padding: 14px 16px 0;
+}
+
+.topic-sidebar__quick-checkup-btn {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0f766e 0%, #0ea5e9 100%);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
 .topic-sidebar__nav {
   padding: 12px 8px;
   overflow-y: auto;
   flex: 1;
+}
+
+.topic-sidebar__path-section {
+  padding: 10px 8px 14px;
+  margin: 0 0 6px;
+  border-bottom: 1px solid rgba(226, 230, 240, 0.9);
+}
+
+.topic-sidebar__path-title {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+.topic-sidebar__path-name {
+  display: block;
+  color: var(--color-text);
+  font-size: 0.98rem;
+  margin-bottom: 10px;
+}
+
+.topic-sidebar__path-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .topic-item {
@@ -85,6 +128,21 @@
 
 .topic-item__name {
   flex: 1;
+}
+
+.topic-item__badge-wrap {
+  flex-shrink: 0;
+}
+
+.topic-item__badge-wrap .path-badge {
+  min-height: 24px;
+  min-width: 24px;
+  padding: 0;
+  justify-content: center;
+}
+
+.topic-item__badge-wrap .path-badge__label {
+  display: none;
 }
 
 .topic-sidebar__footer {

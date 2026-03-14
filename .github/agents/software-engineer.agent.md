@@ -20,6 +20,8 @@ You must make sure that the task and the UI/UX instructions are clear to you, an
 ## Additional instructions
 
 - Once the implementation is done, mark the task as completed in the backlog file. If there are any addition notes that you want to add to the task, add them under that task in the backlog file, under a "developer notes" section at the end of the specific task
+- Once the implementation is done, add a section under the task in the backlog file, with what was changed (very high-level description) and instructions on how to test the implementation manually.
+- Make sure the project is compiling without error and warnings.
 
 ## Keep in mind
 

@@ -1,8 +1,10 @@
 import { useContext } from 'react'
 import { AppContext } from '../../context/useApp'
 import { getSupportedLocales } from '../../utils/localization'
+import { getPathTitleKey } from '../../utils/onboarding'
 import { DEFAULT_LEVEL_ID, resolveTopicLevel } from '../../utils/levels'
 import AuthPanel from '../shared/AuthPanel'
+import PathBadge from '../onboarding/PathBadge'
 import './TopicSidebar.css'
 
 const TOPIC_SYMBOLS = {
@@ -16,6 +18,8 @@ const TOPIC_SYMBOLS = {
 export default function TopicSidebar() {
   const { appState, dispatch, topics, language, setLanguage, t } = useContext(AppContext)
   const localeOptions = getSupportedLocales()
+  const pathTopics = appState.onboarding.learnerProfile.recommendedTopics || []
+  const hasPath = appState.onboarding.status === 'completed' && pathTopics.length > 0
 
   function handleSelectTopic(topic) {
     dispatch({
@@ -37,7 +41,33 @@ export default function TopicSidebar() {
         <img src={`${import.meta.env.BASE_URL}mathrix_logo_100.png`} alt={t('mathrixLogoAlt')} className="topic-sidebar__logo-img" />
         <span className="topic-sidebar__logo-text">Mathrix</span>
       </div>
+      {appState.onboarding.status !== 'completed' && (
+        <div className="topic-sidebar__quick-checkup">
+          <button
+            className="topic-sidebar__quick-checkup-btn"
+            onClick={() => dispatch({ type: 'RESET_ONBOARDING' })}
+          >
+            {t('onboarding.sidebar.quickCheckup')}
+          </button>
+        </div>
+      )}
       <nav className="topic-sidebar__nav">
+        {hasPath && (
+          <section className="topic-sidebar__path-section">
+            <span className="topic-sidebar__path-title">{t('onboarding.sidebar.yourPath')}</span>
+            <strong className="topic-sidebar__path-name">{t(getPathTitleKey(appState.onboarding.learnerProfile.recommendedGradeBand))}</strong>
+            <div className="topic-sidebar__path-badges">
+              {pathTopics.map((topicId, index) => (
+                <PathBadge
+                  key={topicId}
+                  index={index}
+                  label={topics.find(topic => topic.id === topicId)?.name || topicId}
+                  subtle={true}
+                />
+              ))}
+            </div>
+          </section>
+        )}
         {topics.map(topic => (
           <button
             key={topic.id}
@@ -46,6 +76,11 @@ export default function TopicSidebar() {
           >
             <span className="topic-item__symbol">{TOPIC_SYMBOLS[topic.id] || '#'}</span>
             <span className="topic-item__name">{topic.name}</span>
+            {pathTopics.includes(topic.id) && (
+              <span className="topic-item__badge-wrap">
+                <PathBadge index={pathTopics.indexOf(topic.id)} label="" subtle={true} />
+              </span>
+            )}
           </button>
         ))}
       </nav>

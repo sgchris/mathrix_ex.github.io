@@ -17,6 +17,12 @@ import {
   resolveTopicLevel,
 } from '../utils/levels'
 import { getLocale, translate } from '../utils/localization'
+import {
+  createInitialOnboardingState,
+  expandDiagnosticQuestionIds,
+  hasMeaningfulHistory,
+  normalizeOnboardingState,
+} from '../utils/onboarding'
 import { AppContext } from './useApp'
 
 const ANONYMOUS_STORAGE_KEY = 'mathrix_state_v3'
@@ -32,6 +38,7 @@ const initialState = {
   exerciseStates: {},
   selectedLevel: DEFAULT_LEVEL_ID,
   language: 'en',
+  onboarding: createInitialOnboardingState(),
   lastModifiedAt: 0,
 }
 
@@ -40,6 +47,7 @@ function normalizePersistedState(parsedState = {}) {
     ...initialState,
     ...parsedState,
     selectedLevel: normalizeLevelId(parsedState.selectedLevel),
+    onboarding: normalizeOnboardingState(parsedState.onboarding),
     lastModifiedAt: parsedState.lastModifiedAt || 0,
   }
 }
@@ -309,6 +317,127 @@ function reducer(state, action) {
       })
     }
 
+    case 'RESET_ONBOARDING': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...createInitialOnboardingState(),
+          status: 'in_progress',
+        },
+      })
+    }
+
+    case 'SET_ONBOARDING_STEP': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...state.onboarding,
+          currentStep: action.payload.step,
+          status: action.payload.status || state.onboarding.status,
+        },
+      })
+    }
+
+    case 'SELECT_GRADE_BAND': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...state.onboarding,
+          selectedGradeBand: action.payload.gradeBand,
+        },
+      })
+    }
+
+    case 'INITIALIZE_DIAGNOSTIC': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...state.onboarding,
+          status: 'in_progress',
+          currentStep: 'diagnostic',
+          diagnostic: {
+            ...createInitialOnboardingState().diagnostic,
+            questionIds: action.payload.questionIds,
+            startedAt: Date.now(),
+            questionStartedAt: Date.now(),
+          },
+          learnerProfile: createInitialOnboardingState().learnerProfile,
+        },
+      })
+    }
+
+    case 'SAVE_DIAGNOSTIC_ANSWER': {
+      const answers = [...state.onboarding.diagnostic.answers, action.payload.answer]
+      const questionIds = expandDiagnosticQuestionIds(
+        state.onboarding.selectedGradeBand,
+        state.onboarding.diagnostic.questionIds,
+        answers
+      )
+
+      return touchState({
+        ...state,
+        onboarding: {
+          ...state.onboarding,
+          diagnostic: {
+            ...state.onboarding.diagnostic,
+            answers,
+            questionIds,
+            currentIndex: Math.min(answers.length, questionIds.length),
+            questionStartedAt: Date.now(),
+          },
+        },
+      })
+    }
+
+    case 'SET_PLACEMENT_RESULT': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...state.onboarding,
+          currentStep: 'result',
+          diagnostic: {
+            ...state.onboarding.diagnostic,
+            completedAt: Date.now(),
+            confidence: action.payload.confidence,
+          },
+          learnerProfile: action.payload.profile,
+        },
+      })
+    }
+
+    case 'APPLY_MANUAL_PATH': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...state.onboarding,
+          learnerProfile: {
+            ...state.onboarding.learnerProfile,
+            ...action.payload.profile,
+          },
+        },
+      })
+    }
+
+    case 'COMPLETE_ONBOARDING': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...state.onboarding,
+          status: 'completed',
+        },
+      })
+    }
+
+    case 'SKIP_ONBOARDING': {
+      return touchState({
+        ...state,
+        onboarding: {
+          ...createInitialOnboardingState(),
+          status: 'skipped',
+        },
+      })
+    }
+
     case 'HYDRATE_STATE': {
       return normalizePersistedState(action.payload.state)
     }
@@ -341,6 +470,10 @@ export default function AppProvider({ children }) {
   })
 
   const locale = getLocale(appState.language)
+  const hasSavedWork = hasMeaningfulHistory(appState)
+  const isOnboardingBlocking = appState.onboarding.status === 'in_progress'
+    || (appState.onboarding.status === 'not_started' && !hasSavedWork)
+  const shouldShowOnboardingPrompt = hasSavedWork && appState.onboarding.status === 'not_started'
 
   appStateRef.current = appState
 
@@ -612,6 +745,9 @@ export default function AppProvider({ children }) {
         authState,
         syncState,
         isCloudSyncEnabled: isFirebaseConfigured,
+        hasSavedWork,
+        isOnboardingBlocking,
+        shouldShowOnboardingPrompt,
         setLanguage,
         signInWithGoogle,
         signOutUser,
