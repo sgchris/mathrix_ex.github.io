@@ -34,6 +34,10 @@
   padding: 14px 16px 0;
 }
 
+.topic-sidebar__mastery-map {
+  padding: 10px 16px 0;
+}
+
 .topic-sidebar__quick-checkup-btn {
   width: 100%;
   min-height: 42px;
@@ -44,6 +48,21 @@
   font-weight: 800;
 }
 
+.topic-sidebar__mastery-map-btn {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 12px;
+  background: #eef4ff;
+  color: #23408f;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.topic-sidebar__mastery-map-btn--active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
 .topic-sidebar__nav {
   padding: 12px 8px;
   overflow-y: auto;
@@ -51,9 +70,11 @@
 }
 
 .topic-sidebar__path-section {
+  width: 100%;
   padding: 10px 8px 14px;
   margin: 0 0 6px;
   border-bottom: 1px solid rgba(226, 230, 240, 0.9);
+  text-align: start;
 }
 
 .topic-sidebar__path-title {

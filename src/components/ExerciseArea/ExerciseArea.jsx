@@ -12,6 +12,7 @@ import {
   getPathTitleKey,
   getRecommendedLaunchSelection,
 } from '../../utils/onboarding'
+import { getSkillIdForExercise } from '../../utils/mastery'
 import ActionBar from './ActionBar'
 import HintArea from './HintArea'
 import ExerciseDisplay from './ExerciseDisplay'
@@ -80,6 +81,22 @@ export default function ExerciseArea() {
     })
   }
 
+  function openPathOverview() {
+    dispatch({
+      type: 'OPEN_MASTERY_MAP',
+      payload: {
+        mastery: {
+          selectedSkillId: null,
+          filters: {
+            ...appState.mastery.filters,
+            gradeBand: profile.recommendedGradeBand || 'all',
+          },
+          expandedTopicIds: profile.recommendedTopics,
+        },
+      },
+    })
+  }
+
   if (!activeExerciseId) {
     if (appState.onboarding.status === 'completed' && profile.recommendedTopics.length > 0) {
       const solvedCount = countSolvedInPath(profile, exerciseStates)
@@ -106,6 +123,9 @@ export default function ExerciseArea() {
             <div className="exercise-area__placeholder-actions">
               <button className="answer-action-btn answer-action-btn--primary" onClick={startRecommendedTopic}>
                 {t('onboarding.home.startRecommended')}
+              </button>
+              <button className="answer-action-btn answer-action-btn--next" onClick={openPathOverview}>
+                {t('onboarding.home.seePath')}
               </button>
             </div>
           </div>
@@ -184,6 +204,7 @@ export default function ExerciseArea() {
   const hasNextExercise = remainingExercises.length > 0
 
   const attemptsLeft = 3 - exState.attempts
+  const currentSkillId = getSkillIdForExercise(activeExerciseId)
 
   function handleCheckAnswers() {
     const correct = validateAnswers(exercise.inputs, currentInputs)
@@ -224,6 +245,20 @@ export default function ExerciseArea() {
     dispatch({
       type: 'UPDATE_REASONING',
       payload: { exerciseId: activeExerciseId, reasoning: value },
+    })
+  }
+
+  function handleOpenSkillMap() {
+    if (!currentSkillId) return
+
+    dispatch({
+      type: 'OPEN_MASTERY_MAP',
+      payload: {
+        mastery: {
+          selectedSkillId: currentSkillId,
+          expandedTopicIds: [activeTopic],
+        },
+      },
     })
   }
 
@@ -268,6 +303,14 @@ export default function ExerciseArea() {
         {exState.status === 'failed' && (
           <div className="answer-feedback answer-feedback--failed">
             {t('feedback.failed')}
+          </div>
+        )}
+
+        {isCompleted && currentSkillId && (
+          <div className="exercise-area__mastery-link-wrap">
+            <button className="exercise-area__mastery-link" onClick={handleOpenSkillMap}>
+              {t('mastery.actions.openSkillMap')}
+            </button>
           </div>
         )}
 

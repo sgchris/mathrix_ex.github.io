@@ -34,6 +34,25 @@ export default function OnboardingGate() {
     })
   }
 
+  function openPathOverview() {
+    dispatch({ type: 'COMPLETE_ONBOARDING' })
+    dispatch({
+      type: 'OPEN_MASTERY_MAP',
+      payload: {
+        mastery: {
+          selectedSkillId: null,
+          filters: {
+            gradeBand: profile.recommendedGradeBand || 'all',
+            topicId: 'all',
+            state: 'all',
+            sort: 'recommended',
+          },
+          expandedTopicIds: profile.recommendedTopics,
+        },
+      },
+    })
+  }
+
   function renderStep() {
     switch (onboarding.currentStep) {
       case 'grade-band':
@@ -77,7 +96,7 @@ export default function OnboardingGate() {
             topics={topics}
             t={t}
             onStartExercise={launchRecommendedPath}
-            onOpenOverview={() => dispatch({ type: 'COMPLETE_ONBOARDING' })}
+            onOpenOverview={openPathOverview}
           />
         )
       case 'welcome':

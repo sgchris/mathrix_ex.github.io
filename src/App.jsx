@@ -5,6 +5,7 @@ import { AppContext } from './context/useApp'
 import TopicSidebar from './components/TopicSidebar/TopicSidebar'
 import ExerciseHistorySidebar from './components/ExerciseHistorySidebar/ExerciseHistorySidebar'
 import ExerciseArea from './components/ExerciseArea/ExerciseArea'
+import MasteryMapScreen from './components/mastery/MasteryMapScreen'
 import MobileDrawer from './components/shared/MobileDrawer'
 import LevelSelectorBar from './components/shared/LevelSelectorBar'
 import OnboardingGate from './components/onboarding/OnboardingGate'
@@ -13,6 +14,7 @@ import './App.css'
 function AppLayout() {
   const { appState, isOnboardingBlocking, t } = useContext(AppContext)
   const hasActiveTopic = !!appState.activeTopic
+  const isMasteryMapOpen = appState.appView === 'masteryMap'
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false)
 
   const toggleDrawer = () => setIsMobileDrawerOpen(!isMobileDrawerOpen)
@@ -24,9 +26,9 @@ function AppLayout() {
 
   return (
     <>
-      <div className={`app-layout${hasActiveTopic ? ' has-history' : ''}`}>       
+      <div className={`app-layout${hasActiveTopic && !isMasteryMapOpen ? ' has-history' : ''}`}>
         <TopicSidebar />
-        {hasActiveTopic && <ExerciseHistorySidebar />}
+        {hasActiveTopic && !isMasteryMapOpen && <ExerciseHistorySidebar />}
         <main className="main-area">
           <div className="mobile-app-bar">
             <button className="mobile-app-bar__menu" onClick={toggleDrawer} aria-label={t('openMenu')}>
@@ -34,8 +36,14 @@ function AppLayout() {
             </button>
             <span className="mobile-app-bar__title">Mathrix</span>
           </div>
-          <LevelSelectorBar />
-          <ExerciseArea />
+          {isMasteryMapOpen ? (
+            <MasteryMapScreen />
+          ) : (
+            <>
+              <LevelSelectorBar />
+              <ExerciseArea />
+            </>
+          )}
         </main>
       </div>
       
@@ -43,7 +51,7 @@ function AppLayout() {
         <div onClick={closeDrawer}>
           <TopicSidebar />
         </div>
-        {hasActiveTopic && (
+        {hasActiveTopic && !isMasteryMapOpen && (
           <div onClick={closeDrawer}>
             <ExerciseHistorySidebar />
           </div>

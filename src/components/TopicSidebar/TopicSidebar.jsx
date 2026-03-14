@@ -21,6 +21,22 @@ export default function TopicSidebar() {
   const pathTopics = appState.onboarding.learnerProfile.recommendedTopics || []
   const hasPath = appState.onboarding.status === 'completed' && pathTopics.length > 0
 
+  function openMasteryMap() {
+    dispatch({
+      type: 'OPEN_MASTERY_MAP',
+      payload: {
+        mastery: {
+          selectedSkillId: null,
+          filters: {
+            ...appState.mastery.filters,
+            gradeBand: appState.onboarding.learnerProfile.recommendedGradeBand || 'all',
+          },
+          expandedTopicIds: pathTopics,
+        },
+      },
+    })
+  }
+
   function handleSelectTopic(topic) {
     dispatch({
       type: 'SELECT_TOPIC',
@@ -51,9 +67,17 @@ export default function TopicSidebar() {
           </button>
         </div>
       )}
+      <div className="topic-sidebar__mastery-map">
+        <button
+          className={`topic-sidebar__mastery-map-btn${appState.appView === 'masteryMap' ? ' topic-sidebar__mastery-map-btn--active' : ''}`}
+          onClick={openMasteryMap}
+        >
+          {t('mastery.title')}
+        </button>
+      </div>
       <nav className="topic-sidebar__nav">
         {hasPath && (
-          <section className="topic-sidebar__path-section">
+          <button className="topic-sidebar__path-section" onClick={openMasteryMap}>
             <span className="topic-sidebar__path-title">{t('onboarding.sidebar.yourPath')}</span>
             <strong className="topic-sidebar__path-name">{t(getPathTitleKey(appState.onboarding.learnerProfile.recommendedGradeBand))}</strong>
             <div className="topic-sidebar__path-badges">
@@ -66,7 +90,7 @@ export default function TopicSidebar() {
                 />
               ))}
             </div>
-          </section>
+          </button>
         )}
         {topics.map(topic => (
           <button

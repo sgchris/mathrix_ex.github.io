@@ -23,6 +23,7 @@ import {
   hasMeaningfulHistory,
   normalizeOnboardingState,
 } from '../utils/onboarding'
+import { createInitialMasteryState, normalizeMasteryState } from '../utils/mastery'
 import { AppContext } from './useApp'
 
 const ANONYMOUS_STORAGE_KEY = 'mathrix_state_v3'
@@ -32,6 +33,7 @@ function getUserStorageKey(uid) {
 }
 
 const initialState = {
+  appView: 'practice',
   activeTopic: null,
   activeExerciseId: null,
   topicHistory: {},
@@ -39,6 +41,7 @@ const initialState = {
   selectedLevel: DEFAULT_LEVEL_ID,
   language: 'en',
   onboarding: createInitialOnboardingState(),
+  mastery: createInitialMasteryState(),
   lastModifiedAt: 0,
 }
 
@@ -48,6 +51,7 @@ function normalizePersistedState(parsedState = {}) {
     ...parsedState,
     selectedLevel: normalizeLevelId(parsedState.selectedLevel),
     onboarding: normalizeOnboardingState(parsedState.onboarding),
+    mastery: normalizeMasteryState(parsedState.mastery),
     lastModifiedAt: parsedState.lastModifiedAt || 0,
   }
 }
@@ -108,6 +112,8 @@ function getExerciseState(state, exerciseId) {
       hintIndex: 0,
       showExplanation: false,
       reasoning: '',
+      lastPracticedAt: 0,
+      lastOutcomeAt: 0,
     }
   )
 }
@@ -135,6 +141,7 @@ function reducer(state, action) {
 
       return touchState({
         ...state,
+        appView: 'practice',
         activeTopic: topicId,
         activeExerciseId: firstExerciseId,
         selectedLevel: resolvedLevel,
@@ -148,7 +155,29 @@ function reducer(state, action) {
     case 'SELECT_EXERCISE': {
       return touchState({
         ...state,
+        appView: 'practice',
         activeExerciseId: action.payload.exerciseId,
+      })
+    }
+
+    case 'OPEN_EXERCISE': {
+      const { topicId, exercises, exerciseId, selectedLevel } = action.payload
+      const resolvedLevel = resolveTopicLevel(exercises || [], selectedLevel)
+      const existingHistory = state.topicHistory[topicId] || []
+      const history = existingHistory.includes(exerciseId)
+        ? existingHistory
+        : [...existingHistory, exerciseId]
+
+      return touchState({
+        ...state,
+        appView: 'practice',
+        activeTopic: topicId,
+        activeExerciseId: exerciseId,
+        selectedLevel: resolvedLevel,
+        topicHistory: {
+          ...state.topicHistory,
+          [topicId]: history,
+        },
       })
     }
 
@@ -160,6 +189,7 @@ function reducer(state, action) {
         : [...history, nextExerciseId]
       return touchState({
         ...state,
+        appView: 'practice',
         activeExerciseId: nextExerciseId,
         topicHistory: {
           ...state.topicHistory,
@@ -193,6 +223,8 @@ function reducer(state, action) {
             status: newStatus,
             attempts: newAttempts,
             failedAnswers: newFailedAnswers,
+            lastPracticedAt: Date.now(),
+            lastOutcomeAt: Date.now(),
           },
         },
       })
@@ -208,6 +240,7 @@ function reducer(state, action) {
           [exerciseId]: {
             ...current,
             hintIndex: Math.min(current.hintIndex + 1, maxHints),
+            lastPracticedAt: Date.now(),
           },
         },
       })
@@ -227,6 +260,8 @@ function reducer(state, action) {
             ...current,
             showExplanation: true,
             status: newStatus,
+            lastPracticedAt: Date.now(),
+            lastOutcomeAt: Date.now(),
           },
         },
       })
@@ -314,6 +349,83 @@ function reducer(state, action) {
       return touchState({
         ...state,
         language: action.payload.language,
+      })
+    }
+
+    case 'SET_APP_VIEW': {
+      return touchState({
+        ...state,
+        appView: action.payload.view,
+      })
+    }
+
+    case 'OPEN_MASTERY_MAP': {
+      const nextMastery = normalizeMasteryState({
+        ...state.mastery,
+        ...(action.payload?.mastery || {}),
+      })
+
+      return touchState({
+        ...state,
+        appView: 'masteryMap',
+        mastery: nextMastery,
+      })
+    }
+
+    case 'SET_MASTERY_FILTERS': {
+      return touchState({
+        ...state,
+        mastery: {
+          ...state.mastery,
+          filters: {
+            ...state.mastery.filters,
+            ...action.payload.filters,
+          },
+        },
+      })
+    }
+
+    case 'SET_MASTERY_VIEW_MODE': {
+      return touchState({
+        ...state,
+        mastery: {
+          ...state.mastery,
+          lastViewMode: action.payload.viewMode,
+        },
+      })
+    }
+
+    case 'SET_MASTERY_SELECTED_SKILL': {
+      return touchState({
+        ...state,
+        mastery: {
+          ...state.mastery,
+          selectedSkillId: action.payload.skillId,
+        },
+      })
+    }
+
+    case 'TOGGLE_MASTERY_TOPIC': {
+      const expandedTopicIds = state.mastery.expandedTopicIds.includes(action.payload.topicId)
+        ? state.mastery.expandedTopicIds.filter(topicId => topicId !== action.payload.topicId)
+        : [...state.mastery.expandedTopicIds, action.payload.topicId]
+
+      return touchState({
+        ...state,
+        mastery: {
+          ...state.mastery,
+          expandedTopicIds,
+        },
+      })
+    }
+
+    case 'RESET_MASTERY_FILTERS': {
+      return touchState({
+        ...state,
+        mastery: {
+          ...state.mastery,
+          filters: createInitialMasteryState().filters,
+        },
       })
     }
 

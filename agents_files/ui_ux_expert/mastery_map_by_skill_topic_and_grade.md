@@ -8,6 +8,7 @@ This spec is written to fit the current Mathrix app architecture:
 
 - Single-page React app with the existing shell in `App.jsx`
 - Client-side state and persistence via `localStorage`, with optional Firebase sync layered on top
+- A persisted onboarding gate and learner profile already exist from task 1
 - Current topic inventory: fractions, decimals, percentages, algebra, arithmetic progression
 - Existing level model based on ids such as `level01`, `level02`, `level03`, `level05`, `level07`
 - Existing English and Hebrew localization, including LTR and RTL support
@@ -24,6 +25,8 @@ Today the app can show what exercises were attempted, but not what that means. T
 4. How am I moving across grades, not just across random exercises?
 
 The result should feel like a personal math journey board, not an admin dashboard.
+
+It should also turn the onboarding path from task 1 into a living progress surface instead of leaving it as a one-time placement result.
 
 ## UX Principles
 
@@ -54,6 +57,26 @@ Implementation direction:
 - The standard topic practice experience remains unchanged beneath this new screen.
 - The mastery map should open without resetting the learner's active topic or current exercise.
 
+## Relationship to Task 1 Onboarding
+
+Task 1 changed the product baseline in ways this feature should explicitly build on.
+
+Already implemented:
+
+- Brand-new learners are blocked into onboarding until they finish or skip it.
+- Returning learners with saved work can continue using the app and see a non-blocking setup prompt.
+- The app now persists `onboarding.learnerProfile` with `recommendedGradeBand`, `recommendedTopics`, `recommendedLevelsByTopic`, `strengths`, `growthAreas`, `confidenceScore`, and `isManuallyAdjusted`.
+- The topic sidebar and empty-state home area already surface the learner's recommended path.
+- The onboarding kickoff flow already includes an `Open my path overview` action.
+
+Mastery-map implications:
+
+- The mastery map should become the destination for the existing `Open my path overview` action.
+- The first opened grade band, topic cluster, and recommended CTA should default from `learnerProfile`, not from a generic neutral state.
+- Early-state summary copy should use onboarding strengths, growth areas, and confidence while mastery evidence is still sparse.
+- Existing path chips in the sidebar and home area should deep-link into the map once this feature exists.
+- If onboarding was skipped, the map should still render from real practice history, but without pretending the learner has a diagnostic-based path.
+
 ## Core Mental Model
 
 The map should use three levels of structure.
@@ -62,13 +85,13 @@ The map should use three levels of structure.
 
 Use grade bands as broad chapters, not strict school-grade claims.
 
-Recommended current bands:
+Recommended current bands should reuse the ids and localization contract already introduced in task 1:
 
-- `Grade 6 Foundations`
-- `Grade 7 Bridge`
-- `Pre-Algebra`
+- `grade6` -> `Grade 6 Foundations`
+- `grade7` -> `Grade 7 Bridge`
+- `prealgebra` -> `Pre-Algebra`
 
-These labels are understandable to learners and broad enough for the current content set.
+These labels are already learner-facing elsewhere in the app, so the mastery map should not create a second competing grade-band vocabulary.
 
 ### Level 2: Topic
 
@@ -221,6 +244,15 @@ Recommended content:
 - Secondary CTA: `See all topics`
 
 The summary sentence should be generated from current data and localized naturally.
+
+When the learner has just completed onboarding and has not yet built enough skill-level evidence, the summary should fall back to the existing learner profile signals:
+
+- `recommendedGradeBand`
+- `strengths`
+- `growthAreas`
+- `confidenceScore`
+
+This avoids a dead-feeling map immediately after task 1 placement.
 
 ## Map Structure
 
@@ -405,6 +437,19 @@ Show:
 - Most skills in `Not started`
 - Supportive empty-state copy: `As you solve exercises, your map will light up here.`
 
+If onboarding is complete but exercise evidence is still near zero, this state should be seeded from `learnerProfile.recommendedGradeBand` and `learnerProfile.recommendedTopics`.
+
+### Just Finished Onboarding
+
+Show:
+
+- The recommended grade band already expanded
+- The first recommended topic visually highlighted
+- Strength and growth chips carried over from the diagnostic result
+- A clear `Start with this skill` CTA using the first recommended topic and level
+
+This state is important because task 1 already creates a path before the learner has enough practice history for full mastery scoring.
+
 ### Learner with Scattered History
 
 Show:
@@ -478,7 +523,9 @@ The feature should be discoverable from the current shell.
 Recommended entry points:
 
 - New button in the main navigation or top bar: `Mastery Map`
-- Topic sidebar quick link under the topic list
+- Existing onboarding kickoff secondary CTA: `Open my path overview`
+- Existing path section in the topic sidebar
+- Existing personalized empty state in the exercise area
 - Post-exercise completion card: `See this skill on your map`
 
 On mobile, add it as a clear item in the existing drawer.
@@ -585,6 +632,14 @@ Recommended derived metadata:
 - `skillToExerciseIds`
 
 The score calculation itself can be pure and derived from existing `exerciseStates` plus the new manifest.
+
+Task 1 means the mastery feature should also consume, not duplicate, these existing inputs:
+
+- `onboarding.status`
+- `onboarding.selectedGradeBand`
+- `onboarding.learnerProfile`
+
+Use `learnerProfile` to seed map defaults, summary messaging, and recommended entry skills until real mastery evidence overtakes the diagnostic snapshot.
 
 ## Success Criteria
 

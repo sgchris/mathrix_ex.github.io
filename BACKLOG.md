@@ -31,7 +31,7 @@ Manual test instructions:
 - Switch to Hebrew during onboarding and verify translated copy, mirrored layout, and correct path completion behavior.
 - Load the app with existing saved exercise history but without onboarding data and confirm the app stays usable while showing the personalized-path setup card.
 
-### [ ] 2. Mastery Map by Skill, Topic, and Grade
+### [x] 2. Mastery Map by Skill, Topic, and Grade
 Description: Build a visual mastery map that shows progress at the skill level, not just exercise history. This is a must because students need to see what they have mastered, what is weak, and what comes next if Mathrix is going to become a habit-forming study tool rather than a random exercise player.
 
 User story: As a student, I want to open one screen and see which math skills are green, yellow, or red so I know what to practice next.
@@ -40,6 +40,23 @@ Example 1: "Equivalent Fractions" shows 85% mastery, while "Percent Increase and
 Example 2: A learner finishes three algebra exercises correctly and sees the algebra node advance from "Practicing" to "Almost Mastered."
 
 Priority: P0
+
+Developer notes:
+- Added a dedicated `masteryMap` app mode with a persisted mastery screen, grade-band sections, topic clusters, skill nodes, list view, and a responsive detail panel/bottom sheet.
+- Introduced a lightweight skill taxonomy and derived mastery scoring layer from existing `exerciseStates`, including persisted filters, selected skill, view mode, and expanded topics.
+- Linked the new map from onboarding kickoff, the topic sidebar, the path-aware empty state, and completed exercises without resetting the learner's active practice context.
+
+What changed:
+- Added mastery utilities for skill manifests, exercise-to-skill mapping, mastery-state scoring, and direct launch recommendations back into practice.
+- Extended app state with persisted mastery UI preferences and exact exercise launch support for skill-level practice actions.
+- Added English and Hebrew mastery copy plus responsive UI styling, and split large vendor bundles in Vite so the production build stays warning-free.
+
+Manual test instructions:
+- Open the app as a learner with existing practice data, open `Mastery Map`, and verify the summary, grade bands, topic clusters, and skill states render without losing the active exercise.
+- Switch between map and list view, apply grade/topic/state filters, refresh the page, and confirm the selected view and filters are restored.
+- From the onboarding kickoff and the personalized empty state, open the mastery map and verify the recommended grade band and path topics are highlighted.
+- Finish an exercise, use the new map link, and confirm the corresponding skill detail opens and `Practice now` launches a matching exercise in that skill.
+- Repeat the flow in Hebrew and verify translated labels, mirrored layout, and bottom-sheet behavior on mobile width.
 
 ### [ ] 3. Adaptive Recommendation Engine for "What Should I Do Next?"
 Description: Replace the mostly manual next-step flow with a recommendation engine that proposes the next best exercise, topic, or review set based on mistakes, solved history, and recency. This is a must because students often do not know what to practice after finishing one exercise, and that uncertainty reduces session length and return rate.
