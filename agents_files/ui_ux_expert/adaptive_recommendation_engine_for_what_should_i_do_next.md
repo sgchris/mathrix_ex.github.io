@@ -6,11 +6,14 @@ Design an adaptive recommendation experience that tells the learner what to do n
 
 This spec is written to fit the current Mathrix app architecture:
 
-- Single-page React app with the main shell in App.jsx
-- Client-side persistence through localStorage, with optional Firebase sync layered on top
-- Current core surfaces: topic sidebar, level selector bar, exercise area, exercise history sidebar, mobile drawer
+- Single-page React app with the main shell in `App.jsx` and two primary app views: `practice` and `masteryMap`
+- Client-side persistence through `localStorage`, with optional Firebase sync layered on top
+- A persisted onboarding gate and learner profile already exist from task 1
+- A persisted mastery map already exists from task 2, including skill taxonomy, grade-band filters, recommended skill selection, and exact exercise launch back into practice
+- Current core surfaces in practice mode: topic sidebar, level selector bar, exercise area, exercise history sidebar, and mobile drawer
+- Current core surfaces in guidance mode: learner-path sidebar section, recommendation-ready empty state in the exercise area, and mastery-map entry points from sidebar, empty state, and completed exercises
 - Current content inventory: fractions, decimals, percentages, algebra, arithmetic progression
-- Current exercise progression model: manual topic selection, manual difficulty switching, random next exercise within the chosen topic and level
+- Current exercise progression model is now hybrid: onboarding can recommend a starting path, the mastery map can recommend a skill, and the default in-practice next step is still largely manual or random within the selected topic and level
 - Existing English and Hebrew localization with LTR and RTL support
 
 ## Product Intent
@@ -63,13 +66,41 @@ Reasoning:
 
 - The learner already makes decisions in the exercise area and topic sidebar.
 - A separate screen adds navigation cost and fragments the experience.
-- The current app is lightweight and local-first, so recommendations should feel like part of the normal practice flow.
+- The mastery map already owns the dedicated progress screen, so recommendations should feel like part of the normal practice flow rather than a second analytics destination.
+
+## Relationship to Task 2 Mastery Map
+
+Task 2 changed the baseline for this feature.
+
+The recommendation engine should now be designed as the action layer that sits on top of the mastery system, not beside it.
+
+Already implemented and relevant:
+
+- The app has a persisted `masteryMap` view in global state
+- The topic sidebar already includes a `Mastery Map` entry point and a learner-path section
+- The exercise area empty state already becomes path-led after onboarding completes
+- Completed exercises already expose an `Open skill map` action tied to the current skill
+- Mastery utilities already derive skill state, recommended skill, topic grouping, and exact launch targets from existing exercise history
+
+Recommendation implications:
+
+- Do not create a second progress model or a second concept of `what to practise next`
+- The recommendation engine should consume onboarding and mastery signals, then turn them into a single immediate next action
+- The mastery map remains the deep-dive surface for understanding long-term progress
+- Recommendation cards should offer `See on map` or `Why this?` actions that can open the relevant mastery detail when helpful
+- Empty-state, sidebar, and post-exercise recommendations should reinforce the learner's path and skill map, not compete with them
 
 ## Recommendation Moments
 
 ### Moment 1: Return to app with no immediate exercise selected
 
-Replace the current generic empty state with a recommendation-led home state.
+Evolve the current empty-state behavior into a recommendation-led home state.
+
+Important nuance after tasks 1 and 2:
+
+- If onboarding is incomplete and the non-blocking setup prompt is showing, keep that prompt as the first priority
+- If onboarding is completed and a learner path exists, the recommendation home state should merge with the existing path-led home card instead of replacing it with a neutral generic recommendation
+- If the learner arrives from the mastery map after viewing a skill, the home state can preserve that context and bias the next recommendation toward that skill or topic
 
 Primary card content:
 
@@ -77,7 +108,7 @@ Primary card content:
 - One-line reason: “You were doing well here yesterday” or “This skill needs a quick review”
 - Primary CTA: Start recommended exercise
 - Secondary CTA: See two more options
-- Tertiary text link: Choose topic manually
+- Tertiary text link: Choose topic manually or open the mastery map
 
 Below the main card, show two secondary recommendation tiles:
 
@@ -107,7 +138,7 @@ Actions:
 
 - Primary CTA: Start recommended next step
 - Secondary CTA: Stay on current path
-- Small link: Why this?
+- Small link: Why this? or See on map
 
 ### Moment 3: Exercise failed or learner struggles repeatedly
 
@@ -122,6 +153,7 @@ Recommended response card:
 - Primary CTA: Try an easier review exercise
 - Secondary CTA: See a similar exercise
 - Tertiary link: Keep current level anyway
+- Supporting action: Open the weak skill in the mastery map
 
 This is a rescue state, not a punishment state.
 
@@ -136,6 +168,7 @@ Recommended progression card:
 - Primary CTA: Move to the next level
 - Secondary CTA: Try a linked topic
 - Tertiary link: Keep practising this level
+- Supporting action: See how this skill connects inside the mastery map
 
 This makes success feel directional rather than repetitive.
 
@@ -202,9 +235,10 @@ The first version should add one recommendation object to global app state and e
 
 Recommended top-level behavior:
 
-- The topic sidebar gains a compact “Recommended next” module near the top
-- The empty state in the exercise area becomes recommendation-led
+- The topic sidebar gains a compact “Recommended next” module that sits with the existing mastery and learner-path affordances
+- The empty state in the exercise area becomes recommendation-led, but still preserves onboarding prompt and learner-path use cases
 - The action flow after solve or fail becomes recommendation-led
+- The mastery map stays the explanatory and exploratory surface, with lightweight deep links from recommendation cards into the relevant skill or grade-band context
 - The history sidebar remains historical, not predictive
 
 Do not overload every surface at once.
@@ -215,7 +249,12 @@ The learner should see the recommendation prominently in one place, with support
 
 ### A. Recommendation Spotlight in Topic Sidebar
 
-Place this directly below the Mathrix logo and above the topic list.
+Place this below the existing `Mastery Map` button and above the learner-path block or topic list.
+
+Reasoning:
+
+- The `Mastery Map` button is now a stable top-level navigation affordance and should keep that privilege
+- The recommendation spotlight should feel more actionable than the learner-path summary, but less structural than primary navigation
 
 Content:
 
@@ -223,7 +262,7 @@ Content:
 - Primary title: recommended topic or action
 - Support text: one sentence of reasoning
 - CTA button: start
-- Tiny text link: refresh suggestions or see other options
+- Tiny text link: refresh suggestions, see other options, or open on map
 
 Visual behavior:
 
@@ -235,16 +274,23 @@ Interaction behavior:
 
 - Clicking start should select the topic, set the level, and launch the recommended exercise directly
 - Clicking the reasoning link opens a compact explanation popover on desktop and bottom sheet on mobile
+- When the recommendation maps cleanly to an existing skill, the explanation affordance can deep-link into the mastery-map detail state instead of duplicating that explanation UI
 
 ### B. Recommendation Home State in Exercise Area
 
-When no exercise is active, replace the generic placeholder with a guided practice card stack.
+When no exercise is active, evolve the current exercise-area home state into a guided practice card stack.
+
+This means:
+
+- Preserve the existing onboarding setup prompt when it is relevant
+- Preserve the existing learner-path framing when onboarding is completed
+- Replace the current path-only start card with a recommendation-led card stack that still shows path chips and path-aware language when available
 
 Recommended layout:
 
 - Large primary card for the best next action
 - Two smaller secondary cards below for alternatives
-- Small note that the learner can still browse topics manually
+- Small note that the learner can still browse topics manually or open the mastery map
 
 Primary card fields:
 
@@ -254,6 +300,7 @@ Primary card fields:
 - Estimated effort tag such as “2 to 3 min”
 - Confidence or fit label such as “Best next step”
 - Primary CTA
+- Secondary utility link: `See on map` when a skill-level explanation exists
 
 Secondary cards should be visually lighter and not compete with the main recommendation.
 
@@ -277,6 +324,7 @@ Important:
 
 - The existing Next button should no longer randomly choose the next exercise when a recommendation exists.
 - The primary “next” action should execute the recommendation.
+- The current completed-exercise `Open skill map` affordance should remain available nearby, because it is now an established part of the task-2 flow.
 
 ### D. Mobile Drawer Recommendation Entry
 
@@ -299,6 +347,8 @@ Expanded detail view content:
 - Why this was selected
 - What skill it helps with
 - What alternative is available if it feels wrong
+
+If the recommendation is clearly tied to one skill, the expanded detail can reuse the mastery map's skill-detail mental model instead of inventing a second explanation vocabulary.
 
 Do not expose raw scores, formulas, or too much internal logic to the learner.
 
@@ -368,50 +418,82 @@ Use these signals first:
 - Selected level
 - Topic history per learner
 - Last modified time already stored in app state
+- Onboarding learner profile: `recommendedGradeBand`, `recommendedTopics`, `recommendedLevelsByTopic`, `strengths`, `growthAreas`, `confidenceScore`
+- Existing mastery derivation: current skill id, skill state, recommended skill, topic recommendations, and exact launch targets
 
 Add these lightweight derived signals:
 
 - Recent solved streak by topic
 - Recent struggle streak by topic
+- Recent solved streak by skill
+- Recent struggle streak by skill
 - Last practiced timestamp by topic
+- Last practiced timestamp by skill
 - Average hint count by topic over a recent window
 - Average attempts by topic over a recent window
 - Last recommendation accepted or dismissed
 
 Do not require raw dwell-time tracking in V1. That adds noise and complexity.
 
+Do not create a second independent mastery score inside the recommendation engine. Reuse the existing mastery derivation and only add recommendation-specific ranking logic above it.
+
 ## Recommended State Shape
 
-Extend the main app state with a recommendation section and topic skill summaries.
+Extend the main app state with a recommendation section.
+
+Topic and skill summaries should remain primarily derived data, sourced from existing `exerciseStates`, onboarding state, topic history, and mastery utilities.
 
 ```js
 {
+  appView: 'practice' | 'masteryMap',
+  onboarding: {
+    learnerProfile: {
+      recommendedGradeBand: 'grade6',
+      recommendedTopics: ['fractions', 'decimals'],
+      recommendedLevelsByTopic: {
+        fractions: 'level03'
+      }
+    }
+  },
+  mastery: {
+    selectedSkillId: null,
+    lastViewMode: 'map',
+    filters: {
+      gradeBand: 'all',
+      topicId: 'all',
+      state: 'all',
+      sort: 'recommended'
+    },
+    expandedTopicIds: []
+  },
   recommendations: {
     primary: {
       type: 'continue' | 'level_up' | 'recovery' | 'bridge' | 'review' | null,
       topicId: null,
       exerciseId: null,
       levelId: null,
+      skillId: null,
       reasonKey: null,
       reasonParams: {},
       generatedAt: 0,
       basedOnExerciseId: null,
+      basedOnSkillId: null,
       confidence: 'high' | 'medium' | 'low' | null
     },
     alternatives: [],
     lastAction: {
       acceptedAt: 0,
       dismissedAt: 0,
-      type: null
-    }
-  },
-  topicProgress: {
-    fractions: {
-      lastPracticedAt: 0,
-      recentSolved: 0,
-      recentFailed: 0,
-      recentHints: 0,
-      recommendedLevel: 'level01'
+      type: null,
+      recommendationId: null
+    },
+    dismissedRecommendationIds: [],
+    lastComputedFrom: {
+      activeTopic: null,
+      activeExerciseId: null,
+      selectedLevel: null,
+      learnerProfileVersion: 0,
+      exerciseStatesVersion: 0
     }
   }
 }
@@ -419,7 +501,7 @@ Extend the main app state with a recommendation section and topic skill summarie
 
 ## Persistence Rules
 
-- Recompute recommendations whenever an exercise result changes.
+- Recompute recommendations whenever an exercise result, hint count, explanation state, selected level, onboarding path, or mastery-relevant exercise summary changes.
 - Persist recommendation state to localStorage with the rest of the app state.
 - Sync it through the existing Firebase progress model when cloud sync is enabled.
 - On reload, show the latest recommendation immediately, then optionally recompute for freshness.
@@ -592,6 +674,7 @@ Enhance these existing areas:
 - ActionBar or the current post-answer action region
 - MobileDrawer
 - AppContext reducer and derived selectors
+- Mastery map deep-link handling and exact exercise launch helpers
 
 ## Suggested Engineering Integration
 
@@ -600,13 +683,14 @@ The recommendation engine should be implemented as a clear derivation layer rath
 Recommended structure:
 
 - Keep raw learner behavior in appState
+- Keep mastery and onboarding as the source of long-term learning context
 - Add derived recommendation helpers in a utility such as a recommendation engine module
+- Reuse existing mastery helpers where possible instead of rebuilding skill inference in the recommendation module
 - Generate recommendation objects centrally after state changes
 - Let UI components render based on the generated recommendation object
 
 This will make future backlog items easier, especially:
 
-- Mastery Map by skill, topic, and grade
 - Mixed Review Mode with spaced repetition
 - Goal System with weekly targets
 
