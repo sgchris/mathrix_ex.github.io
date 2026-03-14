@@ -17,6 +17,10 @@ A task is usually a task from the backlog file that has a title, description, us
 
 You must make sure that the task and the UI/UX instructions are clear to you, and if you have any questions, you must stop and ask these questions. Don't continue until you get answers to all your questions and you are sure that you understand the task and the UI/UX instructions. Don't make your own assumptions, any unclear parts must be asked and clarified.
 
+## Additional instructions
+
+- Once the implementation is done, mark the task as completed in the backlog file. If there are any addition notes that you want to add to the task, add them under that task in the backlog file, under a "developer notes" section at the end of the specific task
+
 ## Keep in mind
 
 - You are a highly skilled software engineer, make sure that the code that you create is clean, efficient, maintainable, follows best practices, and is well tested.
